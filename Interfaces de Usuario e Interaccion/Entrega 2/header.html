@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZoneArcade</title>
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/user-menu.css">
+    <link rel="stylesheet" href="css/loader.css">
 </head>
 <body>
 
-    <header class="main-header">
+    <!-- PANTALLA DE CARGA (LOADER) -->
+  <div class="loader-overlay" id="loader-overlay">
+    <div class="loader-content">
+      <img src="assets/icons/logo.svg" alt="ZoneArcade" class="loader-logo">
+      <div class="loader-bar-container">
+        <div class="loader-bar-fill" id="loader-bar-fill"></div>
+      </div>
+      <div class="loader-percentage" id="loader-percentage">0%</div>
+    </div>
+  </div>
+
+  <header class="main-header">
     <div class="header-container">
       
       <!-- Seccion Izquierda: Menú + Logo -->
@@ -17,7 +31,7 @@
         <button class="btn-icon" id="btn-menu-toggle" aria-label="Menú">
           <img src="assets/icons/menu-hamburguesa.svg" alt="Menú">
         </button>
-        <a href="index.html" class="brand-logo">
+        <a href="header.html" class="brand-logo">
           <img src="assets/icons/logo.svg" alt="ZoneArcade">
         </a>
       </div>
@@ -35,9 +49,27 @@
         <a href="#cart" class="btn-icon" aria-label="Carrito de compras">
           <img src="assets/icons/logo-carrito.svg" alt="Carrito">
         </a>
-        <a href="#profile" class="btn-icon" aria-label="Perfil de usuario">
-          <img src="assets/icons/logo-user.svg" alt="Perfil">
-        </a>
+        <!-- Contenedor del perfil con dropdown -->
+        <div class="user-dropdown-container">
+          <button class="btn-icon" id="btn-user-toggle" aria-label="Perfil de usuario">
+            <img src="assets/icons/logo-user.svg" alt="Perfil">
+          </button>
+
+          <!-- MENÚ DESPLEGABLE DE USUARIO -->
+          <div class="user-menu" id="user-menu">
+            <div class="user-menu-header">
+              <span>Hola, Usuario</span>
+              <span class="wave-emoji">👋</span>
+            </div>
+            <ul class="user-menu-list">
+              <li><a href="#perfil" class="user-menu-link">Mi Perfil</a></li>
+              <li><a href="#mis-juegos" class="user-menu-link">Mis juegos</a></li>
+              <li><a href="#configuracion" class="user-menu-link">Configuración</a></li>
+              <li><a href="#logout" class="user-menu-link logout-link">Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -123,6 +155,8 @@
   <div class="nav-overlay" id="nav-overlay"></div>
 
   <script src="js/sidebar.js"></script>
+  <script src="js/user-menu.js"></script>
+  <script src="js/loader.js"></script>
     
 </body>
 </html>

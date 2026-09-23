@@ -1,0 +1,71 @@
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #020E30; /* Mismo fondo oscuro del proyecto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Por encima de cualquier elemento */
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* Ocultar el loader con animación suave */
+.loader-overlay.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 90%;
+  max-width: 320px;
+}
+
+.loader-logo {
+  width: 180px;
+  height: auto;
+  animation: pulse-logo 1.5s infinite ease-in-out;
+}
+
+/* EFECTO PULSO EN EL LOGO */
+@keyframes pulse-logo {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* BARRA DE PROGRESO */
+.loader-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.loader-bar-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #3B82F6, #60A5FA);
+  border-radius: 4px;
+  transition: width 0.1s linear;
+}
+
+/* TEXTO PORCENTUAL */
+.loader-percentage {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}

@@ -1,0 +1,81 @@
+.user-dropdown-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* CAJA DEL MENÚ DESPLEGABLE */
+.user-menu {
+  position: absolute;
+  top: calc(100% + 12px); /* Se ubica justo debajo del ícono */
+  right: 0;               /* Alineado al borde derecho */
+  width: 210px;
+  background-color: #020E30; /* Mismo fondo oscuro de tu Figma */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1200;
+
+  /* Estado oculto por defecto */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+/* Estado visible al hacer clic */
+.user-menu.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* SALUDO INICIAL "Hola, Usuario 👋" */
+.user-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  padding-bottom: 4px;
+}
+
+.wave-emoji {
+  font-size: 1.2rem;
+}
+
+/* LISTA DE ENLACES */
+.user-menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.user-menu-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.user-menu-link:hover {
+  opacity: 0.75;
+}
+
+/* OPCIÓN LOG OUT EN ROJO/ROSADO */
+.logout-link {
+  color: #FF5555; /* Color característico de cierre de sesión */
+}
+
+.logout-link:hover {
+  color: #FF7777;
+  opacity: 1;
+}
