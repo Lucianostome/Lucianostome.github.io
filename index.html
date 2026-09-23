@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZoneArcade</title>
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+
+    <header class="main-header">
+    <div class="header-container">
+      
+      <!-- Seccion Izquierda: Menú + Logo -->
+      <div class="header-left">
+        <!-- El botón hamburguesa abre y cierra el menú -->
+        <button class="btn-icon" id="btn-menu-toggle" aria-label="Menú">
+          <img src="assets/icons/menu-hamburguesa.svg" alt="Menú">
+        </button>
+        <a href="index.html" class="brand-logo">
+          <img src="assets/icons/logo.svg" alt="ZoneArcade">
+        </a>
+      </div>
+
+      <!-- Seccion Centro: Buscador -->
+      <form class="search-bar" role="search">
+        <input type="text" placeholder="Buscar Juegos..." aria-label="Buscar juegos">
+        <button type="submit" class="btn-search-submit" aria-label="Buscar">
+          <img src="assets/icons/lupa-buscar.svg" alt="Buscar">
+        </button>
+      </form>
+
+      <!-- Seccion Derecha: Carrito + Perfil -->
+      <div class="header-right">
+        <a href="#cart" class="btn-icon" aria-label="Carrito de compras">
+          <img src="assets/icons/logo-carrito.svg" alt="Carrito">
+        </a>
+        <a href="#profile" class="btn-icon" aria-label="Perfil de usuario">
+          <img src="assets/icons/logo-user.svg" alt="Perfil">
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MENÚ DESPLEGABLE LATERAL -->
+  <nav class="sidebar-nav" id="sidebar-nav">
+    <ul class="nav-list">
+      <li>
+        <a href="#nuevos" class="nav-link">
+          <img src="assets/icons/icon-nuevos.svg" alt="" class="nav-icon">
+          <span>Nuevos</span>
+        </a>
+      </li>
+      <li>
+        <a href="#mas-recientes" class="nav-link">
+          <img src="assets/icons/icon-recientes.svg" alt="" class="nav-icon">
+          <span>Mas recientes</span>
+        </a>
+      </li>
+      <li>
+        <a href="#mas-jugados" class="nav-link">
+          <img src="assets/icons/icon-mas-jugados.svg" alt="" class="nav-icon">
+          <span>Mas Jugados</span>
+        </a>
+      </li>
+
+      <li class="nav-divider"></li> <!-- Línea divisoria -->
+
+      <li>
+        <a href="#shooters" class="nav-link">
+          <img src="assets/icons/icon-shooter.svg" alt="" class="nav-icon">
+          <span>Shooters</span>
+        </a>
+      </li>
+      <li>
+        <a href="#puzzles" class="nav-link">
+          <img src="assets/icons/icon-puzzle.svg" alt="" class="nav-icon">
+          <span>Puzzles</span>
+        </a>
+      </li>
+      <li>
+        <a href="#sports" class="nav-link">
+          <img src="assets/icons/icon-deportes.svg" alt="" class="nav-icon">
+          <span>Sports</span>
+        </a>
+      </li>
+      <li>
+        <a href="#action" class="nav-link">
+          <img src="assets/icons/icon-accion.svg" alt="" class="nav-icon">
+          <span>Action</span>
+        </a>
+      </li>
+      <li>
+        <a href="#drive" class="nav-link">
+          <img src="assets/icons/icon-conduccion.svg" alt="" class="nav-icon">
+          <span>Drive</span>
+        </a>
+      </li>
+      <li>
+        <a href="#strategy" class="nav-link">
+          <img src="assets/icons/icon-estrategia.svg" alt="" class="nav-icon">
+          <span>Strategy</span>
+        </a>
+      </li>
+
+      <li class="nav-divider"></li> <!-- Línea divisoria -->
+    </ul>
+
+    <!-- SECCIÓN ACERCA DE Y REDES SOCIALES -->
+    <div class="sidebar-footer">
+      <span class="footer-title">Acerca de</span>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><img src="assets/icons/icon-facebook.svg" alt="Facebook"></a>
+        <a href="#" aria-label="Instagram"><img src="assets/icons/icon-instagram.svg" alt="Instagram"></a>
+        <a href="#" aria-label="Discord"><img src="assets/icons/icon-discord.svg" alt="Discord"></a>
+        <a href="#" aria-label="Email"><img src="assets/icons/icon-mail.svg" alt="Email"></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CAPA TRANSPARENTE/OSCURA PARA CERRAR AL TOCAR AFUERA -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <script src="js/sidebar.js"></script>
+    
+</body>
+</html>
