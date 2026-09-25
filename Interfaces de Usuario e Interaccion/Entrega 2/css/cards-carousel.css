@@ -1,0 +1,264 @@
+/* --- CONTENEDOR GENERAL --- */
+#categories-wrapper {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+/* --- SECCIÓN DE CADA CATEGORÍA --- */
+.carousel-section {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.carousel-title {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-left: 32px;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 28px 32px; /* Espacio extra para que no se corte la sombra violeta */
+  width: 100%;
+  box-sizing: border-box;
+  scrollbar-width: none; /* Oculta scrollbar en Firefox */
+  background-color: transparent;
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none; /* Oculta scrollbar en Chrome/Safari */
+}
+
+/* --- BOTONES DE NAVEGACIÓN (FLECHAS CENTRADAS) --- */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(2, 14, 48, 0.9);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 50;                    /* antes 10 — ahora por encima de .game-card:hover (20) */
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-align: center;
+  padding: 0;
+  transition: background-color 0.2s, transform 0.2s;
+  user-select: none;
+}
+
+.carousel-arrow:hover {
+  background-color: #7C3AED;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Ajustes ópticos para los símbolos en los botones */
+.prev-arrow { 
+  left: 12px; 
+  padding-right: 2px;
+}
+
+.next-arrow { 
+  right: 12px; 
+  padding-left: 2px;
+}
+
+/* --- CARD DE JUEGO --- */
+.game-card {
+  position: relative;
+  flex: 0 0 160px;
+  height: 220px;                 /* alto fijo total — antes esto lo tenía solo .card-media */
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  background-color: #030B21;
+  border: 2px solid #8B5CF6;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+  overflow: hidden;
+  transform-origin: center center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, z-index 0.3s;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.game-card:hover {
+  transform: scale(1.15);        /* "un poco, no mucho" — ajustá 1.1–1.2 a gusto */
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.8);
+  z-index: 20;
+}
+
+.card-media {
+  position: relative;
+  width: 100%;
+  height: 100%;                  /* ocupa el 100% del alto en reposo */
+  flex: none;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+.game-card:hover .card-media {
+  height: 58%;                   /* se reduce a 55-60% en hover */
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Candado en juegos de pago */
+.lock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lock-icon {
+  width: 44px;
+  height: 44px;
+}
+
+/* HOVER Y CONTENIDO */
+.card-body {
+  flex: none;
+  height: 0%;
+  opacity: 0;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: height 0.3s ease, opacity 0.25s ease 0.05s, padding 0.3s ease;
+}
+
+.game-card:hover .card-body {
+  height: 42%;                   /* ocupa el espacio restante */
+  opacity: 1;
+  padding: 8px 10px;
+}
+
+.game-card:hover .lock-overlay {
+  opacity: 1;
+}
+
+.card-title {
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  position: relative;
+  flex: 0 0 auto;
+  line-height: 1.2;
+}
+
+.card-title-inner {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+/* Cuando el texto NO entra, en hover animamos el span interno */
+.game-card:hover .card-title.has-overflow .card-title-inner {
+  animation: marqueeScroll 7s linear infinite;
+  animation-delay: 0.3s;
+}
+
+@keyframes marqueeScroll {
+  0%, 15% {
+    transform: translateX(0%);
+  }
+  50%, 65% {
+    transform: translateX(calc(-100% + 130px));
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.card-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.65rem;
+  color: #A0AEC0;
+  flex: 0 0 auto;
+  line-height: 1.1;
+}
+
+.card-price-green {
+  color: #A3E635;
+  font-weight: 600;
+}
+
+/* BOTONES */
+.card-btn {
+  width: 100%;
+  padding: 5px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 2px;
+  transition: filter 0.2s ease, transform 0.1s ease;
+  flex: 0 0 auto;
+}
+
+.card-btn:hover { filter: brightness(1.15); }
+.card-btn:active { transform: scale(0.98); }
+
+.btn-free {
+  background-color: #7C3AED;
+  color: #FFFFFF;
+}
+
+.btn-paid {
+  background-color: #A3E635;
+  color: #000000;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZoneArcade</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/user-menu.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cards-carousel.css">
+</head>
+<body>
+
+    <!-- PANTALLA DE CARGA (LOADER) -->
+    <div class="loader-overlay" id="loader-overlay">
+    <div class="loader-content">
+        <img src="assets/icons/logo.svg" alt="ZoneArcade" class="loader-logo">
+        <div class="loader-bar-container">
+        <div class="loader-bar-fill" id="loader-bar-fill"></div>
+        </div>
+        <div class="loader-percentage" id="loader-percentage">0%</div>
+    </div>
+    </div>
+
+    <div id="header-container"></div>
+
+    <main>
+        <div id="categories-wrapper"></div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="js/sidebar.js"></script>
+    <script src="js/user-menu.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/insertar-header-footer.js"></script>
+    <script src="js/carrusel-juegos.js"></script>
+    
+</body>
+</html>

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
   const btnUserToggle = document.getElementById('btn-user-toggle');
   const userMenu = document.getElementById('user-menu');
 
@@ -26,6 +26,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // CERRAR el menú si se hace clic en cualquier lugar FUERA de él
     document.addEventListener('click', () => {
       if (userMenu.classList.contains('is-active')) {
+        userMenu.classList.remove('is-active');
+      }
+    });
+  }
+});*/
+
+document.addEventListener('componentesCargados', () => {
+  const btnUserToggle = document.getElementById('btn-user-toggle');
+  const userMenu = document.getElementById('user-menu');
+
+  if (btnUserToggle && userMenu) {
+    btnUserToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      userMenu.classList.toggle('is-active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!userMenu.contains(e.target) && !btnUserToggle.contains(e.target)) {
         userMenu.classList.remove('is-active');
       }
     });

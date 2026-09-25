@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
   const btnMenuToggle = document.getElementById('btn-menu-toggle');
   const sidebarNav = document.getElementById('sidebar-nav');
   const navOverlay = document.getElementById('nav-overlay');
@@ -37,4 +37,28 @@ document.addEventListener('DOMContentLoaded', () => {
       closeMenu();
     }
   });
+});*/
+
+document.addEventListener('componentesCargados', () => {
+  const btnMenuToggle = document.getElementById('btn-menu-toggle');
+  const sidebarNav = document.getElementById('sidebar-nav');
+  const navOverlay = document.getElementById('nav-overlay');
+
+  if (btnMenuToggle && sidebarNav) {
+    btnMenuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      sidebarNav.classList.toggle('is-open');
+
+      if (navOverlay) {
+        navOverlay.classList.toggle('is-active');
+      }
+    });
+  }
+
+  if (navOverlay && sidebarNav) {
+    navOverlay.addEventListener('click', () => {
+      sidebarNav.classList.remove('is-open');
+      navOverlay.classList.remove('is-active');
+    });
+  }
 });

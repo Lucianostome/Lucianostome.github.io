@@ -27,3 +27,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   // (como el menú hamburguesa), puedes disparar un evento personalizado:
   document.dispatchEvent(new CustomEvent('componentesCargados'));
 });
+
+
+  
