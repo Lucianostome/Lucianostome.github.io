@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap');
+
+
+.game-page {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 18px 24px 48px;
+}
+
+.breadcrumb {
+  color: #b9c8ed;
+  font-size: 0.75rem;
+  margin-bottom: 42px;
+}
+
+.breadcrumb a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #a3e635;
+}
+
+#breadcrumb-text {
+  color: #A3E635;
+}
+
+.back-button,
+.comment-form button,
+.copy-link button {
+  border: 0;
+  border-radius: 5px;
+  background-color: #8b3ff2;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 9px 20px;
+}
+
+.back-button {
+  position: absolute;
+  top: -56px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92px;
+  height: 32px;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+.back-button:hover,
+.copy-link button:hover {
+  filter: brightness(1.15);
+}
+
+.comment-form button:hover {
+  background-color: #a3e635;
+  color: #111111;
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(250px, 0.9fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.game-main-column {
+  min-width: 0;
+}
+
+.game-image-box {
+  padding: 7px;
+  border: 2px solid #8b3ff2;
+  border-radius: 9px;
+  background-color: #030b21;
+  box-shadow: 0 0 15px rgba(139, 63, 242, 0.65);
+}
+
+.game-image-box img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 884 / 492;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.game-sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.share-box {
+  margin-top: 58px;
+  font-family: 'Space Grotesk', sans-serif;
+  text-align: center;
+}
+
+.instructions-box,
+.share-box {
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #020e30;
+}
+
+.instructions-box {
+  overflow-y: auto;
+}
+
+.instructions-box h2,
+.share-box h2,
+.comments-section h2 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.instructions-box p,
+.instructions-box li {
+  color: #e0e6f6;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.instructions-box ol {
+  padding-left: 18px;
+  margin: 12px 0;
+}
+
+.instructions-box .tip {
+  color: #b9c8ed;
+  margin-top: 16px;
+}
+
+.comments-section {
+  padding: 22px 8px 0;
+}
+
+.comment-form {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.comment-avatar {
+  width: 28px;
+  height: 28px;
+  padding: 5px;
+  border: 1px solid #8b3ff2;
+  border-radius: 50%;
+}
+
+.comment-form textarea {
+  width: 100%;
+  min-height: 62px;
+  resize: vertical;
+  padding: 11px;
+  border: 0;
+  background-color: #030b21;
+  color: #ffffff;
+  font-family: inherit;
+}
+
+.comment-form textarea::placeholder {
+  color: #b9c8ed;
+}
+
+.comment-form button {
+  grid-column: 2;
+  justify-self: end;
+  margin-top: 0;
+  background-color: #a3e635;
+  color: #111111;
+  padding: 9px 17px;
+}
+
+.comment-message,
+.copy-message {
+  min-height: 18px;
+  color: #a3e635;
+  font-size: 0.75rem;
+}
+
+.comment {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  color: #ffffff;
+  font-size: 0.78rem;
+}
+
+.comment-author {
+  color: #b9c8ed;
+  margin-bottom: 6px;
+}
+
+.comment-author span {
+  color: #ffffff;
+  font-size: 0.7rem;
+  margin-left: 8px;
+}
+
+.comment-actions {
+  color: #b9c8ed;
+  font-size: 0.65rem;
+  margin-top: 8px;
+}
+
+.share-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.share-links img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.copy-link {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.copy-link input {
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  padding: 8px;
+  background-color: #172b5c;
+  color: #b9c8ed;
+  font-size: 0.65rem;
+  text-align: center;
+}
+
+.copy-link button {
+  padding: 7px 10px;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 700px) {
+  .game-page {
+    padding: 15px 14px 35px;
+  }
+
+  .breadcrumb {
+    margin-bottom: 12px;
+  }
+
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .game-sidebar {
+    gap: 10px;
+  }
+
+  .back-button {
+    position: static;
+    transform: none;
+    align-self: center;
+  }
+
+  .share-box {
+    margin-top: 18px;
+  }
+
+  .instructions-box {
+    height: auto !important;
+  }
+
+  .comment-form button {
+    grid-column: 2;
+    justify-self: end;
+  }
+}

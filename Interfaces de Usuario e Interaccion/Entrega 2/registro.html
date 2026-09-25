@@ -6,6 +6,8 @@
   <title>ZoneArcade - Registrarse</title>
 
   <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/user-menu.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/registro.css">
 </head>
@@ -19,7 +21,7 @@
     <section class="register-card" id="registerCard">
       <h1 class="register-title">Registrarse</h1>
 
-      <form class="register-form" id="registerForm">
+      <form class="register-form" id="registerForm" novalidate>
         <div class="form-group">
           <label for="fullName">Nombre y Apellido</label>
           <input type="text" id="fullName" required placeholder="Tu nombre completo">
@@ -49,7 +51,7 @@
 
         <div class="form-group">
           <label for="password">Contraseña</label>
-          <input type="password" id="password" required placeholder="••••••••">
+          <input type="password" id="password" required maxlength="8" placeholder="••••••••">
         </div>
 
         <div class="form-group">
@@ -93,6 +95,6 @@
   <div id="footer-container"></div>
 
   <script src="js/insertar-header-footer.js"></script>
-  <script src="js/header.js"></script>
+  <script src="js/registro.js"></script>
 </body>
 </html>

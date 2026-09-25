@@ -3,7 +3,7 @@
 
 body.page-container {
   margin: 0;
-  padding: 0;
+  padding: 65px 0 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -95,6 +95,16 @@ body.page-container {
 
 .form-group input:focus {
   border-color: #A3E635;
+}
+
+.form-group.has-error input {
+  border-color: #FF4D6D;
+}
+
+.field-error {
+  color: #FF4D6D;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
 }
 
 .btn {

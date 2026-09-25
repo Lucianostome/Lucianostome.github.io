@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZoneArcade - Peg Solitaire</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/juego.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="game-page">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> / Juegos de Arcade / <span id="breadcrumb-text">Pac-Man: Ghost Maze Solitaire</span>
+    </div>
+
+    <section class="game-layout">
+      <div class="game-main-column">
+        <div class="game-image-box">
+          <img src="assets/icons/peg_solitaire.svg" alt="Pantalla del juego Peg Solitaire">
+        </div>
+
+        <section class="comments-section">
+          <h2>Comentarios</h2>
+          <div class="comment-form">
+            <img src="assets/icons/logo-user.svg" alt="Usuario" class="comment-avatar">
+            <textarea id="commentText" placeholder="Deja un comentario..." required></textarea>
+            <button type="button">Publicar</button>
+          </div>
+          <p class="comment-message" id="commentMessage"></p>
+          <div id="commentsList">
+            <article class="comment">
+              <img src="assets/icons/logo-user.svg" alt="Usuario" class="comment-avatar">
+              <div>
+                <p class="comment-author">Pepito123 <span>Hace 8 horas</span></p>
+                <p>Muy bueno el juego y sobre todo complicado.</p>
+                <div class="comment-actions">Responder &nbsp;&nbsp; Compartir</div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <aside class="game-sidebar">
+        <button class="back-button" id="backButton" type="button"> Home</button>
+
+        <section class="instructions-box">
+          <h2>Como jugar?</h2>
+          <p>Objetivo: Atrapa a todos los fantasmas y logra que quede solo uno en el laberinto.</p>
+          <ol>
+            <li>Selecciona una ficha sobre cualquier fantasma que tenga la posibilidad de saltar a un casillero vacio.</li>
+            <li>Salta tacticamente moviendo la ficha por encima de otro adyacente.</li>
+            <li>Al terminar, intenta dejar una sola ficha en el tablero.</li>
+          </ol>
+          <p class="tip">Tip: Planifica tus movimientos con anticipacion para no dejar fichas aisladas.</p>
+        </section>
+
+        <section class="share-box">
+          <h2>Comparte este juego</h2>
+          <div class="share-links">
+            <img src="assets/icons/icon-facebook.svg" alt="Facebook">
+            <img src="assets/icons/icon-twitter.svg" alt="X">
+            <img src="assets/icons/icon-whatsapp.svg" alt="WhatsApp">
+          </div>
+          <div class="copy-link">
+            <input id="gameLink" type="text" value="https://zonearcade.com/PegSolitarire" readonly>
+            <button id="copyButton" type="button">Copiar</button>
+          </div>
+          <p class="copy-message" id="copyMessage"></p>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/sidebar.js"></script>
+  <script src="js/user-menu.js"></script>
+  <script src="js/insertar-header-footer.js"></script>
+  <script src="js/juego.js"></script>
+</body>
+</html>
