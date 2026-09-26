@@ -253,12 +253,144 @@
 .card-btn:hover { filter: brightness(1.15); }
 .card-btn:active { transform: scale(0.98); }
 
-.btn-free {
-  background-color: #7C3AED;
-  color: #FFFFFF;
-}
-
 .btn-paid {
   background-color: #A3E635;
   color: #000000;
 }
+
+.btn-free {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #7C3AED;
+  color: #FFFFFF;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  pointer-events: auto; /* <-- Agrega esta línea si sigue sin responder */
+}
+
+/* Ocultar / Mostrar textos */
+.btn-free .btn-label {
+  display: inline-block;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.btn-free .fx,
+.btn-free .done {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.25s ease;
+}
+
+.btn-free .done {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* --- ESTADO BUSY (Encendido de combos) --- */
+.btn-free.busy {
+  background-color: #4C1D95; /* Violeta oscuro en animación */
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.6);
+}
+
+.btn-free.busy .btn-label {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.btn-free.busy .fx {
+  opacity: 1;
+  gap: 6px;
+}
+
+/* Símbolos base */
+.btn-free .fx [data-step] {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #6B7280;
+  background: #1E1B4B;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.6);
+  transform: scale(0.7);
+  transition: transform 0.18s cubic-bezier(0.3, 1.8, 0.5, 1), background 0.18s, color 0.18s, box-shadow 0.18s;
+}
+
+/* Símbolos encendidos (Colores originales PS) */
+.btn-free .fx [data-step].lit {
+  transform: scale(1);
+}
+
+.btn-free .fx [data-step="1"].lit { /* Triángulo verde */
+  color: #042F2E;
+  background: #2DD4BF;
+  box-shadow: 0 0 8px #2DD4BF;
+}
+
+.btn-free .fx [data-step="2"].lit { /* Círculo rojo */
+  color: #450A0A;
+  background: #F87171;
+  box-shadow: 0 0 8px #F87171;
+}
+
+.btn-free .fx [data-step="3"].lit { /* Cruz azul */
+  color: #172554;
+  background: #60A5FA;
+  box-shadow: 0 0 8px #60A5FA;
+}
+
+.btn-free .fx [data-step="4"].lit { /* Cuadrado rosado */
+  color: #500724;
+  background: #F472B6;
+  box-shadow: 0 0 8px #F472B6;
+}
+
+/* --- ESTADO READY (Completado) --- */
+.btn-free.ready {
+  background-color: #059669; /* Verde de éxito al terminar */
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.8);
+}
+
+.btn-free.ready .fx {
+  opacity: 0;
+}
+
+.btn-free.ready .done {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* Esconde el texto original tanto en busy como en ready */
+.btn-free.busy .btn-label,
+.btn-free.ready .btn-label {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+/* Ajustes individuales de tamaño para equiparar los 4 símbolos */
+.btn-free .fx [data-step="1"] { font-size: 0.7rem; }  /* Triángulo */
+.btn-free .fx [data-step="2"] { font-size: 0.9rem; font-weight: bold; }  /* Círculo agrandado */
+.btn-free .fx [data-step="3"] { font-size: 0.7rem; }  /* X */
+.btn-free .fx [data-step="4"] { font-size: 0.85rem; font-weight: bold; } /* Cuadrado agrandado */

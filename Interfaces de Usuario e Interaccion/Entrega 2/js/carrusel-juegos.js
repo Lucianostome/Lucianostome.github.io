@@ -7,7 +7,6 @@ async function obtenerJuegosYAgrupar() {
   if (!wrapper) return;
 
   try {
-    // Ruta desde la raíz (index.html) hacia la carpeta js
     const respuesta = await fetch('js/games_v2.json');
     
     if (!respuesta.ok) {
@@ -16,7 +15,6 @@ async function obtenerJuegosYAgrupar() {
 
     const juegos = await respuesta.json();
 
-    // Resto del código de agrupación...
     const juegosPorGenero = {};
     juegos.forEach(juego => {
       if (juego.genres && juego.genres.length > 0) {
@@ -39,14 +37,14 @@ async function obtenerJuegosYAgrupar() {
     });
 
     activarNavegacionCarruseles();
-    detectarTitulosLargos();    
+    detectarTitulosLargos();
+    activarAnimacionesBotones();
 
   } catch (error) {
     console.error("No se pudo cargar el archivo JSON:", error);
   }
 }
 
-// Genera la sección HTML completa de un género con sus cards
 function crearSeccionCarrusel(genero, juegos) {
   const cardsHTML = juegos.map(juego => crearCardJuego(juego, genero)).join('');
 
@@ -67,18 +65,28 @@ function crearSeccionCarrusel(genero, juegos) {
   `;
 }
 
-// Genera la Card individual leyendo las propiedades de TU JSON
 function crearCardJuego(juego, generoActual) {
   const titulo = juego.name;
   const imagen = juego.background_image_low_res || juego.background_image;
   
-  // Condición de prueba para juegos pagos / gratis
   const esGratis = juego.id % 2 === 0; 
   const precioTexto = esGratis ? 'Free To Play' : '$4.99 USD';
 
+  const botonGratisHTML = `
+    <button class="card-btn btn-free" type="button">
+      <span class="btn-label">Jugar</span>
+      <span class="fx" aria-hidden="true">
+        <span data-step="1">△</span>
+        <span data-step="2">○</span>
+        <span data-step="3">✕</span>
+        <span data-step="4">□</span>
+      </span>
+      <span class="done">▶ ¡A jugar!</span>
+    </button>`;
+
   const botonHTML = esGratis 
-    ? `<button class="card-btn btn-free">Jugar</button>`
-    : `<button class="card-btn btn-paid">Añadir al carrito</button>`;
+    ? botonGratisHTML
+    : `<button class="card-btn btn-paid" type="button">Añadir al carrito</button>`;
 
   const lockHTML = !esGratis 
     ? `<div class="lock-overlay">
@@ -108,6 +116,51 @@ function crearCardJuego(juego, generoActual) {
     `;
 }
 
+// Lógica de animación corregida con delegación global
+function activarAnimacionesBotones() {
+  if (window.__btnAnimationInitialized) return;
+  window.__btnAnimationInitialized = true;
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-free');
+    if (!btn) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (btn.classList.contains('busy') || btn.classList.contains('ready')) return;
+
+    const steps = 4;
+    const stepMs = 300;
+    const delay = 300;
+    const busyMs = 1800;
+    const readyMs = 3200;
+
+    const icons = btn.querySelectorAll('.fx [data-step]');
+
+    btn.classList.add('busy');
+
+    for (let n = 1; n <= steps; n++) {
+      setTimeout(() => {
+        icons.forEach(el => {
+          const step = Number(el.dataset.step);
+          if (step <= n) el.classList.add('lit');
+        });
+      }, delay + n * stepMs);
+    }
+
+    setTimeout(() => {
+      btn.classList.remove('busy');
+      btn.classList.add('ready');
+    }, busyMs);
+
+    setTimeout(() => {
+      btn.classList.remove('ready');
+      icons.forEach(el => el.classList.remove('lit'));
+    }, readyMs);
+  });
+}
+
 function activarNavegacionCarruseles() {
   const secciones = document.querySelectorAll('.carousel-section');
 
@@ -118,13 +171,11 @@ function activarNavegacionCarruseles() {
 
     if (!track) return;
 
-    // --- FUNCIÓN DE DESPLAZAMIENTO FLUIDO (EASING ANIMATION) ---
     function smoothScrollTo(element, targetPosition, duration) {
       const startPosition = element.scrollLeft;
       const distance = targetPosition - startPosition;
       let startTime = null;
 
-      // Función de aceleración/desaceleración (ease-in-out quintic)
       function easeInOut(t) {
         return t < 0.5 
           ? 16 * t * t * t * t * t 
@@ -147,10 +198,9 @@ function activarNavegacionCarruseles() {
       requestAnimationFrame(animation);
     }
 
-    // --- 1. NAVEGACIÓN POR FLECHAS ---
     if (prevBtn && nextBtn) {
         nextBtn.addEventListener('click', () => {
-            const anchoCard = 160 + 16; // ancho de card + gap (coincide con flex: 0 0 160px y gap:16px del CSS)
+            const anchoCard = 160 + 16;
             const cardsAAvanzar = 7;
             const scrollAmount = anchoCard * cardsAAvanzar;
 
@@ -171,30 +221,27 @@ function activarNavegacionCarruseles() {
         });
     }
 
-    // --- 2. MOVER AL HACER CLIC Y ARRASTRAR (DRAG TO SCROLL) ---
     let isDown = false;
     let startX;
     let scrollLeft;
 
     track.addEventListener('mousedown', (e) => {
+      // Ignorar arrastre si se hace clic dentro del botón
+      if (e.target.closest('.card-btn')) return;
+
       isDown = true;
       startX = e.pageX - track.offsetLeft;
       scrollLeft = track.scrollLeft;
     });
 
-    track.addEventListener('mouseleave', () => {
-      isDown = false;
-    });
-
-    track.addEventListener('mouseup', () => {
-      isDown = false;
-    });
+    track.addEventListener('mouseleave', () => { isDown = false; });
+    track.addEventListener('mouseup', () => { isDown = false; });
 
     track.addEventListener('mousemove', (e) => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - track.offsetLeft;
-      const walk = (x - startX) * 1.5; // Velocidad del arrastre
+      const walk = (x - startX) * 1.5;
       track.scrollLeft = scrollLeft - walk;
     });
   });
