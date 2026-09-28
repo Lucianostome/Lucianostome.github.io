@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/cards-carousel.css">
+    <link rel="stylesheet" href="css/hero-carousel.css">
 </head>
 <body>
 
@@ -28,6 +29,18 @@
 
     <div id="header-container"></div>
 
+    <section class="hero-carousel-container">
+        <button class="carousel-arrow prev" aria-label="Anterior">&lt;</button>
+        
+        <div class="carousel-viewport">
+            <div class="carousel-track" id="heroTrack">
+            <!-- Se genera dinámicamente con JS leyendo los 5 mejores ratings -->
+            </div>
+        </div>
+
+        <button class="carousel-arrow next" aria-label="Siguiente">&gt;</button>
+    </section>
+
     <main>
         <div id="categories-wrapper"></div>
     </main>
@@ -39,6 +52,7 @@
     <script src="js/loader.js"></script>
     <script src="js/insertar-header-footer.js"></script>
     <script src="js/carrusel-juegos.js"></script>
+    <script src="js/hero-carousel.js"></script>
     
 </body>
 </html>

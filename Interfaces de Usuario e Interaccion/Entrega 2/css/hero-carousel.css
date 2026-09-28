@@ -1,0 +1,134 @@
+.hero-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px; /* Ampliado de 1100px a 1400px */
+  margin: 10px auto 30px auto;
+}
+
+.hero-carousel-container .carousel-viewport {
+  width: 100%;
+  height: 480px; /* Ampliado de 400px a 480px */
+  perspective: 1200px; /* Ajuste de perspectiva para tarjetas más grandes */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-carousel-container .carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.hero-carousel-container .hero-card {
+  position: absolute;
+  width: 780px; /* Ampliado de 620px a 780px */
+  height: 420px; /* Ampliado de 350px a 420px */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease, filter 0.8s ease;
+  cursor: pointer;
+  background: #111827;
+}
+
+.hero-carousel-container .hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* POSICIONES 3D EXCLUSIVAS DEL HERO */
+.hero-carousel-container .hero-card.active {
+  transform: translateX(0) translateZ(0) rotateY(0deg);
+  z-index: 10;
+  opacity: 1;
+  filter: brightness(1);
+}
+
+.hero-carousel-container .hero-card.prev-card {
+  transform: translateX(-48%) translateZ(-220px) rotateY(18deg);
+  z-index: 5;
+  opacity: 0.65;
+  filter: brightness(0.55);
+}
+
+.hero-carousel-container .hero-card.next-card {
+  transform: translateX(48%) translateZ(-220px) rotateY(-18deg);
+  z-index: 5;
+  opacity: 0.65;
+  filter: brightness(0.55);
+}
+
+.hero-carousel-container .hero-card.hidden-card {
+  transform: translateX(0) translateZ(-450px) scale(0.5);
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* FLECHAS DEL HERO */
+.hero-carousel-container .carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) !important; /* Fuerza el centrado vertical exacto */
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-carousel-container .carousel-arrow:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-50%) scale(1.1) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Posicionamiento lateral a los extremos del contenedor */
+.hero-carousel-container .carousel-arrow.prev {
+  left: 20px;
+  right: auto;
+}
+
+.hero-carousel-container .carousel-arrow.next {
+  right: 20px;
+  left: auto;
+}
+
+/* EFECTO DE RESALTADO AL HACER SCROLL */
+.game-card.highlight-card {
+  animation: pulseHighlight 1.5s ease-out;
+}
+
+@keyframes pulseHighlight {
+  0% { transform: scale(1); box-shadow: 0 0 0px rgba(163, 230, 53, 0); }
+  50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(163, 230, 53, 0.9); }
+  100% { transform: scale(1); box-shadow: 0 0 0px rgba(163, 230, 53, 0); }
+}
+
+/* RESPONSIVE: Adaptación para pantallas pequeñas / Laptops medianas */
+@media (max-width: 1024px) {
+  .hero-carousel-container .carousel-viewport {
+    height: 380px;
+  }
+  .hero-carousel-container .hero-card {
+    width: 88%;
+    height: 330px;
+  }
+}

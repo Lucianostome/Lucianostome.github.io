@@ -76,17 +76,25 @@ function crearCardJuego(juego, generoActual) {
     <button class="card-btn btn-free" type="button">
       <span class="btn-label">Jugar</span>
       <span class="fx" aria-hidden="true">
-        <span data-step="1">△</span>
-        <span data-step="2">○</span>
-        <span data-step="3">✕</span>
-        <span data-step="4">□</span>
+        <span data-step="1"><img src= "assets/btntriangulo.png" alt= "Triángulo" class= "btn-icon-img"></span>
+        <span data-step="2"><img src= "assets/btncirculo.png" alt= "Círculo" class= "btn-icon-img"></span>
+        <span data-step="3"><img src= "assets/btnx.png" alt= "X" class= "btn-icon-img"></span>
+        <span data-step="4"><img src= "assets/btncuadrado2.png" alt= "Cuadrado" class= "btn-icon-img"></span>
       </span>
       <span class="done">▶ ¡A jugar!</span>
     </button>`;
 
-  const botonHTML = esGratis 
-    ? botonGratisHTML
-    : `<button class="card-btn btn-paid" type="button">Añadir al carrito</button>`;
+  const botonPaidHTML = `
+    <button class="card-btn btn-paid" type="button">
+      <span class="btn-label">Añadir al carrito</span>
+      <span class="fx" aria-hidden="true">
+        <img src="assets/paquete.png" alt="Paquete" class="box-img box">
+        <img src="assets/icons/logo-carrito.svg" alt="Carrito" class="cart-img cart">
+      </span>
+      <span class="done">✔ ¡Agregado!</span>
+    </button>`;
+
+  const botonHTML = esGratis ? botonGratisHTML : botonPaidHTML;
 
   const lockHTML = !esGratis 
     ? `<div class="lock-overlay">
@@ -116,48 +124,73 @@ function crearCardJuego(juego, generoActual) {
     `;
 }
 
-// Lógica de animación corregida con delegación global
 function activarAnimacionesBotones() {
   if (window.__btnAnimationInitialized) return;
   window.__btnAnimationInitialized = true;
 
   document.addEventListener('click', (e) => {
-    const btn = e.target.closest('.btn-free');
-    if (!btn) return;
+    // 1. ANIMACIÓN BOTÓN GRATIS (.btn-free)
+    const btnFree = e.target.closest('.btn-free');
+    if (btnFree) {
+      e.preventDefault();
+      e.stopPropagation();
 
-    e.preventDefault();
-    e.stopPropagation();
+      if (btnFree.classList.contains('busy') || btnFree.classList.contains('ready')) return;
 
-    if (btn.classList.contains('busy') || btn.classList.contains('ready')) return;
+      const steps = 4;
+      const stepMs = 300;
+      const delay = 300;
+      const busyMs = 1800;
+      const readyMs = 3200;
 
-    const steps = 4;
-    const stepMs = 300;
-    const delay = 300;
-    const busyMs = 1800;
-    const readyMs = 3200;
+      const icons = btnFree.querySelectorAll('.fx [data-step]');
 
-    const icons = btn.querySelectorAll('.fx [data-step]');
+      btnFree.classList.add('busy');
 
-    btn.classList.add('busy');
+      for (let n = 1; n <= steps; n++) {
+        setTimeout(() => {
+          icons.forEach(el => {
+            const step = Number(el.dataset.step);
+            if (step <= n) el.classList.add('lit');
+          });
+        }, delay + n * stepMs);
+      }
 
-    for (let n = 1; n <= steps; n++) {
       setTimeout(() => {
-        icons.forEach(el => {
-          const step = Number(el.dataset.step);
-          if (step <= n) el.classList.add('lit');
-        });
-      }, delay + n * stepMs);
+        btnFree.classList.remove('busy');
+        btnFree.classList.add('ready');
+      }, busyMs);
+
+      setTimeout(() => {
+        btnFree.classList.remove('ready');
+        icons.forEach(el => el.classList.remove('lit'));
+      }, readyMs);
+
+      return;
     }
 
-    setTimeout(() => {
-      btn.classList.remove('busy');
-      btn.classList.add('ready');
-    }, busyMs);
+    // 2. ANIMACIÓN BOTÓN CARRITO (.btn-paid)
+    const btnPaid = e.target.closest('.btn-paid');
+    if (btnPaid) {
+      e.preventDefault();
+      e.stopPropagation();
 
-    setTimeout(() => {
-      btn.classList.remove('ready');
-      icons.forEach(el => el.classList.remove('lit'));
-    }, readyMs);
+      if (btnPaid.classList.contains('busy') || btnPaid.classList.contains('ready')) return;
+
+      const busyMs = 1400;
+      const readyMs = 3200;
+
+      btnPaid.classList.add('busy');
+
+      setTimeout(() => {
+        btnPaid.classList.remove('busy');
+        btnPaid.classList.add('ready');
+      }, busyMs);
+
+      setTimeout(() => {
+        btnPaid.classList.remove('ready');
+      }, readyMs);
+    }
   });
 }
 
@@ -268,4 +301,82 @@ function detectarTitulosLargos() {
 
     document.body.removeChild(medidor);
   });
+}
+
+function renderizarHeroCarousel(destacados) {
+  const track = document.getElementById('heroTrack');
+  if (!track) return;
+
+  track.innerHTML = destacados.map(juego => `
+    <div class="hero-card" data-id="${juego.id}">
+      <img src="${juego.background_image}" alt="${juego.name}">
+    </div>
+  `).join('');
+
+  const cards = Array.from(track.querySelectorAll('.hero-card'));
+  const btnPrev = document.querySelector('.carousel-arrow.prev');
+  const btnNext = document.querySelector('.carousel-arrow.next');
+
+  let currentIndex = 0;
+  let autoPlayTimer = null;
+
+  function updateCarousel() {
+    const total = cards.length;
+
+    cards.forEach((card, index) => {
+      card.classList.remove('active', 'prev-card', 'next-card', 'hidden-card');
+
+      const prevIndex = (currentIndex - 1 + total) % total;
+      const nextIndex = (currentIndex + 1) % total;
+
+      if (index === currentIndex) {
+        card.classList.add('active');
+      } else if (index === prevIndex) {
+        card.classList.add('prev-card');
+      } else if (index === nextIndex) {
+        card.classList.add('next-card');
+      } else {
+        card.classList.add('hidden-card');
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    updateCarousel();
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    autoPlayTimer = setInterval(nextSlide, 4000);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayTimer) clearInterval(autoPlayTimer);
+  }
+
+  if (btnNext) {
+    btnNext.addEventListener('click', () => {
+      nextSlide();
+      startAutoPlay();
+    });
+  }
+
+  if (btnPrev) {
+    btnPrev.addEventListener('click', () => {
+      prevSlide();
+      startAutoPlay();
+    });
+  }
+
+  track.addEventListener('mouseenter', stopAutoPlay);
+  track.addEventListener('mouseleave', startAutoPlay);
+
+  updateCarousel();
+  startAutoPlay();
 }

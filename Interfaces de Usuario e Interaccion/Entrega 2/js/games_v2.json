@@ -68,6 +68,30 @@
     "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
   },
   {
+  "id": 1000,
+  "name": "Peg Solitaire : Pac-Man",
+  "released": "2026-01-01",
+  "background_image": "assets/peg-solitaire-pacman.jpg",
+  "rating": 5.0,
+  "platforms": [
+    {
+      "id": 1,
+      "name": "PC"
+    },
+    {
+      "id": 2,
+      "name": "PlayStation"
+    }
+  ],
+  "genres": [
+    {
+      "id": 7,
+      "name": "Puzzle"
+    }
+  ],
+  "background_image_low_res": "assets/peg-solitaire-pacman.jpg"
+  },
+  {
     "id": 4200,
     "name": "Portal 2",
     "released": "2011-04-18",
