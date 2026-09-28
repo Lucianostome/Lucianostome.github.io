@@ -89,7 +89,8 @@
       "name": "Puzzle"
     }
   ],
-  "background_image_low_res": "assets/peg-solitaire-pacman.jpg"
+  "background_image_low_res": "assets/peg-solitaire-pacman.jpg",
+  "playUrl": "peg-solitaire-pac-man.html"
   },
   {
     "id": 4200,
