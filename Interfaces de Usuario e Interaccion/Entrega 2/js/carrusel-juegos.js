@@ -72,8 +72,10 @@ function crearCardJuego(juego, generoActual) {
   const esGratis = juego.id % 2 === 0; 
   const precioTexto = esGratis ? 'Free To Play' : '$4.99 USD';
 
+  const dataPlayUrlAttr = juego.playUrl ? ` data-play-url="${juego.playUrl}"` : '';
+
   const botonGratisHTML = `
-    <button class="card-btn btn-free" type="button">
+    <button class="card-btn btn-free" type="button"${dataPlayUrlAttr}>
       <span class="btn-label">Jugar</span>
       <span class="fx" aria-hidden="true">
         <span data-step="1"><img src= "assets/btntriangulo.png" alt= "Triángulo" class= "btn-icon-img"></span>
@@ -164,6 +166,13 @@ function activarAnimacionesBotones() {
       setTimeout(() => {
         btnFree.classList.remove('ready');
         icons.forEach(el => el.classList.remove('lit'));
+        
+        // Si el botón tiene playUrl, redirige recién cuando termina la animación
+        const playUrl = btnFree.dataset.playUrl;
+        if (playUrl) {
+          window.location.href = playUrl;
+        }
+      
       }, readyMs);
 
       return;
