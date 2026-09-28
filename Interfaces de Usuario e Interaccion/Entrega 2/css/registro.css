@@ -260,6 +260,25 @@ body.page-container {
   background-color: #166FE5;
 }
 
+@keyframes registerSuccess {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #A3E635;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+.animated-success {
+  animation: registerSuccess 0.8s forwards ease-in-out;
+}
+
 .login-redirect-text {
   font-family: 'Inter', sans-serif;
   color: #9CA3AF;

@@ -164,6 +164,10 @@ function activarAnimacionesBotones() {
       setTimeout(() => {
         btnFree.classList.remove('ready');
         icons.forEach(el => el.classList.remove('lit'));
+
+        if (btnFree.closest('.game-card')?.dataset.id === '1000') {
+          window.location.href = 'juego.html';
+        }
       }, readyMs);
 
       return;
