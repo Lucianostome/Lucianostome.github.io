@@ -1,9 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
+  
+
+  
   const registerForm = document.getElementById('registerForm');
 
   if (!registerForm) {
     return;
   }
+  // --- Animación del checkbox "No soy un robot" ---
+  const recaptchaCheck = document.getElementById('recaptchaCheck');
+  const customBox = recaptchaCheck.nextElementSibling;
+  let verificando = false;
+  let estaVerificado = false; // nuestra propia variable de control, no usamos .checked para decidir
+
+  recaptchaCheck.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (verificando) return;
+
+    if (estaVerificado) {
+      // el usuario quiere destildar
+      setTimeout(() => {
+        estaVerificado = false;
+        recaptchaCheck.checked = false;
+        customBox.classList.remove('loading');
+      }, 0);
+      return;
+    }
+
+    // el usuario quiere tildar → arranca la animación
+    verificando = true;
+    customBox.classList.add('loading');
+
+    setTimeout(() => {
+      estaVerificado = true;
+      recaptchaCheck.checked = true;
+      customBox.classList.remove('loading');
+      verificando = false;
+    }, 1000);
+  });
 
   registerForm.addEventListener('submit', (event) => {
     event.preventDefault();
