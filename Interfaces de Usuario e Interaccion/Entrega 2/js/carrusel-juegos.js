@@ -108,9 +108,10 @@ function crearCardJuego(juego, generoActual) {
     : '';
 
   return `
-    <article class="game-card" data-id="${juego.id}">
+    <div class="card-3d-wrapper">
+      <article class="game-card" data-id="${juego.id}">
         <div class="card-media">
-        <img src="${imagen}" alt="${titulo}" class="card-img" loading="lazy">
+        <img src="${imagen}" alt="${titulo}" class="card-img" draggable="false" loading="lazy">
         ${lockHTML}
         </div>
         
@@ -122,7 +123,8 @@ function crearCardJuego(juego, generoActual) {
         </p>
         ${botonHTML}
         </div>
-    </article>
+      </article>
+    </div>
     `;
 }
 
@@ -203,6 +205,10 @@ function activarAnimacionesBotones() {
   });
 }
 
+function lerp(v0, v1, t) {
+  return v0 * (1 - t) + v1 * t;
+}
+
 function activarNavegacionCarruseles() {
   const secciones = document.querySelectorAll('.carousel-section');
 
@@ -213,80 +219,110 @@ function activarNavegacionCarruseles() {
 
     if (!track) return;
 
-    function smoothScrollTo(element, targetPosition, duration) {
-      const startPosition = element.scrollLeft;
-      const distance = targetPosition - startPosition;
-      let startTime = null;
-
-      function easeInOut(t) {
-        return t < 0.5 
-          ? 16 * t * t * t * t * t 
-          : 1 + 16 * (--t) * t * t * t * t;
-      }
-
-      function animation(currentTime) {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const progress = Math.min(timeElapsed / duration, 1);
-        const easeProgress = easeInOut(progress);
-
-        element.scrollLeft = startPosition + (distance * easeProgress);
-
-        if (timeElapsed < duration) {
-          requestAnimationFrame(animation);
-        }
-      }
-
-      requestAnimationFrame(animation);
-    }
-
-    if (prevBtn && nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            const anchoCard = 160 + 16;
-            const cardsAAvanzar = 7;
-            const scrollAmount = anchoCard * cardsAAvanzar;
-
-            const maxScroll = track.scrollWidth - track.clientWidth;
-            const target = Math.min(track.scrollLeft + scrollAmount, maxScroll);
-
-            smoothScrollTo(track, target, 600);
-        });
-
-        prevBtn.addEventListener('click', () => {
-            const anchoCard = 160 + 16;
-            const cardsAAvanzar = 7;
-            const scrollAmount = anchoCard * cardsAAvanzar;
-
-            const target = Math.max(track.scrollLeft - scrollAmount, 0);
-
-            smoothScrollTo(track, target, 600);
-        });
-    }
-
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    track.addEventListener('mousedown', (e) => {
-      // Ignorar arrastre si se hace clic dentro del botón
-      if (e.target.closest('.card-btn')) return;
-
-      isDown = true;
-      startX = e.pageX - track.offsetLeft;
-      scrollLeft = track.scrollLeft;
-    });
-
-    track.addEventListener('mouseleave', () => { isDown = false; });
-    track.addEventListener('mouseup', () => { isDown = false; });
-
-    track.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - track.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      track.scrollLeft = scrollLeft - walk;
-    });
+    iniciarCarruselDinamico(track, prevBtn, nextBtn);
   });
+}
+
+function iniciarCarruselDinamico(track, prevBtn, nextBtn) {
+  const wrappers = Array.from(track.querySelectorAll('.card-3d-wrapper'));
+  if (wrappers.length === 0) return;
+
+  const itemWidth = 160 + 16;      // ancho de card + gap
+  const paddingHorizontal = 32;
+
+  let scrollObjetivo = 0;   // a dónde queremos llegar (clamped)
+  let scrollActual = 0;     // valor suavizado que realmente se pinta
+  let scrollAnterior = 0;   // para calcular la velocidad instantánea
+
+  function maxScroll() {
+    const anchoContenido = paddingHorizontal * 2 + wrappers.length * itemWidth - 16;
+    return Math.max(0, anchoContenido - track.clientWidth);
+  }
+
+  function clamp(valor) {
+    return Math.max(0, Math.min(maxScroll(), valor));
+  }
+
+  function pintar(scroll, velocidad) {
+    const skew = -velocidad * 0.2;
+    const rotacion = velocidad * 0.01;
+    const escala = 1 - Math.min(100, Math.abs(velocidad)) * 0.003;
+
+    wrappers.forEach((wrapper, i) => {
+      const x = paddingHorizontal + i * itemWidth - scroll;
+      wrapper.style.transform = `translateX(${x}px) skewX(${skew}deg) rotate(${rotacion}deg) scale(${escala})`;
+    });
+  }
+  pintar(0, 0);
+
+  function render() {
+    requestAnimationFrame(render);
+
+    scrollActual = lerp(scrollActual, scrollObjetivo, 0.1);
+
+    const velocidad = scrollActual - scrollAnterior;
+    scrollAnterior = scrollActual;
+
+    pintar(scrollActual, velocidad);
+  }
+  render();
+
+  // --- Arrastre (Pointer Events) ---
+  let isDragging = false;
+  let didDrag = false;
+  let startX = 0;
+  let scrollAlEmpezar = 0;
+
+  track.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('.card-btn')) return;
+
+    isDragging = true;
+    didDrag = false;
+    startX = e.clientX;
+    scrollAlEmpezar = scrollObjetivo;
+
+    track.setPointerCapture(e.pointerId);
+    track.classList.add('is-dragging');
+  });
+
+  track.addEventListener('pointermove', (e) => {
+    if (!isDragging) return;
+
+    const delta = e.clientX - startX;
+    if (Math.abs(delta) > 5) didDrag = true;
+
+    scrollObjetivo = clamp(scrollAlEmpezar - delta * 1.5);
+  });
+
+  track.addEventListener('pointerup', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.releasePointerCapture(e.pointerId);
+    track.classList.remove('is-dragging');
+  });
+
+  track.addEventListener('pointercancel', () => {
+    isDragging = false;
+    track.classList.remove('is-dragging');
+  });
+
+  track.addEventListener('click', (e) => {
+    if (didDrag) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  });
+
+  // --- Flechas ---
+  if (prevBtn && nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      scrollObjetivo = clamp(scrollObjetivo + itemWidth * 7);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      scrollObjetivo = clamp(scrollObjetivo - itemWidth * 7);
+    });
+  }
 }
 
 function detectarTitulosLargos() {

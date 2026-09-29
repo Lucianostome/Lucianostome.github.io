@@ -33,25 +33,23 @@
 }
 
 .carousel-track {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding: 28px 32px; /* Espacio extra para que no se corte la sombra violeta */
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  box-sizing: border-box;
-  scrollbar-width: none; /* Oculta scrollbar en Firefox */
-  background-color: transparent;
+  height: 300px;           /* 220 de la card + 40 arriba + 40 abajo, para el hover */
   cursor: grab;
   user-select: none;
+  touch-action: pan-y;
 }
 
 .carousel-track:active {
   cursor: grabbing;
 }
 
-.carousel-track::-webkit-scrollbar {
-  display: none; /* Oculta scrollbar en Chrome/Safari */
+.carousel-track.is-dragging {
+  cursor: grabbing;
 }
+
 
 /* --- BOTONES DE NAVEGACIÓN (FLECHAS CENTRADAS) --- */
 .carousel-arrow {
@@ -94,11 +92,10 @@
   padding-left: 2px;
 }
 
-/* --- CARD DE JUEGO --- */
 .game-card {
   position: relative;
-  flex: 0 0 160px;
-  height: 220px;                 /* alto fijo total — antes esto lo tenía solo .card-media */
+  width: 100%;              
+  height: 220px;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
@@ -127,6 +124,15 @@
   overflow: hidden;
   transition: height 0.3s ease;
 }
+
+.card-3d-wrapper {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 160px;
+  will-change: transform;
+}
+
 .game-card:hover .card-media {
   height: 58%;                   /* se reduce a 55-60% en hover */
 }
@@ -136,6 +142,9 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  -webkit-user-drag: none;   
+  user-select: none;         
+  pointer-events: none;    
 }
 
 /* Candado en juegos de pago */
@@ -503,3 +512,8 @@
   65%  { transform: scale(0.92, 1.08); }
   100% { transform: scale(1, 1); }
 }
+
+
+
+
+
