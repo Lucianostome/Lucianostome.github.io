@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Cantidad de juegos a mostrar en el carrusel principal
-const CANTIDAD_DESTACADOS = 7;
+const CANTIDAD_DESTACADOS = 12;
 
 async function cargarHeroDestacados() {
   try {
-    const respuesta = await fetch('js/games_v2.json');
+    const respuesta = await fetch('js/games_v2_completo.json');
     const juegos = await respuesta.json();
 
     // 1. Filtrar y ordenar los Top 7 con mayor rating
@@ -142,17 +142,17 @@ function renderizarHeroCarousel(destacados) {
     const targetCard = document.querySelector(`.game-card[data-id="${gameId}"]`);
 
     if (targetCard) {
-      // 1. Acomodar la tarjeta dentro de su carrusel horizontal si está oculta por el overflow
       const horizontalTrack = targetCard.closest('.carousel-track');
-      if (horizontalTrack) {
-        const cardLeft = targetCard.offsetLeft;
-        const trackWidth = horizontalTrack.clientWidth;
-        horizontalTrack.scrollTo({
-          left: cardLeft - (trackWidth / 2) + (targetCard.clientWidth / 2),
-          behavior: 'smooth'
-        });
-      }
+      const wrapper3D = targetCard.closest('.card-3d-wrapper');
 
+      console.log('horizontalTrack:', horizontalTrack);
+      console.log('wrapper3D:', wrapper3D);
+      console.log('tiene centrarCard:', horizontalTrack && typeof horizontalTrack.centrarCard);
+
+      if (horizontalTrack && wrapper3D && horizontalTrack.centrarCard) {
+        horizontalTrack.centrarCard(wrapper3D);
+        console.log('centrarCard ejecutado');
+      }
       // 2. Calcular la distancia vertical para centrar el juego en la pantalla
       const headerOffset = 100; // Espacio libre superior para evitar el header
       const rect = targetCard.getBoundingClientRect();

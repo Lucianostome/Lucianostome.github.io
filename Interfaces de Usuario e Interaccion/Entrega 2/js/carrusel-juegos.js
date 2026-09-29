@@ -7,7 +7,7 @@ async function obtenerJuegosYAgrupar() {
   if (!wrapper) return;
 
   try {
-    const respuesta = await fetch('js/games_v2.json');
+    const respuesta = await fetch('js/games_v2_completo.json');
     
     if (!respuesta.ok) {
       throw new Error(`Error HTTP: ${respuesta.status}`);
@@ -48,9 +48,12 @@ async function obtenerJuegosYAgrupar() {
 function crearSeccionCarrusel(genero, juegos) {
   const cardsHTML = juegos.map(juego => crearCardJuego(juego, genero)).join('');
 
+  
   return `
     <section class="carousel-section">
-      <h2 class="carousel-title">${genero}</h2>
+      <a class="carousel-title-link" href="categoria.html?genero=${encodeURIComponent(genero)}">
+        <h2 class="carousel-title">${genero}</h2>
+      </a>
       
       <div class="carousel-container">
         <button class="carousel-arrow prev-arrow" aria-label="Anterior">&lt;</button>
@@ -65,7 +68,9 @@ function crearSeccionCarrusel(genero, juegos) {
   `;
 }
 
-function crearCardJuego(juego, generoActual) {
+function crearCardJuego(juego, generoActual, opciones = {}) {
+  const { conWrapper = true } = opciones;
+
   const titulo = juego.name;
   const imagen = juego.background_image_low_res || juego.background_image;
   
@@ -107,8 +112,7 @@ function crearCardJuego(juego, generoActual) {
        </div>`
     : '';
 
-  return `
-    <div class="card-3d-wrapper">
+  const cardHTML = `
       <article class="game-card" data-id="${juego.id}">
         <div class="card-media">
         <img src="${imagen}" alt="${titulo}" class="card-img" draggable="false" loading="lazy">
@@ -124,8 +128,9 @@ function crearCardJuego(juego, generoActual) {
         ${botonHTML}
         </div>
       </article>
-    </div>
     `;
+
+  return conWrapper ? `<div class="card-3d-wrapper">${cardHTML}</div>` : cardHTML;
 }
 
 function activarAnimacionesBotones() {
@@ -227,12 +232,12 @@ function iniciarCarruselDinamico(track, prevBtn, nextBtn) {
   const wrappers = Array.from(track.querySelectorAll('.card-3d-wrapper'));
   if (wrappers.length === 0) return;
 
-  const itemWidth = 160 + 16;      // ancho de card + gap
+  const itemWidth = 160 + 16;
   const paddingHorizontal = 32;
 
-  let scrollObjetivo = 0;   // a dónde queremos llegar (clamped)
-  let scrollActual = 0;     // valor suavizado que realmente se pinta
-  let scrollAnterior = 0;   // para calcular la velocidad instantánea
+  let scrollObjetivo = 0;
+  let scrollActual = 0;
+  let scrollAnterior = 0;
 
   function maxScroll() {
     const anchoContenido = paddingHorizontal * 2 + wrappers.length * itemWidth - 16;
@@ -242,6 +247,25 @@ function iniciarCarruselDinamico(track, prevBtn, nextBtn) {
   function clamp(valor) {
     return Math.max(0, Math.min(maxScroll(), valor));
   }
+
+  function actualizarFlechas() {
+    if (!prevBtn || !nextBtn) return;
+    prevBtn.classList.toggle('arrow-hidden', scrollObjetivo <= 0);
+    nextBtn.classList.toggle('arrow-hidden', scrollObjetivo >= maxScroll());
+  }
+
+  actualizarFlechas();
+
+  // NUEVO: permite centrar una card puntual desde afuera (ej: click en el Hero)
+  track.centrarCard = function (wrapper) {
+    const index = wrappers.indexOf(wrapper);
+    if (index === -1) return;
+
+    const centroCard = paddingHorizontal + index * itemWidth + 160 / 2;
+    const centroTrack = track.clientWidth / 2;
+
+    scrollObjetivo = clamp(centroCard - centroTrack);
+  };
 
   function pintar(scroll, velocidad) {
     const skew = -velocidad * 0.2;
@@ -292,6 +316,7 @@ function iniciarCarruselDinamico(track, prevBtn, nextBtn) {
     if (Math.abs(delta) > 5) didDrag = true;
 
     scrollObjetivo = clamp(scrollAlEmpezar - delta * 1.5);
+    actualizarFlechas();
   });
 
   track.addEventListener('pointerup', (e) => {
@@ -317,10 +342,12 @@ function iniciarCarruselDinamico(track, prevBtn, nextBtn) {
   if (prevBtn && nextBtn) {
     nextBtn.addEventListener('click', () => {
       scrollObjetivo = clamp(scrollObjetivo + itemWidth * 7);
+      actualizarFlechas();
     });
 
     prevBtn.addEventListener('click', () => {
       scrollObjetivo = clamp(scrollObjetivo - itemWidth * 7);
+      actualizarFlechas();
     });
   }
 }

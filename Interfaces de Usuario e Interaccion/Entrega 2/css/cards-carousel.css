@@ -4,7 +4,7 @@
   padding: 20px 0;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 36px;              /* antes: 20px — este es el "salto" entre una sección y la próxima */
   box-sizing: border-box;
   background-color: transparent;
 }
@@ -20,8 +20,18 @@
   color: #FFFFFF;
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 14px;    /* antes: 22px — más chico que el gap, para que quede pegado a SU carrusel */
   padding-left: 32px;
+}
+
+.carousel-title-link {
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.carousel-title-link:hover .carousel-title {
+  color: #A3E635;
 }
 
 .carousel-container {
@@ -34,9 +44,9 @@
 
 .carousel-track {
   position: relative;
-  overflow: hidden;
+  clip-path: inset(-40px 0 -40px 0);   /* antes: overflow: hidden */
   width: 100%;
-  height: 300px;           /* 220 de la card + 40 arriba + 40 abajo, para el hover */
+  height: 220px;                        /* antes: 260px — ahora es exactamente el alto de la card */
   cursor: grab;
   user-select: none;
   touch-action: pan-y;
@@ -72,8 +82,13 @@
   line-height: 1;
   text-align: center;
   padding: 0;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: background-color 0.2s, transform 0.2s, opacity 0.25s;
   user-select: none;
+}
+
+.carousel-arrow.arrow-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .carousel-arrow:hover {
@@ -127,7 +142,7 @@
 
 .card-3d-wrapper {
   position: absolute;
-  top: 40px;
+  top: 0;                 /* antes: 20px — ya no hace falta ningún offset */
   left: 0;
   width: 160px;
   will-change: transform;

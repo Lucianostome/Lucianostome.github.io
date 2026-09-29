@@ -101,3 +101,17 @@
 .nav-overlay.is-active {
   display: block;
 }
+
+
+.nav-link-sub {
+  padding-left: 12px;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link-sub:hover {
+  color: #A3E635; /* Color de acento al pasar el cursor */
+  transform: translateX(4px);
+  opacity: 1;
+}

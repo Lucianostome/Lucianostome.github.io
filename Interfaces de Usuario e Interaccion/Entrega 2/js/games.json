@@ -1,0 +1,2042 @@
+[
+  {
+    "id": 1001,
+    "name": "Grand Theft Auto V",
+    "released": "2013-09-17",
+    "background_image": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg",
+    "rating": 4.47,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1002,
+    "name": "The Witcher 3: Wild Hunt",
+    "released": "2015-05-18",
+    "background_image": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg",
+    "rating": 4.64,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1000,
+    "name": "Peg Solitaire : Pac-Man",
+    "released": "2026-01-01",
+    "background_image": "assets/peg-solitaire-pacman.jpg",
+    "background_image_low_res": "assets/peg-solitaire-pacman.jpg",
+    "rating": 5.0,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 11, "name": "Casual"}, {"id": 13, "name": "Arcade"}],
+    "playUrl": "peg-solitaire-pac-man.html"
+  },
+  {
+    "id": 1003,
+    "name": "Portal 2",
+    "released": "2011-04-18",
+    "background_image": "https://media.rawg.io/media/games/2ba/2bac0e87cf45715da7b23d19d81e2240.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/2ba/2bac0e87cf45715da7b23d19d81e2240.jpg",
+    "rating": 4.61,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 2, "name": "Shooter"}]
+  },
+  {
+    "id": 1004,
+    "name": "Tomb Raider",
+    "released": "2013-03-05",
+    "background_image": "https://media.rawg.io/media/games/021/021c4e21a1824d7726f0bf1686774313.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/021/021c4e21a1824d7726f0bf1686774313.jpg",
+    "rating": 4.05,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 3, "name": "Adventure"}]
+  },
+  {
+    "id": 1005,
+    "name": "The Elder Scrolls V: Skyrim",
+    "released": "2011-11-11",
+    "background_image": "https://media.rawg.io/media/games/7cf/7cfc92f8f3042e77464106d041150f8f.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/7cf/7cfc92f8f3042e77464106d041150f8f.jpg",
+    "rating": 4.42,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1006,
+    "name": "Hollow Knight",
+    "released": "2017-02-24",
+    "background_image": "https://media.rawg.io/media/games/4be/4be6e15016639499215109bb46a70f2b.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/4be/4be6e15016639499215109bb46a70f2b.jpg",
+    "rating": 4.4,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1007,
+    "name": "Counter-Strike: Global Offensive",
+    "released": "2012-08-21",
+    "background_image": "https://media.rawg.io/media/games/73e/73e1100910c9238d3e6eef61a6965734.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/73e/73e1100910c9238d3e6eef61a6965734.jpg",
+    "rating": 3.57,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 2, "name": "Shooter"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1008,
+    "name": "Dota 2",
+    "released": "2013-07-09",
+    "background_image": "https://media.rawg.io/media/games/6fc/6fcf4a3a801867201d8120021c43555f.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/6fc/6fcf4a3a801867201d8120021c43555f.jpg",
+    "rating": 3.06,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1009,
+    "name": "Rocket League",
+    "released": "2015-07-07",
+    "background_image": "https://media.rawg.io/media/games/88b/88b5f61f0931f63d4ea6a7f50a4b0d1e.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/88b/88b5f61f0931f63d4ea6a7f50a4b0d1e.jpg",
+    "rating": 3.94,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 9, "name": "Sports"}, {"id": 14, "name": "Racing"}]
+  },
+  {
+    "id": 1010,
+    "name": "Stardew Valley",
+    "released": "2016-02-26",
+    "background_image": "https://media.rawg.io/media/games/713/7132647fd704f64746e8036540a84a16.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/713/7132647fd704f64746e8036540a84a16.jpg",
+    "rating": 4.39,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 12, "name": "Simulation"}, {"id": 5, "name": "RPG"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1011,
+    "name": "Civilization VI",
+    "released": "2016-10-21",
+    "background_image": "https://media.rawg.io/media/games/4be/4be407130282129a03f43eb75960b73c.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/4be/4be407130282129a03f43eb75960b73c.jpg",
+    "rating": 4.15,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1012,
+    "name": "Street Fighter V",
+    "released": "2016-02-16",
+    "background_image": "https://media.rawg.io/media/games/075/0753381a8b30f81d830b806d2745e69e.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/075/0753381a8b30f81d830b806d2745e69e.jpg",
+    "rating": 3.8,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 15, "name": "Fighting"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1013,
+    "name": "Pac-Man Championship Edition DX+",
+    "released": "2013-09-25",
+    "background_image": "https://media.rawg.io/media/games/a57/a579f131a29362a7a409549fcfbe474f.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/a57/a579f131a29362a7a409549fcfbe474f.jpg",
+    "rating": 4.2,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 13, "name": "Arcade"}, {"id": 11, "name": "Casual"}]
+  },
+  {
+    "id": 1014,
+    "name": "Forza Horizon 4",
+    "released": "2018-10-02",
+    "background_image": "https://media.rawg.io/media/games/786/7863e5887693f222e916da05e5f8a5ad.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/786/7863e5887693f222e916da05e5f8a5ad.jpg",
+    "rating": 4.35,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 14, "name": "Racing"}, {"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1015,
+    "name": "FIFA 22",
+    "released": "2021-10-01",
+    "background_image": "https://media.rawg.io/media/games/3f2/3f20d0f507b9efeb565ff51ef2b8be56.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/3f2/3f20d0f507b9efeb565ff51ef2b8be56.jpg",
+    "rating": 3.7,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 9, "name": "Sports"}, {"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1016,
+    "name": "World of Warcraft",
+    "released": "2004-11-23",
+    "background_image": "https://media.rawg.io/media/games/1a3/1a3f1246104f3fb0209c72e2cf1cb5eb.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/1a3/1a3f1246104f3fb0209c72e2cf1cb5eb.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1017,
+    "name": "The Sims 4",
+    "released": "2014-09-02",
+    "background_image": "https://media.rawg.io/media/games/a7c/a7c4387d812d334586338b2fb98f7e2a.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/a7c/a7c4387d812d334586338b2fb98f7e2a.jpg",
+    "rating": 3.6,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 12, "name": "Simulation"}, {"id": 11, "name": "Casual"}]
+  },
+  {
+    "id": 1018,
+    "name": "Tekken 7",
+    "released": "2017-06-02",
+    "background_image": "https://media.rawg.io/media/games/710/7102e3b2e3e57147774d61c6b162f1c8.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/710/7102e3b2e3e57147774d61c6b162f1c8.jpg",
+    "rating": 4.12,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 15, "name": "Fighting"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1019,
+    "name": "Tetris Effect: Connected",
+    "released": "2020-11-10",
+    "background_image": "https://media.rawg.io/media/games/613/6130ebbe8975a6f233be854ed24d3536.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/613/6130ebbe8975a6f233be854ed24d3536.jpg",
+    "rating": 4.5,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1020,
+    "name": "Age of Empires II: Definitive Edition",
+    "released": "2019-11-14",
+    "background_image": "https://media.rawg.io/media/games/7a2/7a2741be2d7c570f443c7262198d0034.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/7a2/7a2741be2d7c570f443c7262198d0034.jpg",
+    "rating": 4.38,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1021,
+    "name": "Need for Speed Heat",
+    "released": "2019-11-08",
+    "background_image": "https://media.rawg.io/media/games/5e4/5e42a00c2f6d2f3c7e7389ffb9952a26.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/5e4/5e42a00c2f6d2f3c7e7389ffb9952a26.jpg",
+    "rating": 3.8,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 14, "name": "Racing"}]
+  },
+  {
+    "id": 1022,
+    "name": "NBA 2K22",
+    "released": "2021-09-10",
+    "background_image": "https://media.rawg.io/media/games/053/0532fffe3135b3e64d7df643c1b183dd.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/053/0532fffe3135b3e64d7df643c1b183dd.jpg",
+    "rating": 3.4,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 9, "name": "Sports"}]
+  },
+  {
+    "id": 1023,
+    "name": "Mortal Kombat 11",
+    "released": "2019-04-23",
+    "background_image": "https://media.rawg.io/media/games/588/588c6bd70b22a0162030d22080a97c26.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/588/588c6bd70b22a0162030d22080a97c26.jpg",
+    "rating": 4.11,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 15, "name": "Fighting"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1024,
+    "name": "Among Us",
+    "released": "2018-06-15",
+    "background_image": "https://media.rawg.io/media/games/e74/e74458058b35e0f1928572a13312d6a2.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/e74/e74458058b35e0f1928572a13312d6a2.jpg",
+    "rating": 3.86,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 11, "name": "Casual"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1025,
+    "name": "Gran Turismo 7",
+    "released": "2022-03-04",
+    "background_image": "https://media.rawg.io/media/games/67a/67a68e833633d3c75ebc08d13233c46d.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/67a/67a68e833633d3c75ebc08d13233c46d.jpg",
+    "rating": 4.2,
+    "platforms": [{"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 14, "name": "Racing"}, {"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1026,
+    "name": "Tony Hawk's Pro Skater 1 + 2",
+    "released": "2020-09-04",
+    "background_image": "https://media.rawg.io/media/games/441/44122d259c1935e40be5cf43c683b5d3.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/441/44122d259c1935e40be5cf43c683b5d3.jpg",
+    "rating": 4.3,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 9, "name": "Sports"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1027,
+    "name": "StarCraft II: Wings of Liberty",
+    "released": "2010-07-27",
+    "background_image": "https://media.rawg.io/media/games/1be/1be7e418e2f893d5f309a4d8a5f458e0.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/1be/1be7e418e2f893d5f309a4d8a5f458e0.jpg",
+    "rating": 4.32,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1028,
+    "name": "Guilty Gear Strive",
+    "released": "2021-06-11",
+    "background_image": "https://media.rawg.io/media/games/212/2128795550a25fa124e93fb2ffc14040.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/212/2128795550a25fa124e93fb2ffc14040.jpg",
+    "rating": 4.15,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 15, "name": "Fighting"}]
+  },
+  {
+    "id": 1029,
+    "name": "Super Smash Bros. Ultimate",
+    "released": "2018-12-07",
+    "background_image": "https://media.rawg.io/media/games/9f3/9f3c51f04e14f85223a5e81f1816e01a.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/9f3/9f3c51f04e14f85223a5e81f1816e01a.jpg",
+    "rating": 4.52,
+    "platforms": [{"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 15, "name": "Fighting"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1030,
+    "name": "Final Fantasy XIV: A Realm Reborn",
+    "released": "2013-08-27",
+    "background_image": "https://media.rawg.io/media/games/d8c/d8c2bf80b8529235a96be342624e5ef9.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/d8c/d8c2bf80b8529235a96be342624e5ef9.jpg",
+    "rating": 4.25,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1031,
+    "name": "Total War: Warhammer III",
+    "released": "2022-02-17",
+    "background_image": "https://media.rawg.io/media/games/390/3904696155f891b9f62c0e86b4d320a5.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/390/3904696155f891b9f62c0e86b4d320a5.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1032,
+    "name": "Microsoft Flight Simulator",
+    "released": "2020-08-18",
+    "background_image": "https://media.rawg.io/media/games/1e5/1e58e38810e9f168fec5ef30e54d3e8e.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/1e5/1e58e38810e9f168fec5ef30e54d3e8e.jpg",
+    "rating": 4.2,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1033,
+    "name": "Dirt 5",
+    "released": "2020-11-06",
+    "background_image": "https://media.rawg.io/media/games/c0e/c0e9b986f3f982987a0e3776e7d69b32.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/c0e/c0e9b986f3f982987a0e3776e7d69b32.jpg",
+    "rating": 3.7,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 14, "name": "Racing"}]
+  },
+  {
+    "id": 1034,
+    "name": "Puyo Puyo Tetris 2",
+    "released": "2020-12-08",
+    "background_image": "https://media.rawg.io/media/games/b89/b89b12d5b6e205128ff4ef0609a63aa6.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/b89/b89b12d5b6e205128ff4ef0609a63aa6.jpg",
+    "rating": 4.0,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 11, "name": "Casual"}]
+  },
+  {
+    "id": 1035,
+    "name": "Fall Guys",
+    "released": "2020-08-04",
+    "background_image": "https://media.rawg.io/media/games/5eb/5eb49eb2d6ba6d21a24320ec30db4be1.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/5eb/5eb49eb2d6ba6d21a24320ec30db4be1.jpg",
+    "rating": 3.8,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 11, "name": "Casual"}, {"id": 8, "name": "Massively Multiplayer"}]
+  },
+  {
+    "id": 1036,
+    "name": "Riders Republic",
+    "released": "2021-10-28",
+    "background_image": "https://media.rawg.io/media/games/556/5561a35790c3776e82a0d922a9ee2a8f.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/556/5561a35790c3776e82a0d922a9ee2a8f.jpg",
+    "rating": 3.9,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 9, "name": "Sports"}, {"id": 14, "name": "Racing"}]
+  },
+  {
+    "id": 1037,
+    "name": "The Witness",
+    "released": "2016-01-26",
+    "background_image": "https://media.rawg.io/media/games/6c5/6c55e2218587662e2a22283a00f28e20.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/6c5/6c55e2218587662e2a22283a00f28e20.jpg",
+    "rating": 4.08,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1038,
+    "name": "Cuphead",
+    "released": "2017-09-29",
+    "background_image": "https://media.rawg.io/media/games/226/226551e034262164f3169aeb142272b0.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/226/226551e034262164f3169aeb142272b0.jpg",
+    "rating": 4.33,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 6, "name": "Indie"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1039,
+    "name": "Brawlhalla",
+    "released": "2017-10-17",
+    "background_image": "https://media.rawg.io/media/games/35b/35b4f15214e77119105f614920b88580.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/35b/35b4f15214e77119105f614920b88580.jpg",
+    "rating": 3.6,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 15, "name": "Fighting"}, {"id": 11, "name": "Casual"}]
+  },
+  {
+    "id": 1040,
+    "name": "Overcooked! 2",
+    "released": "2018-08-07",
+    "background_image": "https://media.rawg.io/media/games/388/388933801e712a67e71d4d8a1834ee8b.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/388/388933801e712a67e71d4d8a1834ee8b.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 11, "name": "Casual"}, {"id": 10, "name": "Strategy"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1041,
+    "name": "Slime Rancher",
+    "released": "2017-08-01",
+    "background_image": "https://media.rawg.io/media/games/75c/75c2e39e21ff28a8d11cbe2d3b2bf40d.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/75c/75c2e39e21ff28a8d11cbe2d3b2bf40d.jpg",
+    "rating": 4.18,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 12, "name": "Simulation"}, {"id": 6, "name": "Indie"}, {"id": 3, "name": "Adventure"}]
+  },
+  {
+    "id": 1042,
+    "name": "Super Animal Royale",
+    "released": "2021-08-26",
+    "background_image": "https://media.rawg.io/media/games/63f/63f458510c4d299ed5c53142ed9874a9.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/63f/63f458510c4d299ed5c53142ed9874a9.jpg",
+    "rating": 3.7,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 2, "name": "Shooter"}]
+  },
+  {
+    "id": 1043,
+    "name": "Guild Wars 2",
+    "released": "2012-08-28",
+    "background_image": "https://media.rawg.io/media/games/117/11797c0f0d611804d9c44569c7921a4f.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/117/11797c0f0d611804d9c44569c7921a4f.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1044,
+    "name": "Metal Slug 3",
+    "released": "2000-06-01",
+    "background_image": "https://media.rawg.io/media/games/a78/a7812586e3954eb3a3f0ef118c7f3e82.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/a78/a7812586e3954eb3a3f0ef118c7f3e82.jpg",
+    "rating": 4.25,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 13, "name": "Arcade"}, {"id": 2, "name": "Shooter"}]
+  },
+  {
+    "id": 1045,
+    "name": "Assetto Corsa",
+    "released": "2014-12-19",
+    "background_image": "https://media.rawg.io/media/games/b17/b17351651e737979f4c3af4a6bc66657.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/b17/b17351651e737979f4c3af4a6bc66657.jpg",
+    "rating": 4.05,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 14, "name": "Racing"}, {"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1046,
+    "name": "Super Mario Odyssey",
+    "released": "2017-10-27",
+    "background_image": "https://media.rawg.io/media/games/7c4/7c448374d781e05d0959441113b29d47.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/7c4/7c448374d781e05d0959441113b29d47.jpg",
+    "rating": 4.7,
+    "platforms": [{"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 3, "name": "Adventure"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1047,
+    "name": "Injustice 2",
+    "released": "2017-05-16",
+    "background_image": "https://media.rawg.io/media/games/93e/93e23d1d1f05459b15949d6d5eb77f59.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/93e/93e23d1d1f05459b15949d6d5eb77f59.jpg",
+    "rating": 4.12,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 15, "name": "Fighting"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1048,
+    "name": "Cities: Skylines",
+    "released": "2015-03-10",
+    "background_image": "https://media.rawg.io/media/games/25c/25c477e12fa5dbd91df7d90610012431.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/25c/25c477e12fa5dbd91df7d90610012431.jpg",
+    "rating": 4.22,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 12, "name": "Simulation"}, {"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1049,
+    "name": "Dragon Ball FighterZ",
+    "released": "2018-01-26",
+    "background_image": "https://media.rawg.io/media/games/226/226f1a8c9b360b080641d4c20790938f.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/226/226f1a8c9b360b080641d4c20790938f.jpg",
+    "rating": 4.19,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 15, "name": "Fighting"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1050,
+    "name": "Unravel Two",
+    "released": "2018-06-09",
+    "background_image": "https://media.rawg.io/media/games/419/4191d84813f278eb084a9e5572622416.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/419/4191d84813f278eb084a9e5572622416.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 11, "name": "Casual"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1051,
+    "name": "The Elder Scrolls Online",
+    "released": "2014-04-04",
+    "background_image": "https://media.rawg.io/media/games/740/740ac8d3278f997cb65ef3c42be2077e.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/740/740ac8d3278f997cb65ef3c42be2077e.jpg",
+    "rating": 3.75,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1052,
+    "name": "Sea of Thieves",
+    "released": "2018-03-20",
+    "background_image": "https://media.rawg.io/media/games/e2d/e2d3f396116a3e36996d80128213f56e.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/e2d/e2d3f396116a3e36996d80128213f56e.jpg",
+    "rating": 3.9,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 3, "name": "Adventure"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1053,
+    "name": "PGA TOUR 2K23",
+    "released": "2022-10-14",
+    "background_image": "https://media.rawg.io/media/games/9b7/9b798782a22be264bb93b2a30bb66405.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/9b7/9b798782a22be264bb93b2a30bb66405.jpg",
+    "rating": 3.6,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 9, "name": "Sports"}, {"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1054,
+    "name": "BABA IS YOU",
+    "released": "2019-03-13",
+    "background_image": "https://media.rawg.io/media/games/13a/13a1a9e0a05a964e56eb6be212b05b45.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/13a/13a1a9e0a05a964e56eb6be212b05b45.jpg",
+    "rating": 4.4,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1055,
+    "name": "Football Manager 2023",
+    "released": "2022-11-08",
+    "background_image": "https://media.rawg.io/media/games/288/28833917d235c59f0f6222b460d00f72.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/288/28833917d235c59f0f6222b460d00f72.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 9, "name": "Sports"}, {"id": 12, "name": "Simulation"}, {"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1056,
+    "name": "Project CARS 2",
+    "released": "2017-09-22",
+    "background_image": "https://media.rawg.io/media/games/613/6134a69c094bfcfb489d892404e0e560.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/613/6134a69c094bfcfb489d892404e0e560.jpg",
+    "rating": 3.9,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 14, "name": "Racing"}, {"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1057,
+    "name": "Soulcalibur VI",
+    "released": "2018-10-19",
+    "background_image": "https://media.rawg.io/media/games/60e/60e0eb8a614d33458a24c2a514d3a2e7.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/60e/60e0eb8a614d33458a24c2a514d3a2e7.jpg",
+    "rating": 3.95,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 15, "name": "Fighting"}]
+  },
+  {
+    "id": 1058,
+    "name": "Super Hexagon",
+    "released": "2012-11-27",
+    "background_image": "https://media.rawg.io/media/games/ef2/ef250f215d2a933f2c7a02fb4208a3d5.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/ef2/ef250f215d2a933f2c7a02fb4208a3d5.jpg",
+    "rating": 4.15,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 13, "name": "Arcade"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1059,
+    "name": "Plants vs. Zombies",
+    "released": "2009-05-05",
+    "background_image": "https://media.rawg.io/media/games/283/283e73600dd10d22d4f6142b03268599.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/283/283e73600dd10d22d4f6142b03268599.jpg",
+    "rating": 4.31,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 11, "name": "Casual"}, {"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1060,
+    "name": "XCOM 2",
+    "released": "2016-02-05",
+    "background_image": "https://media.rawg.io/media/games/9b5/9b532f37083e20963b14620572d4ecf2.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/9b5/9b532f37083e20963b14620572d4ecf2.jpg",
+    "rating": 4.25,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1061,
+    "name": "Black Desert Online",
+    "released": "2014-12-17",
+    "background_image": "https://media.rawg.io/media/games/609/60966f363065b26fbe85700877a561e1.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/609/60966f363065b26fbe85700877a561e1.jpg",
+    "rating": 3.3,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 5, "name": "RPG"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1062,
+    "name": "Euro Truck Simulator 2",
+    "released": "2012-10-18",
+    "background_image": "https://media.rawg.io/media/games/e4f/e4fb3fb1e70befdbbe99583a5a697d86.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/e4f/e4fb3fb1e70befdbbe99583a5a697d86.jpg",
+    "rating": 4.35,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1063,
+    "name": "WWE 2K23",
+    "released": "2023-03-14",
+    "background_image": "https://media.rawg.io/media/games/1e9/1e9d1a3b31871e8bb7d53205dfb22bc0.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/1e9/1e9d1a3b31871e8bb7d53205dfb22bc0.jpg",
+    "rating": 4.0,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 9, "name": "Sports"}, {"id": 15, "name": "Fighting"}]
+  },
+  {
+    "id": 1064,
+    "name": "Dead Cells",
+    "released": "2018-08-07",
+    "background_image": "https://media.rawg.io/media/games/0be/0bea0501aed52902041235123d4c7a5d.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/0be/0bea0501aed52902041235123d4c7a5d.jpg",
+    "rating": 4.37,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1065,
+    "name": "F1 22",
+    "released": "2022-07-01",
+    "background_image": "https://media.rawg.io/media/games/60c/60c490a66d3a8e1b6cb46f0436d591ff.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/60c/60c490a66d3a8e1b6cb46f0436d591ff.jpg",
+    "rating": 3.8,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 14, "name": "Racing"}, {"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1066,
+    "name": "Wanderlust: Transsiberian",
+    "released": "2020-04-22",
+    "background_image": "https://media.rawg.io/media/games/178/178c772c72b8384210ec1f2118334465.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/178/178c772c72b8384210ec1f2118334465.jpg",
+    "rating": 3.5,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 3, "name": "Adventure"}, {"id": 11, "name": "Casual"}]
+  },
+  {
+    "id": 1067,
+    "name": "Fez",
+    "released": "2012-04-13",
+    "background_image": "https://media.rawg.io/media/games/2e8/2e811f06121f00a5d4481001c2a11b68.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/2e8/2e811f06121f00a5d4481001c2a11b68.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1068,
+    "name": "Untitled Goose Game",
+    "released": "2019-09-20",
+    "background_image": "https://media.rawg.io/media/games/744/7441113279c664b3014164a32c255755.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/744/7441113279c664b3014164a32c255755.jpg",
+    "rating": 4.12,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 11, "name": "Casual"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1069,
+    "name": "The Division 2",
+    "released": "2019-03-15",
+    "background_image": "https://media.rawg.io/media/games/7d8/7d80be1629e843ed3476e3d2aa3d56d7.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/7d8/7d80be1629e843ed3476e3d2aa3d56d7.jpg",
+    "rating": 3.8,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 2, "name": "Shooter"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1070,
+    "name": "Hades",
+    "released": "2020-09-17",
+    "background_image": "https://media.rawg.io/media/games/1f4/1f47a55aff842b55f10bea1921245077.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/1f4/1f47a55aff842b55f10bea1921245077.jpg",
+    "rating": 4.6,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 6, "name": "Indie"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1071,
+    "name": "Stellaris",
+    "released": "2016-05-09",
+    "background_image": "https://media.rawg.io/media/games/558/5580e5d076a08e1694f575677d2ee218.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/558/5580e5d076a08e1694f575677d2ee218.jpg",
+    "rating": 4.2,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}, {"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1072,
+    "name": "Geometry Dash",
+    "released": "2013-08-13",
+    "background_image": "https://media.rawg.io/media/games/3bb/3bb32b30e42d7b4200c01e227a9c3722.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/3bb/3bb32b30e42d7b4200c01e227a9c3722.jpg",
+    "rating": 4.25,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 13, "name": "Arcade"}, {"id": 11, "name": "Casual"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1073,
+    "name": "Slay the Spire",
+    "released": "2019-01-23",
+    "background_image": "https://media.rawg.io/media/games/288/2888cf36e0d9b4b0a484e5eb2d08a0d0.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/288/2888cf36e0d9b4b0a484e5eb2d08a0d0.jpg",
+    "rating": 4.45,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1074,
+    "name": "Sonic Mania",
+    "released": "2017-08-29",
+    "background_image": "https://media.rawg.io/media/games/d1c/d1c4e8d3e2329ef310db90351f28b7f8.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/d1c/d1c4e8d3e2329ef310db90351f28b7f8.jpg",
+    "rating": 4.2,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 13, "name": "Arcade"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1075,
+    "name": "Hot Wheels Unleashed",
+    "released": "2021-09-30",
+    "background_image": "https://media.rawg.io/media/games/6b6/6b6e4e11736e4f3a7f80459345ed6a9c.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/6b6/6b6e4e11736e4f3a7f80459345ed6a9c.jpg",
+    "rating": 3.9,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 14, "name": "Racing"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1076,
+    "name": "Elden Ring",
+    "released": "2022-02-25",
+    "background_image": "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7be37839340d0c.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/b29/b294fdd866dcdb643e7be37839340d0c.jpg",
+    "rating": 4.7,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1077,
+    "name": "God of War",
+    "released": "2018-04-20",
+    "background_image": "https://media.rawg.io/media/games/4be/4be407130282129a03f43eb75960b73c.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/4be/4be407130282129a03f43eb75960b73c.jpg",
+    "rating": 4.58,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 3, "name": "Adventure"}]
+  },
+  {
+    "id": 1078,
+    "name": "Red Dead Redemption 2",
+    "released": "2018-10-26",
+    "background_image": "https://media.rawg.io/media/games/511/511829865d371113210470f419fda7ba.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/511/511829865d371113210470f419fda7ba.jpg",
+    "rating": 4.59,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 3, "name": "Adventure"}]
+  },
+  {
+    "id": 1079,
+    "name": "BioShock Infinite",
+    "released": "2013-03-26",
+    "background_image": "https://media.rawg.io/media/games/d82/d82362545593ed9256fc77d30f863182.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/d82/d82362545593ed9256fc77d30f863182.jpg",
+    "rating": 4.39,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 2, "name": "Shooter"}]
+  },
+  {
+    "id": 1080,
+    "name": "Cyberpunk 2077",
+    "released": "2020-12-10",
+    "background_image": "https://media.rawg.io/media/games/713/7132647fd704f64746e8036540a84a16.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/713/7132647fd704f64746e8036540a84a16.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1081,
+    "name": "Terraria",
+    "released": "2011-05-16",
+    "background_image": "https://media.rawg.io/media/games/f46/f467387170a86e3704de07784f36572d.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/f46/f467387170a86e3704de07784f36572d.jpg",
+    "rating": 4.08,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1082,
+    "name": "Fallout 4",
+    "released": "2015-11-09",
+    "background_image": "https://media.rawg.io/media/games/d15/d1527237892477391b4976d8f7b9b370.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/d15/d1527237892477391b4976d8f7b9b370.jpg",
+    "rating": 3.8,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1083,
+    "name": "PAYDAY 2",
+    "released": "2013-08-13",
+    "background_image": "https://media.rawg.io/media/games/73e/73e1100910c9238d3e6eef61a6965734.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/73e/73e1100910c9238d3e6eef61a6965734.jpg",
+    "rating": 3.51,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 2, "name": "Shooter"}]
+  },
+  {
+    "id": 1084,
+    "name": "Borderlands 2",
+    "released": "2012-09-18",
+    "background_image": "https://media.rawg.io/media/games/490/4901650ddf15b357a9f65e691543dcd2.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/490/4901650ddf15b357a9f65e691543dcd2.jpg",
+    "rating": 4.02,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 2, "name": "Shooter"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1085,
+    "name": "Left 4 Dead 2",
+    "released": "2009-11-17",
+    "background_image": "https://media.rawg.io/media/games/46d/46d98e6910fbc0706e4fe7b8288b0215.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/46d/46d98e6910fbc0706e4fe7b8288b0215.jpg",
+    "rating": 4.09,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 2, "name": "Shooter"}]
+  },
+  {
+    "id": 1086,
+    "name": "BioShock",
+    "released": "2007-08-21",
+    "background_image": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56014.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/bc0/bc06a29ceac58652b684deefe7d56014.jpg",
+    "rating": 4.36,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 2, "name": "Shooter"}]
+  },
+  {
+    "id": 1087,
+    "name": "Destiny 2",
+    "released": "2017-09-06",
+    "background_image": "https://media.rawg.io/media/games/34b/34b820590ed8a316d43d0e6ea08d27f7.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/34b/34b820590ed8a316d43d0e6ea08d27f7.jpg",
+    "rating": 3.56,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 2, "name": "Shooter"}, {"id": 8, "name": "Massively Multiplayer"}]
+  },
+  {
+    "id": 1088,
+    "name": "Life is Strange",
+    "released": "2015-01-29",
+    "background_image": "https://media.rawg.io/media/games/562/56255a1a4928e59004a0ed400a2e2f94.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/562/56255a1a4928e59004a0ed400a2e2f94.jpg",
+    "rating": 4.11,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 3, "name": "Adventure"}]
+  },
+  {
+    "id": 1089,
+    "name": "LIMBO",
+    "released": "2010-07-21",
+    "background_image": "https://media.rawg.io/media/games/942/9424c6c03250e8a1b764d4cba5b08d22.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/942/9424c6c03250e8a1b764d4cba5b08d22.jpg",
+    "rating": 4.15,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 6, "name": "Indie"}, {"id": 7, "name": "Puzzle"}, {"id": 3, "name": "Adventure"}]
+  },
+  {
+    "id": 1090,
+    "name": "Portal",
+    "released": "2007-10-09",
+    "background_image": "https://media.rawg.io/media/games/7fa/7fa0b586293c5861ee32490e953a4996.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/7fa/7fa0b586293c5861ee32490e953a4996.jpg",
+    "rating": 4.51,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1091,
+    "name": "Apex Legends",
+    "released": "2019-02-04",
+    "background_image": "https://media.rawg.io/media/games/b72/b723a115e0a430f4a7c2a1423a6650c3.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/b72/b723a115e0a430f4a7c2a1423a6650c3.jpg",
+    "rating": 3.66,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 2, "name": "Shooter"}, {"id": 8, "name": "Massively Multiplayer"}]
+  },
+  {
+    "id": 1092,
+    "name": "Team Fortress 2",
+    "released": "2007-10-10",
+    "background_image": "https://media.rawg.io/media/games/461/4616211b8c28f3077d242646f9038202.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/461/4616211b8c28f3077d242646f9038202.jpg",
+    "rating": 3.68,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 2, "name": "Shooter"}]
+  },
+  {
+    "id": 1093,
+    "name": "DOOM (2016)",
+    "released": "2016-05-13",
+    "background_image": "https://media.rawg.io/media/games/c4b/c4b011311e56310228d73b063d80a138.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/c4b/c4b011311e56310228d73b063d80a138.jpg",
+    "rating": 4.38,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 2, "name": "Shooter"}]
+  },
+  {
+    "id": 1094,
+    "name": "Warframe",
+    "released": "2013-03-25",
+    "background_image": "https://media.rawg.io/media/games/6fc/6fcf4a3a801867201d8120021c43555f.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/6fc/6fcf4a3a801867201d8120021c43555f.jpg",
+    "rating": 3.42,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 2, "name": "Shooter"}, {"id": 8, "name": "Massively Multiplayer"}]
+  },
+  {
+    "id": 1095,
+    "name": "PUBG: BATTLEGROUNDS",
+    "released": "2017-03-23",
+    "background_image": "https://media.rawg.io/media/games/1bd/1bd2657a814735b814d34211711af4a6.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/1bd/1bd2657a814735b814d34211711af4a6.jpg", "rating": 2.88,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 2, "name": "Shooter"}, {"id": 8, "name": "Massively Multiplayer"}]
+  },
+  {
+    "id": 1096,
+    "name": "Slender: The Eight Pages",
+    "released": "2012-06-26",
+    "background_image": "https://media.rawg.io/media/games/04a/04a7bea123017725321f28c00b007d30.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/04a/04a7bea123017725321f28c00b007d30.jpg",
+    "rating": 3.2,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 6, "name": "Indie"}, {"id": 3, "name": "Adventure"}]
+  },
+  {
+    "id": 1097,
+    "name": "Super Meat Boy",
+    "released": "2010-10-20",
+    "background_image": "https://media.rawg.io/media/games/e04/e049db3c35fbe4e8026343282b7e300b.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/e04/e049db3c35fbe4e8026343282b7e300b.jpg",
+    "rating": 3.95,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 6, "name": "Indie"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1098,
+    "name": "Firewatch",
+    "released": "2016-02-09",
+    "background_image": "https://media.rawg.io/media/games/b54/b54598d1d5cc31899f4f0a2363194a61.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/b54/b54598d1d5cc31899f4f0a2363194a61.jpg",
+    "rating": 4.14,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 3, "name": "Adventure"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1099,
+    "name": "Detroit: Become Human",
+    "released": "2018-05-25",
+    "background_image": "https://media.rawg.io/media/games/951/951572a70b28b32e022097d762d1840b.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/951/951572a70b28b32e022097d762d1840b.jpg",
+    "rating": 4.28,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 3, "name": "Adventure"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1100,
+    "name": "Dark Souls III",
+    "released": "2016-03-24",
+    "background_image": "https://media.rawg.io/media/games/da1/da1b2677647711a57d050c69c8207ef1.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/da1/da1b2677647711a57d050c69c8207ef1.jpg",
+    "rating": 4.56,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 4, "name": "Action"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1101,
+    "name": "Subnautica",
+    "released": "2018-01-23",
+    "background_image": "https://media.rawg.io/media/games/73e/73e1100910c9238d3e6eef61a6965734.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/73e/73e1100910c9238d3e6eef61a6965734.jpg",
+    "rating": 4.4,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 3, "name": "Adventure"}, {"id": 12, "name": "Simulation"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1102,
+    "name": "Crossy Road",
+    "released": "2014-11-20",
+    "background_image": "https://media.rawg.io/media/games/490/4901650ddf15b357a9f65e691543dcd2.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/490/4901650ddf15b357a9f65e691543dcd2.jpg",
+    "rating": 3.7,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 11, "name": "Casual"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1103,
+    "name": "Don't Starve Together",
+    "released": "2016-04-21",
+    "background_image": "https://media.rawg.io/media/games/5be/5be1546e843f5f4f05c7077452676d68.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/5be/5be1546e843f5f4f05c7077452676d68.jpg",
+    "rating": 4.2,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 6, "name": "Indie"}, {"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1104,
+    "name": "Human: Fall Flat",
+    "released": "2016-07-22",
+    "background_image": "https://media.rawg.io/media/games/e4a/e4a5573e6925db3fdb2367d4151da4d0.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/e4a/e4a5573e6925db3fdb2367d4151da4d0.jpg",
+    "rating": 3.9,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 11, "name": "Casual"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1105,
+    "name": "Garry's Mod",
+    "released": "2006-11-29",
+    "background_image": "https://media.rawg.io/media/games/48c/48cb04c3484be1703d3728507f16ea39.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/48c/48cb04c3484be1703d3728507f16ea39.jpg",
+    "rating": 3.8,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 12, "name": "Simulation"}, {"id": 11, "name": "Casual"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1106,
+    "name": "War Thunder",
+    "released": "2012-11-01",
+    "background_image": "https://media.rawg.io/media/games/1e5/1e58e38810e9f168fec5ef30e54d3e8e.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/1e5/1e58e38810e9f168fec5ef30e54d3e8e.jpg",
+    "rating": 3.4,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 12, "name": "Simulation"}, {"id": 2, "name": "Shooter"}]
+  },
+  {
+    "id": 1107,
+    "name": "Slay The Spire II",
+    "released": "2025-01-01",
+    "background_image": "https://media.rawg.io/media/games/288/2888cf36e0d9b4b0a484e5eb2d08a0d0.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/288/2888cf36e0d9b4b0a484e5eb2d08a0d0.jpg",
+    "rating": 4.5,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1108,
+    "name": "Super Mario Party",
+    "released": "2018-10-05",
+    "background_image": "https://media.rawg.io/media/games/9f3/9f3c51f04e14f85223a5e81f1816e01a.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/9f3/9f3c51f04e14f85223a5e81f1816e01a.jpg",
+    "rating": 3.9,
+    "platforms": [{"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 11, "name": "Casual"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1109,
+    "name": "Overwatch 2",
+    "released": "2022-10-04",
+    "background_image": "https://media.rawg.io/media/games/34b/34b820590ed8a316d43d0e6ea08d27f7.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/34b/34b820590ed8a316d43d0e6ea08d27f7.jpg",
+    "rating": 3.2,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 2, "name": "Shooter"}, {"id": 8, "name": "Massively Multiplayer"}]
+  },
+  {
+    "id": 1110,
+    "name": "VALORANT",
+    "released": "2020-06-02",
+    "background_image": "https://media.rawg.io/media/games/73e/73e1100910c9238d3e6eef61a6965734.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/73e/73e1100910c9238d3e6eef61a6965734.jpg",
+    "rating": 3.7,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 2, "name": "Shooter"}, {"id": 8, "name": "Massively Multiplayer"}]
+  },
+  {
+    "id": 1111,
+    "name": "Rayman Legends",
+    "released": "2013-08-29",
+    "background_image": "https://media.rawg.io/media/games/85c/85c8ae70e7311e810f17b50d0b388477.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/85c/85c8ae70e7311e810f17b50d0b388477.jpg",
+    "rating": 4.4,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 13, "name": "Arcade"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1112,
+    "name": "Portal: Prelude",
+    "released": "2008-10-09",
+    "background_image": "https://media.rawg.io/media/games/7fa/7fa0b586293c5861ee32490e953a4996.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/7fa/7fa0b586293c5861ee32490e953a4996.jpg",
+    "rating": 4.0,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 7, "name": "Puzzle"}]
+  },
+  {
+    "id": 1113,
+    "name": "Unpacking",
+    "released": "2021-11-02",
+    "background_image": "https://media.rawg.io/media/games/713/7132647fd704f64746e8036540a84a16.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/713/7132647fd704f64746e8036540a84a16.jpg",
+    "rating": 4.3,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 11, "name": "Casual"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1114,
+    "name": "Mini Metro",
+    "released": "2015-11-06",
+    "background_image": "https://media.rawg.io/media/games/13a/13a1a9e0a05a964e56eb6be212b05b45.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/13a/13a1a9e0a05a964e56eb6be212b05b45.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 10, "name": "Strategy"}, {"id": 11, "name": "Casual"}]
+  },
+  {
+    "id": 1115,
+    "name": "Super Meat Boy Forever",
+    "released": "2020-12-23",
+    "background_image": "https://media.rawg.io/media/games/e04/e049db3c35fbe4e8026343282b7e300b.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/e04/e049db3c35fbe4e8026343282b7e300b.jpg",
+    "rating": 3.6,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 13, "name": "Arcade"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1116,
+    "name": "SimCity 4",
+    "released": "2003-01-14",
+    "background_image": "https://media.rawg.io/media/games/25c/25c477e12fa5dbd91df7d90610012431.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/25c/25c477e12fa5dbd91df7d90610012431.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 12, "name": "Simulation"}, {"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1117,
+    "name": "Star Wars: Squadrons",
+    "released": "2020-10-02",
+    "background_image": "https://media.rawg.io/media/games/1e5/1e58e38810e9f168fec5ef30e54d3e8e.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/1e5/1e58e38810e9f168fec5ef30e54d3e8e.jpg",
+    "rating": 3.7,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 12, "name": "Simulation"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1118,
+    "name": "WarioWare: Get It Together!",
+    "released": "2021-09-10",
+    "background_image": "https://media.rawg.io/media/games/9f3/9f3c51f04e14f85223a5e81f1816e01a.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/9f3/9f3c51f04e14f85223a5e81f1816e01a.jpg",
+    "rating": 3.8,
+    "platforms": [{"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 11, "name": "Casual"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1119,
+    "name": "Monument Valley",
+    "released": "2014-04-03",
+    "background_image": "https://media.rawg.io/media/games/6c5/6c55e2218587662e2a22283a00f28e20.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/6c5/6c55e2218587662e2a22283a00f28e20.jpg",
+    "rating": 4.5,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 11, "name": "Casual"}]
+  },
+  {
+    "id": 1120,
+    "name": "TrackMania 2: Canyon",
+    "released": "2011-09-14",
+    "background_image": "https://media.rawg.io/media/games/6b6/6b6e4e11736e4f3a7f80459345ed6a9c.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/6b6/6b6e4e11736e4f3a7f80459345ed6a9c.jpg",
+    "rating": 3.9,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 14, "name": "Racing"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1121,
+    "name": "Dead or Alive 6",
+    "released": "2019-03-01",
+    "background_image": "https://media.rawg.io/media/games/212/2128795550a25fa124e93fb2ffc14040.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/212/2128795550a25fa124e93fb2ffc14040.jpg",
+    "rating": 3.6,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 15, "name": "Fighting"}]
+  },
+  {
+    "id": 1122,
+    "name": "Super Mario 3D World",
+    "released": "2013-11-22",
+    "background_image": "https://media.rawg.io/media/games/7c4/7c448374d781e05d0959441113b29d47.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/7c4/7c448374d781e05d0959441113b29d47.jpg",
+    "rating": 4.4,
+    "platforms": [{"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 13, "name": "Arcade"}, {"id": 3, "name": "Adventure"}]
+  },
+  {
+    "id": 1123,
+    "name": "Mario Kart 8 Deluxe",
+    "released": "2017-04-28",
+    "background_image": "https://media.rawg.io/media/games/88b/88b5f61f0931f63d4ea6a7f50a4b0d1e.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/88b/88b5f61f0931f63d4ea6a7f50a4b0d1e.jpg",
+    "rating": 4.6,
+    "platforms": [{"id": 7, "name": "Nintendo"}],
+    "genres": [{"id": 14, "name": "Racing"}, {"id": 11, "name": "Casual"}]
+  },
+  {
+    "id": 1124,
+    "name": "Worms Reloaded",
+    "released": "2010-08-26",
+    "background_image": "https://media.rawg.io/media/games/388/388933801e712a67e71d4d8a1834ee8b.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/388/388933801e712a67e71d4d8a1834ee8b.jpg",
+    "rating": 3.8,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}, {"id": 11, "name": "Casual"}]
+  },
+  {
+    "id": 1125,
+    "name": "Inscryption",
+    "released": "2021-10-19",
+    "background_image": "https://media.rawg.io/media/games/288/2888cf36e0d9b4b0a484e5eb2d08a0d0.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/288/2888cf36e0d9b4b0a484e5eb2d08a0d0.jpg",
+    "rating": 4.6,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 10, "name": "Strategy"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1126,
+    "name": "Command & Conquer: Red Alert 3",
+    "released": "2008-10-28",
+    "background_image": "https://media.rawg.io/media/games/7a2/7a2741be2d7c570f443c7262198d0034.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/7a2/7a2741be2d7c570f443c7262198d0034.jpg",
+    "rating": 3.9,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1127,
+    "name": "Skullgirls 2nd Encore",
+    "released": "2015-07-07",
+    "background_image": "https://media.rawg.io/media/games/212/2128795550a25fa124e93fb2ffc14040.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/212/2128795550a25fa124e93fb2ffc14040.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 15, "name": "Fighting"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1128,
+    "name": "Multiversus",
+    "released": "2022-07-19",
+    "background_image": "https://media.rawg.io/media/games/35b/35b4f15214e77119105f614920b88580.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/35b/35b4f15214e77119105f614920b88580.jpg",
+    "rating": 3.6,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 15, "name": "Fighting"}]
+  },
+  {
+    "id": 1129,
+    "name": "Mortal Kombat X",
+    "released": "2015-04-14",
+    "background_image": "https://media.rawg.io/media/games/588/588c6bd70b22a0162030d22080a97c26.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/588/588c6bd70b22a0162030d22080a97c26.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 15, "name": "Fighting"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1130,
+    "name": "Rival Schools: United by Fate",
+    "released": "1997-11-01",
+    "background_image": "https://media.rawg.io/media/games/075/0753381a8b30f81d830b806d2745e69e.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/075/0753381a8b30f81d830b806d2745e69e.jpg",
+    "rating": 4.2,
+    "platforms": [{"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 15, "name": "Fighting"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1131,
+    "name": "Killer Instinct",
+    "released": "2013-11-22",
+    "background_image": "https://media.rawg.io/media/games/60e/60e0eb8a614d33458a24c2a514d3a2e7.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/60e/60e0eb8a614d33458a24c2a514d3a2e7.jpg",
+    "rating": 4.0,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 15, "name": "Fighting"}]
+  },
+  {
+    "id": 1132,
+    "name": "BlazBlue: Central Fiction",
+    "released": "2016-10-06",
+    "background_image": "https://media.rawg.io/media/games/212/2128795550a25fa124e93fb2ffc14040.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/212/2128795550a25fa124e93fb2ffc14040.jpg",
+    "rating": 4.3,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 15, "name": "Fighting"}]
+  },
+  {
+    "id": 1133,
+    "name": "Under Night In-Birth Exe:Late[cl-r]",
+    "released": "2020-02-20",
+    "background_image": "https://media.rawg.io/media/games/075/0753381a8b30f81d830b806d2745e69e.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/075/0753381a8b30f81d830b806d2745e69e.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 15, "name": "Fighting"}]
+  },
+  {
+    "id": 1134,
+    "name": "Virtua Fighter 5 Ultimate Showdown",
+    "released": "2021-06-01",
+    "background_image": "https://media.rawg.io/media/games/710/7102e3b2e3e57147774d61c6b162f1c8.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/710/7102e3b2e3e57147774d61c6b162f1c8.jpg",
+    "rating": 4.0,
+    "platforms": [{"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 15, "name": "Fighting"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1135,
+    "name": "Samurai Shodown",
+    "released": "2019-06-25",
+    "background_image": "https://media.rawg.io/media/games/60e/60e0eb8a614d33458a24c2a514d3a2e7.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/60e/60e0eb8a614d33458a24c2a514d3a2e7.jpg",
+    "rating": 3.9,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 15, "name": "Fighting"}]
+  },
+  {
+    "id": 1136,
+    "name": "Sackboy: A Big Adventure",
+    "released": "2020-11-12",
+    "background_image": "https://media.rawg.io/media/games/e4a/e4a5573e6925db3fdb2367d4151da4d0.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/e4a/e4a5573e6925db3fdb2367d4151da4d0.jpg",
+    "rating": 4.2,
+    "platforms": [{"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 3, "name": "Adventure"}, {"id": 11, "name": "Casual"}]
+  },
+  {
+    "id": 1137,
+    "name": "Crash Team Racing Nitro-Fueled",
+    "released": "2019-06-21",
+    "background_image": "https://media.rawg.io/media/games/88b/88b5f61f0931f63d4ea6a7f50a4b0d1e.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/88b/88b5f61f0931f63d4ea6a7f50a4b0d1e.jpg",
+    "rating": 4.3,
+    "platforms": [{"id": 2, "name": "PlayStation"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 14, "name": "Racing"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1138,
+    "name": "Burnout Paradise Remastered",
+    "released": "2018-03-16",
+    "background_image": "https://media.rawg.io/media/games/5e4/5e42a00c2f6d2f3c7e7389ffb9952a26.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/5e4/5e42a00c2f6d2f3c7e7389ffb9952a26.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 14, "name": "Racing"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1139,
+    "name": "Grid Legends",
+    "released": "2022-02-25",
+    "background_image": "https://media.rawg.io/media/games/60c/60c490a66d3a8e1b6cb46f0436d591ff.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/60c/60c490a66d3a8e1b6cb46f0436d591ff.jpg",
+    "rating": 3.7,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 14, "name": "Racing"}]
+  },
+  {
+    "id": 1140,
+    "name": "WRC Generations",
+    "released": "2022-11-03",
+    "background_image": "https://media.rawg.io/media/games/c0e/c0e9b986f3f982987a0e3776e7d69b32.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/c0e/c0e9b986f3f982987a0e3776e7d69b32.jpg",
+    "rating": 3.8,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 14, "name": "Racing"}, {"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1141,
+    "name": "Sonic Racing",
+    "released": "2019-05-21",
+    "background_image": "https://media.rawg.io/media/games/6b6/6b6e4e11736e4f3a7f80459345ed6a9c.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/6b6/6b6e4e11736e4f3a7f80459345ed6a9c.jpg",
+    "rating": 3.6,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 14, "name": "Racing"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1142,
+    "name": "Asphalt 9: Legends",
+    "released": "2018-07-25",
+    "background_image": "https://media.rawg.io/media/games/5e4/5e42a00c2f6d2f3c7e7389ffb9952a26.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/5e4/5e42a00c2f6d2f3c7e7389ffb9952a26.jpg",
+    "rating": 3.5,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 14, "name": "Racing"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1143,
+    "name": "BeamNG.drive",
+    "released": "2015-05-29",
+    "background_image": "https://media.rawg.io/media/games/b17/b17351651e737979f4c3af4a6bc66657.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/b17/b17351651e737979f4c3af4a6bc66657.jpg",
+    "rating": 4.4,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 14, "name": "Racing"}, {"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1144,
+    "name": "SnowRunner",
+    "released": "2020-04-28",
+    "background_image": "https://media.rawg.io/media/games/e4f/e4fb3fb1e70befdbbe99583a5a697d86.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/e4f/e4fb3fb1e70befdbbe99583a5a697d86.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1145,
+    "name": "Farming Simulator 22",
+    "released": "2021-11-22",
+    "background_image": "https://media.rawg.io/media/games/a7c/a7c4387d812d334586338b2fb98f7e2a.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/a7c/a7c4387d812d334586338b2fb98f7e2a.jpg",
+    "rating": 3.9,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1146,
+    "name": "House Flipper",
+    "released": "2018-05-17",
+    "background_image": "https://media.rawg.io/media/games/75c/75c2e39e21ff28a8d11cbe2d3b2bf40d.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/75c/75c2e39e21ff28a8d11cbe2d3b2bf40d.jpg",
+    "rating": 3.9,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 12, "name": "Simulation"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1147,
+    "name": "Kerbal Space Program",
+    "released": "2015-04-27",
+    "background_image": "https://media.rawg.io/media/games/1e5/1e58e38810e9f168fec5ef30e54d3e8e.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/1e5/1e58e38810e9f168fec5ef30e54d3e8e.jpg",
+    "rating": 4.3,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 12, "name": "Simulation"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1148,
+    "name": "RollerCoaster Tycoon Deluxe",
+    "released": "1999-03-31",
+    "background_image": "https://media.rawg.io/media/games/25c/25c477e12fa5dbd91df7d90610012431.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/25c/25c477e12fa5dbd91df7d90610012431.jpg",
+    "rating": 4.3,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 12, "name": "Simulation"}, {"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1149,
+    "name": "Planet Coaster",
+    "released": "2016-11-17",
+    "background_image": "https://media.rawg.io/media/games/25c/25c477e12fa5dbd91df7d90610012431.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/25c/25c477e12fa5dbd91df7d90610012431.jpg",
+    "rating": 4.2,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 12, "name": "Simulation"}, {"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1150,
+    "name": "Tony Hawk's Underground",
+    "released": "2003-10-27",
+    "background_image": "https://media.rawg.io/media/games/441/44122d259c1935e40be5cf43c683b5d3.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/441/44122d259c1935e40be5cf43c683b5d3.jpg",
+    "rating": 4.4,
+    "platforms": [{"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 9, "name": "Sports"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1151,
+    "name": "WWE 2K22",
+    "released": "2022-03-08",
+    "background_image": "https://media.rawg.io/media/games/1e9/1e9d1a3b31871e8bb7d53205dfb22bc0.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/1e9/1e9d1a3b31871e8bb7d53205dfb22bc0.jpg",
+    "rating": 3.8,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 9, "name": "Sports"}, {"id": 15, "name": "Fighting"}]
+  },
+  {
+    "id": 1152,
+    "name": "Madden NFL 23",
+    "released": "2022-08-19",
+    "background_image": "https://media.rawg.io/media/games/053/0532fffe3135b3e64d7df643c1b183dd.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/053/0532fffe3135b3e64d7df643c1b183dd.jpg",
+    "rating": 3.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 9, "name": "Sports"}]
+  },
+  {
+    "id": 1153,
+    "name": "NHL 23",
+    "released": "2022-10-14",
+    "background_image": "https://media.rawg.io/media/games/3f2/3f20d0f507b9efeb565ff51ef2b8be56.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/3f2/3f20d0f507b9efeb565ff51ef2b8be56.jpg",
+    "rating": 3.5,
+    "platforms": [{"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 9, "name": "Sports"}]
+  },
+  {
+    "id": 1154,
+    "name": "AO Tennis 2",
+    "released": "2020-01-09",
+    "background_image": "https://media.rawg.io/media/games/9b7/9b798782a22be264bb93b2a30bb66405.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/9b7/9b798782a22be264bb93b2a30bb66405.jpg",
+    "rating": 3.6,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 9, "name": "Sports"}]
+  },
+  {
+    "id": 1155,
+    "name": "Steep",
+    "released": "2016-12-02",
+    "background_image": "https://media.rawg.io/media/games/556/5561a35790c3776e82a0d922a9ee2a8f.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/556/5561a35790c3776e82a0d922a9ee2a8f.jpg",
+    "rating": 3.7,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 9, "name": "Sports"}]
+  },
+  {
+    "id": 1156,
+    "name": "Windjammers 2",
+    "released": "2022-01-20",
+    "background_image": "https://media.rawg.io/media/games/35b/35b4f15214e77119105f614920b88580.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/35b/35b4f15214e77119105f614920b88580.jpg",
+    "rating": 3.9,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 9, "name": "Sports"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1157,
+    "name": "OlliOlli World",
+    "released": "2022-02-08",
+    "background_image": "https://media.rawg.io/media/games/441/44122d259c1935e40be5cf43c683b5d3.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/441/44122d259c1935e40be5cf43c683b5d3.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 9, "name": "Sports"}, {"id": 6, "name": "Indie"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1158,
+    "name": "Descenders",
+    "released": "2019-05-07",
+    "background_image": "https://media.rawg.io/media/games/556/5561a35790c3776e82a0d922a9ee2a8f.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/556/5561a35790c3776e82a0d922a9ee2a8f.jpg",
+    "rating": 4.0,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 9, "name": "Sports"}, {"id": 14, "name": "Racing"}]
+  },
+  {
+    "id": 1159,
+    "name": "Super Mega Baseball 3",
+    "released": "2020-05-13",
+    "background_image": "https://media.rawg.io/media/games/053/0532fffe3135b3e64d7df643c1b183dd.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/053/0532fffe3135b3e64d7df643c1b183dd.jpg",
+    "rating": 4.0,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 9, "name": "Sports"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1160,
+    "name": "Command & Conquer Remastered Collection",
+    "released": "2020-06-05",
+    "background_image": "https://media.rawg.io/media/games/7a2/7a2741be2d7c570f443c7262198d0034.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/7a2/7a2741be2d7c570f443c7262198d0034.jpg",
+    "rating": 4.3,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1161,
+    "name": "Warcraft III: Reforged",
+    "released": "2020-01-28",
+    "background_image": "https://media.rawg.io/media/games/1be/1be7e418e2f893d5f309a4d8a5f458e0.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/1be/1be7e418e2f893d5f309a4d8a5f458e0.jpg",
+    "rating": 2.8,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1162,
+    "name": "Company of Heroes 3",
+    "released": "2023-02-23",
+    "background_image": "https://media.rawg.io/media/games/390/3904696155f891b9f62c0e86b4d320a5.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/390/3904696155f891b9f62c0e86b4d320a5.jpg",
+    "rating": 3.7,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1163,
+    "name": "Crusader Kings III",
+    "released": "2020-09-01",
+    "background_image": "https://media.rawg.io/media/games/558/5580e5d076a08e1694f575677d2ee218.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/558/5580e5d076a08e1694f575677d2ee218.jpg",
+    "rating": 4.5,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1164,
+    "name": "Hearts of Iron IV",
+    "released": "2016-06-06",
+    "background_image": "https://media.rawg.io/media/games/558/5580e5d076a08e1694f575677d2ee218.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/558/5580e5d076a08e1694f575677d2ee218.jpg",
+    "rating": 4.2,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}, {"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1165,
+    "name": "Into the Breach",
+    "released": "2018-02-27",
+    "background_image": "https://media.rawg.io/media/games/288/2888cf36e0d9b4b0a484e5eb2d08a0d0.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/288/2888cf36e0d9b4b0a484e5eb2d08a0d0.jpg",
+    "rating": 4.3,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1166,
+    "name": "Frostpunk",
+    "released": "2018-04-24",
+    "background_image": "https://media.rawg.io/media/games/25c/25c477e12fa5dbd91df7d90610012431.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/25c/25c477e12fa5dbd91df7d90610012431.jpg",
+    "rating": 4.35,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}, {"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1167,
+    "name": "Northgard",
+    "released": "2018-03-07",
+    "background_image": "https://media.rawg.io/media/games/390/3904696155f891b9f62c0e86b4d320a5.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/390/3904696155f891b9f62c0e86b4d320a5.jpg",
+    "rating": 4.0,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 10, "name": "Strategy"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1168,
+    "name": "Fruit Ninja Classic",
+    "released": "2010-04-21",
+    "background_image": "https://media.rawg.io/media/games/283/283e73600dd10d22d4f6142b03268599.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/283/283e73600dd10d22d4f6142b03268599.jpg",
+    "rating": 3.8,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 11, "name": "Casual"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1169,
+    "name": "Peggle Deluxe",
+    "released": "2007-03-05",
+    "background_image": "https://media.rawg.io/media/games/a57/a579f131a29362a7a409549fcfbe474f.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/a57/a579f131a29362a7a409549fcfbe474f.jpg",
+    "rating": 4.2,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 11, "name": "Casual"}, {"id": 7, "name": "Puzzle"}, {"id": 13, "name": "Arcade"}]
+  },
+  {
+    "id": 1170,
+    "name": "Angry Birds Friends",
+    "released": "2012-02-13",
+    "background_image": "https://media.rawg.io/media/games/283/283e73600dd10d22d4f6142b03268599.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/283/283e73600dd10d22d4f6142b03268599.jpg",
+    "rating": 3.5,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 11, "name": "Casual"}, {"id": 7, "name": "Puzzle"}]
+  },
+  {
+    "id": 1171,
+    "name": "Bejeweled 3",
+    "released": "2010-12-07",
+    "background_image": "https://media.rawg.io/media/games/a57/a579f131a29362a7a409549fcfbe474f.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/a57/a579f131a29362a7a409549fcfbe474f.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 11, "name": "Casual"}, {"id": 7, "name": "Puzzle"}]
+  },
+  {
+    "id": 1172,
+    "name": "Cut the Rope",
+    "released": "2010-10-04",
+    "background_image": "https://media.rawg.io/media/games/13a/13a1a9e0a05a964e56eb6be212b05b45.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/13a/13a1a9e0a05a964e56eb6be212b05b45.jpg",
+    "rating": 4.0,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 11, "name": "Casual"}, {"id": 7, "name": "Puzzle"}]
+  },
+  {
+    "id": 1173,
+    "name": "World of Tanks",
+    "released": "2010-08-12",
+    "background_image": "https://media.rawg.io/media/games/1e5/1e58e38810e9f168fec5ef30e54d3e8e.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/1e5/1e58e38810e9f168fec5ef30e54d3e8e.jpg",
+    "rating": 3.2,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 2, "name": "Shooter"}]
+  },
+  {
+    "id": 1174,
+    "name": "Eve Online",
+    "released": "2003-05-06",
+    "background_image": "https://media.rawg.io/media/games/117/11797c0f0d611804d9c44569c7921a4f.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/117/11797c0f0d611804d9c44569c7921a4f.jpg",
+    "rating": 3.7,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 12, "name": "Simulation"}]
+  },
+  {
+    "id": 1175,
+    "name": "Albion Online",
+    "released": "2017-07-17",
+    "background_image": "https://media.rawg.io/media/games/609/60966f363065b26fbe85700877a561e1.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/609/60966f363065b26fbe85700877a561e1.jpg",
+    "rating": 3.6,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1176,
+    "name": "Star Wars: The Old Republic",
+    "released": "2011-12-20",
+    "background_image": "https://media.rawg.io/media/games/1a3/1a3f1246104f3fb0209c72e2cf1cb5eb.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/1a3/1a3f1246104f3fb0209c72e2cf1cb5eb.jpg",
+    "rating": 4.0,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1177,
+    "name": "Lost Ark",
+    "released": "2019-12-04",
+    "background_image": "https://media.rawg.io/media/games/609/60966f363065b26fbe85700877a561e1.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/609/60966f363065b26fbe85700877a561e1.jpg",
+    "rating": 3.6,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 8, "name": "Massively Multiplayer"}, {"id": 5, "name": "RPG"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1178,
+    "name": "Phasmophobia",
+    "released": "2020-09-18",
+    "background_image": "https://media.rawg.io/media/games/04a/04a7bea123017725321f28c00b007d30.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/04a/04a7bea123017725321f28c00b007d30.jpg",
+    "rating": 4.3,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 6, "name": "Indie"}, {"id": 3, "name": "Adventure"}]
+  },
+  {
+    "id": 1179,
+    "name": "Outer Wilds",
+    "released": "2019-05-28",
+    "background_image": "https://media.rawg.io/media/games/b54/b54598d1d5cc31899f4f0a2363194a61.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/b54/b54598d1d5cc31899f4f0a2363194a61.jpg",
+    "rating": 4.6,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 6, "name": "Indie"}, {"id": 3, "name": "Adventure"}, {"id": 7, "name": "Puzzle"}]
+  },
+  {
+    "id": 1180,
+    "name": "Celeste",
+    "released": "2018-01-25",
+    "background_image": "https://media.rawg.io/media/games/4be/4be6e15016639499215109bb46a70f2b.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/4be/4be6e15016639499215109bb46a70f2b.jpg",
+    "rating": 4.5,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 6, "name": "Indie"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1181,
+    "name": "Tunic",
+    "released": "2022-03-16",
+    "background_image": "https://media.rawg.io/media/games/4be/4be6e15016639499215109bb46a70f2b.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/4be/4be6e15016639499215109bb46a70f2b.jpg",
+    "rating": 4.4,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 6, "name": "Indie"}, {"id": 3, "name": "Adventure"}, {"id": 7, "name": "Puzzle"}]
+  },
+  {
+    "id": 1182,
+    "name": "Superluminal",
+    "released": "2019-11-12",
+    "background_image": "https://media.rawg.io/media/games/6c5/6c55e2218587662e2a22283a00f28e20.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/6c5/6c55e2218587662e2a22283a00f28e20.jpg",
+    "rating": 4.1,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1183,
+    "name": "Talos Principle",
+    "released": "2014-12-11",
+    "background_image": "https://media.rawg.io/media/games/6c5/6c55e2218587662e2a22283a00f28e20.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/6c5/6c55e2218587662e2a22283a00f28e20.jpg",
+    "rating": 4.3,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1184,
+    "name": "World of Goo",
+    "released": "2008-10-13",
+    "background_image": "https://media.rawg.io/media/games/13a/13a1a9e0a05a964e56eb6be212b05b45.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/13a/13a1a9e0a05a964e56eb6be212b05b45.jpg",
+    "rating": 4.2,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 6, "name": "Indie"}, {"id": 11, "name": "Casual"}]
+  },
+  {
+    "id": 1185,
+    "name": "Gorogoa",
+    "released": "2017-12-14",
+    "background_image": "https://media.rawg.io/media/games/6c5/6c55e2218587662e2a22283a00f28e20.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/6c5/6c55e2218587662e2a22283a00f28e20.jpg",
+    "rating": 4.4,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1186,
+    "name": "Machinarium",
+    "released": "2009-10-16",
+    "background_image": "https://media.rawg.io/media/games/13a/13a1a9e0a05a964e56eb6be212b05b45.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/13a/13a1a9e0a05a964e56eb6be212b05b45.jpg",
+    "rating": 4.25,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 7, "name": "Puzzle"}, {"id": 3, "name": "Adventure"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1187,
+    "name": "Stray",
+    "released": "2022-07-19",
+    "background_image": "https://media.rawg.io/media/games/b54/b54598d1d5cc31899f4f0a2363194a61.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/b54/b54598d1d5cc31899f4f0a2363194a61.jpg",
+    "rating": 4.38,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 3, "name": "Adventure"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1188,
+    "name": "Journey",
+    "released": "2012-03-13",
+    "background_image": "https://media.rawg.io/media/games/b54/b54598d1d5cc31899f4f0a2363194a61.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/b54/b54598d1d5cc31899f4f0a2363194a61.jpg",
+    "rating": 4.41,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 3, "name": "Adventure"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1189,
+    "name": "What Remains of Edith Finch",
+    "released": "2017-04-25",
+    "background_image": "https://media.rawg.io/media/games/562/56255a1a4928e59004a0ed400a2e2f94.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/562/56255a1a4928e59004a0ed400a2e2f94.jpg",
+    "rating": 4.42,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 3, "name": "Adventure"}, {"id": 6, "name": "Indie"}]
+  },
+  {
+    "id": 1190,
+    "name": "Grim Fandango Remastered",
+    "released": "2015-01-27",
+    "background_image": "https://media.rawg.io/media/games/178/178c772c72b8384210ec1f2118334465.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/178/178c772c72b8384210ec1f2118334465.jpg",
+    "rating": 4.2,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 3, "name": "Adventure"}]
+  },
+  {
+    "id": 1191,
+    "name": "The Monkey Island Special Edition",
+    "released": "2009-07-15",
+    "background_image": "https://media.rawg.io/media/games/178/178c772c72b8384210ec1f2118334465.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/178/178c772c72b8384210ec1f2118334465.jpg",
+    "rating": 4.3,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 3, "name": "Adventure"}]
+  },
+  {
+    "id": 1192,
+    "name": "Divinity: Original Sin 2",
+    "released": "2017-09-14",
+    "background_image": "https://media.rawg.io/media/games/da1/da1b2677647711a57d050c69c8207ef1.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/da1/da1b2677647711a57d050c69c8207ef1.jpg",
+    "rating": 4.63,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 5, "name": "RPG"}, {"id": 10, "name": "Strategy"}]
+  },
+  {
+    "id": 1193,
+    "name": "Persona 5 Royal",
+    "released": "2019-10-31",
+    "background_image": "https://media.rawg.io/media/games/a7c/a7c4387d812d334586338b2fb98f7e2a.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/a7c/a7c4387d812d334586338b2fb98f7e2a.jpg",
+    "rating": 4.7,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 5, "name": "RPG"}]
+  },
+  {
+    "id": 1194,
+    "name": "Mass Effect Legendary Edition",
+    "released": "2021-05-14",
+    "background_image": "https://media.rawg.io/media/games/d82/d82362545593ed9256fc77d30f863182.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/d82/d82362545593ed9256fc77d30f863182.jpg",
+    "rating": 4.6,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 5, "name": "RPG"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1195,
+    "name": "Dragon Age: Inquisition",
+    "released": "2014-11-18",
+    "background_image": "https://media.rawg.io/media/games/da1/da1b2677647711a57d050c69c8207ef1.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/da1/da1b2677647711a57d050c69c8207ef1.jpg",
+    "rating": 4.0,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 5, "name": "RPG"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1196,
+    "name": "Monster Hunter: World",
+    "released": "2018-01-26",
+    "background_image": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg",
+    "rating": 4.2,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 5, "name": "RPG"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1197,
+    "name": "Fallout: New Vegas",
+    "released": "2010-10-19",
+    "background_image": "https://media.rawg.io/media/games/d15/d1527237892477391b4976d8f7b9b370.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/d15/d1527237892477391b4976d8f7b9b370.jpg",
+    "rating": 4.43,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 5, "name": "RPG"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1198,
+    "name": "NieR:Automata",
+    "released": "2017-02-23",
+    "background_image": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg",
+    "rating": 4.5,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 5, "name": "RPG"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1199,
+    "name": "Final Fantasy VII Remake",
+    "released": "2020-04-10",
+    "background_image": "https://media.rawg.io/media/games/a7c/a7c4387d812d334586338b2fb98f7e2a.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/a7c/a7c4387d812d334586338b2fb98f7e2a.jpg",
+    "rating": 4.45,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 2, "name": "PlayStation"}],
+    "genres": [{"id": 5, "name": "RPG"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1200,
+    "name": "Far Cry 5",
+    "released": "2018-03-27",
+    "background_image": "https://media.rawg.io/media/games/c4b/c4b011311e56310228d73b063d80a138.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/c4b/c4b011311e56310228d73b063d80a138.jpg",
+    "rating": 3.9,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 2, "name": "Shooter"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1201,
+    "name": "Halo Infinite",
+    "released": "2021-12-08",
+    "background_image": "https://media.rawg.io/media/games/34b/34b820590ed8a316d43d0e6ea08d27f7.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/34b/34b820590ed8a316d43d0e6ea08d27f7.jpg",
+    "rating": 3.8,
+    "platforms": [{"id": 1, "name": "PC"}, {"id": 3, "name": "Xbox"}],
+    "genres": [{"id": 2, "name": "Shooter"}, {"id": 4, "name": "Action"}]
+  },
+  {
+    "id": 1202,
+    "name": "Call of Duty: Warzone",
+    "released": "2020-03-10",
+    "background_image": "https://media.rawg.io/media/games/73e/73e1100910c9238d3e6eef61a6965734.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/73e/73e1100910c9238d3e6eef61a6965734.jpg",
+    "rating": 3.3,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 2, "name": "Shooter"}, {"id": 8, "name": "Massively Multiplayer"}]
+  },
+  {
+    "id": 1203,
+    "name": "Tom Clancy's Rainbow Six Siege",
+    "released": "2015-12-01",
+    "background_image": "https://media.rawg.io/media/games/73e/73e1100910c9238d3e6eef61a6965734.jpg",
+    "background_image_low_res": "https://media.rawg.io/media/crop/600/400/games/73e/73e1100910c9238d3e6eef61a6965734.jpg",
+    "rating": 3.9,
+    "platforms": [{"id": 1, "name": "PC"}],
+    "genres": [{"id": 2, "name": "Shooter"}, {"id": 4, "name": "Action"}]
+  }
+]

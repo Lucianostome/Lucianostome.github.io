@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (loaderOverlay && loaderBarFill && loaderPercentage) {
     let progress = 0;
-    const duration = 5000; // Tiempo total en ms (5 segundos)
+    const duration = 1000; // Tiempo total en ms (5 segundos)
     const intervalTime = 50; // Frecuencia de actualización
     const step = (intervalTime / duration) * 100;
 
