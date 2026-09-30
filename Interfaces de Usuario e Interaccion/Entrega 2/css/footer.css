@@ -46,7 +46,7 @@
 .brand-column {
   align-items: center;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Divisor opcional */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 2rem;
   margin-top: -8px;
   gap: 1rem;

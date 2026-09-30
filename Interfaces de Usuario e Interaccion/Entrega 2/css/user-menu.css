@@ -7,10 +7,10 @@
 /* CAJA DEL MENÚ DESPLEGABLE */
 .user-menu {
   position: absolute;
-  top: calc(100% + 12px); /* Se ubica justo debajo del ícono */
-  right: 0;               /* Alineado al borde derecho */
+  top: calc(100% + 12px); 
+  right: 0;             
   width: 210px;
-  background-color: #020E30; /* Mismo fondo oscuro de tu Figma */
+  background-color: #020E30; 
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   padding: 20px 24px;
@@ -70,9 +70,9 @@
   opacity: 0.75;
 }
 
-/* OPCIÓN LOG OUT EN ROJO/ROSADO */
+/* OPCIÓN LOG OUT EN ROJO */
 .logout-link {
-  color: #FF5555; /* Color característico de cierre de sesión */
+  color: #FF5555;
 }
 
 .logout-link:hover {

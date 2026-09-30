@@ -29,8 +29,8 @@
 
 .hero-carousel-container .hero-card {
   position: absolute;
-  width: 780px; /* Ampliado de 620px a 780px */
-  height: 420px; /* Ampliado de 350px a 420px */
+  width: 780px;
+  height: 420px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
@@ -140,7 +140,7 @@
   100% { transform: scale(1); box-shadow: 0 0 0px rgba(163, 230, 53, 0); }
 }
 
-/* RESPONSIVE: Adaptación para pantallas pequeñas / Laptops medianas */
+/* RESPONSIVE: Adaptación para pantallas pequeñas / Tablets medianas */
 @media (max-width: 1024px) {
   .hero-carousel-container .carousel-viewport {
     height: 380px;
