@@ -1,21 +1,44 @@
 .categoria-main {
-  padding: 40px 32px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 16px;
   box-sizing: border-box;
 }
 
 .categoria-titulo {
   color: #FFFFFF;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin: 0 0 24px;
+  margin: 0 0 20px;
+  text-align: left;
 }
 
 .categoria-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); 
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
 }
 
 .categoria-grid .game-card {
-  flex: 0 0 160px;
+  width: 100%; 
+}
+
+/* DESKTOP (A partir de 768px) */
+@media (min-width: 768px) {
+  .categoria-main {
+    padding: 40px 32px;
+  }
+
+  .categoria-titulo {
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+
+  .categoria-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
 }

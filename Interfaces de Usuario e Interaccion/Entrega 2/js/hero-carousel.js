@@ -89,7 +89,7 @@ function renderizarHeroCarousel(destacados) {
     updateCarousel();
   }
 
-  // Control del temporizador automático (4000 ms)
+  // Control del temporizador automático (8000 ms)
   function startAutoPlay() {
     stopAutoPlay();
     autoPlayTimer = setInterval(nextSlide, 8000);
@@ -148,33 +148,45 @@ function renderizarHeroCarousel(destacados) {
     const heroCard = e.target.closest('.hero-card');
     if (!heroCard) return;
 
+    // Obtener la card activa actual directamente del DOM
+    const activeCard = track.querySelector('.hero-card.active');
+
+    // SI NO ES LA TARJETA DEL MEDIO (ACTIVE)
+    if (heroCard !== activeCard) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Girar el carrusel a la tarjeta presionada
+      if (heroCard.classList.contains('next-card')) {
+        nextSlide();
+      } else if (heroCard.classList.contains('prev-card')) {
+        prevSlide();
+      }
+      
+      startAutoPlay();
+      return; // No ejecuta el scroll vertical
+    }
+
+    // SI ES LA TARJETA DEL MEDIO (.active)
     const gameId = heroCard.dataset.id;
-    
-    // Busca la primera coincidencia del juego en las categorías inferiores
     const targetCard = document.querySelector(`.game-card[data-id="${gameId}"]`);
 
     if (targetCard) {
       const horizontalTrack = targetCard.closest('.carousel-track');
       const wrapper3D = targetCard.closest('.card-3d-wrapper');
 
-      console.log('horizontalTrack:', horizontalTrack);
-      console.log('wrapper3D:', wrapper3D);
-      console.log('tiene centrarCard:', horizontalTrack && typeof horizontalTrack.centrarCard);
-
       if (horizontalTrack && wrapper3D && horizontalTrack.centrarCard) {
         horizontalTrack.centrarCard(wrapper3D);
-        console.log('centrarCard ejecutado');
       }
-      // 2. Calcular la distancia vertical para centrar el juego en la pantalla
-      const headerOffset = 100; // Espacio libre superior para evitar el header
+
+      // Calcular la distancia vertical para centrar el juego en la pantalla
       const rect = targetCard.getBoundingClientRect();
       const targetY = rect.top + window.pageYOffset - (window.innerHeight / 2) + (rect.height / 2);
 
-      // 3. Iniciar el scroll animado
+      // Iniciar el scroll animado
       smoothScrollToPosition(targetY, 900, () => {
-        // Disparar el brillo de resplandor al llegar
         targetCard.classList.remove('highlight-card');
-        void targetCard.offsetWidth; // Forzar reflow para reiniciar la animación
+        void targetCard.offsetWidth; // Reflow
         targetCard.classList.add('highlight-card');
       });
 
@@ -182,6 +194,37 @@ function renderizarHeroCarousel(destacados) {
       console.warn(`No se encontró la tarjeta objetivo con data-id="${gameId}" en las categorías.`);
     }
   });
+
+  // ==========================================================================
+  // SOPORTE TÁCTIL (SWIPE DE A UNA CARD EN MÓVILES)
+  // ==========================================================================
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+
+  track.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  track.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+
+    // Solo se activa si el deslizamiento es predominantemente horizontal (> 40px)
+    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+      if (diffX < 0) {
+        nextSlide(); // Swipe a la izquierda -> avanza 1 card
+      } else {
+        prevSlide(); // Swipe a la derecha -> retrocede 1 card
+      }
+      startAutoPlay();
+    }
+  }, { passive: true });
 
   if (dotsContainer) {
     dotsContainer.addEventListener('click', (e) => {

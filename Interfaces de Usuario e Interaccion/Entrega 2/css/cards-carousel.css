@@ -513,17 +513,58 @@
 
 
 @media (max-width: 768px) {
+  .carousel-container {
+    padding: 12px 0;
+  }
+
   .carousel-track {
-    height: 180px; /* Reducimos la altura del track */
+    height: 220px; /* Margen adicional para evitar recortes al agrandar */
+    align-items: center;
   }
 
   .game-card {
-    width: 130px; /* Ancho menor para tarjetas en móvil */
-    height: 175px;
+    width: 135px;
+    height: 185px;
+    transform-origin: center center;
   }
 
-  /* Las flechas laterales se pueden ocultar en táctil si el usuario desliza con el dedo */
+  /* --- DISTRIBUCIÓN DE ESPACIO EN HOVER PARA PANTALLAS MÓVILES --- */
+  
+  /* Achica la imagen en móvil para dar más lugar al contenido inferior */
+  .game-card:hover .card-media {
+    height: 52% !important;
+  }
+
+  /* Ocupa el 55% restante para garantizar visibilidad total del botón */
+  .game-card:hover .card-body {
+    height: 48% !important;
+    padding: 6px 8px !important;
+    gap: 3px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  /* Reducción de fuentes para optimizar espacio */
+  .game-card .card-title {
+    font-size: 0.72rem !important;
+    line-height: 1.1;
+  }
+
+  .game-card .card-info {
+    font-size: 0.62rem !important;
+    margin-bottom: 2px;
+  }
+
+  /* Botón adaptado a pantallas pequeñas */
+  .game-card .card-btn {
+    padding: 4px 0 !important;
+    font-size: 0.65rem !important;
+    margin-top: 0 !important;
+  }
+
+  /* Ocultar flechas en dispositivos táctiles */
   .carousel-container .carousel-arrow {
-    display: none; 
+    display: none !important;
   }
 }

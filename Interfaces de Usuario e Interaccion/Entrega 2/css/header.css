@@ -65,6 +65,16 @@ body {
   font-size: 0.9rem;
 }
 
+.search-bar input,
+#searchInput {
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  width: 100%;
+  box-sizing: border-box;
+  /* Evita que el texto del placeholder se corte si no entra completo */
+  text-overflow: ellipsis; 
+}
+
 .search-bar input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
@@ -128,4 +138,6 @@ body {
   .brand-logo img {
     height: 30px; /* Logo un poco más pequeño */
   }
+
+  
 }

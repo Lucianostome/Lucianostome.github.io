@@ -19,14 +19,41 @@ async function cargarJuegosDeCategoria() {
     const juegos = await respuesta.json();
     let juegosAMostrar = [];
 
+    let cantJuegosAMostrar = 30;
+
     if(filtro == 'destacados'){
-      if(tituloEl) tituloEl.textContent = 'Destacados (Top 30)';
+      if(tituloEl) tituloEl.textContent = 'Destacados';
       juegosAMostrar = juegos
       .filter(juego => typeof juego.rating === 'number')
       .sort((a, b) => b.rating - a.rating)
-      .slice(0, 30);
+      .slice(0, cantJuegosAMostrar);
     }
+    else if (filtro == 'nuevos'){
+      if(tituloEl) tituloEl.textContent = 'Nuevos Lanzamientos';
+      juegosAMostrar = juegos
+      .filter(juego => juego.released)
+      .sort((a, b) => new Date(b.released) - new Date(a.released))
+      .slice(0, cantJuegosAMostrar)
+    }
+    else if (filtro === 'recientes') {
+      if (tituloEl) tituloEl.textContent = 'Jugados Recientemente';
 
+      // 1. Buscar a Peg Solitaire por su nombre o slug
+      const pegSolitaire = juegos.find(j => 
+        j.name?.toLowerCase().includes('peg solitaire') || 
+        j.slug?.toLowerCase().includes('peg-solitaire')
+      );
+
+      // 2. Obtener el resto de los juegos excluyendo a Peg Solitaire
+      const otrosJuegos = juegos.filter(j => j !== pegSolitaire);
+
+      // 3. Si existe Peg Solitaire lo coloca en 1° lugar; luego completa hasta 30 juegos
+      if (pegSolitaire) {
+        juegosAMostrar = [pegSolitaire, ...otrosJuegos.slice(0, 29)];
+      } else {
+        juegosAMostrar = juegos.slice(0, 30);
+      }
+    }
     else if(genero) {
       if (tituloEl) tituloEl.textContent = genero || 'Categoría';
       juegosAMostrar = juegos.filter(juego =>
