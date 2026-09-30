@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
   const registerForm = document.getElementById('registerForm');
+  const registerCard = document.getElementById('registerCard');
+
+  document.querySelectorAll('.social-login .btn-google, .social-login .btn-facebook').forEach((button) => {
+    button.addEventListener('click', () => {
+      completeRegistration(registerCard);
+    });
+  });
 
   if (!registerForm) {
     return;
@@ -49,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = document.getElementById('password');
     const confirmPassword = document.getElementById('confirmPassword');
     const recaptchaCheck = document.getElementById('recaptchaCheck');
-    const registerCard = document.getElementById('registerCard');
     let formIsValid = true;
 
     clearFieldError(fullName);
@@ -99,14 +105,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (formIsValid) {
-      registerCard.classList.add('animated-success');
-
-      setTimeout(() => {
-        window.location.href = 'index.html';
-      }, 800);
+      completeRegistration(registerCard);
     }
   });
 });
+
+function completeRegistration(registerCard) {
+  if (!registerCard) {
+    return;
+  }
+
+  registerCard.classList.add('animated-success');
+
+  setTimeout(() => {
+    window.location.href = 'index.html';
+  }, 800);
+}
 
 function showFieldError(field, message) {
   const fieldGroup = field.closest('.form-group');

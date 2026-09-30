@@ -30,14 +30,28 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      loginCard.classList.add('animated-success');
-
-      setTimeout(() => {
-        window.location.href = 'index.html';
-      }, 800);
+      completeLogin(loginCard);
     });
   }
+
+  document.querySelectorAll('.social-login .btn-google, .social-login .btn-facebook').forEach((button) => {
+    button.addEventListener('click', () => {
+      completeLogin(loginCard);
+    });
+  });
 });
+
+function completeLogin(loginCard) {
+  if (!loginCard) {
+    return;
+  }
+
+  loginCard.classList.add('animated-success');
+
+  setTimeout(() => {
+    window.location.href = 'index.html';
+  }, 800);
+}
 
 function showFieldError(field, message) {
   const fieldGroup = field.closest('.form-group');
