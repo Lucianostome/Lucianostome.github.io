@@ -1,7 +1,7 @@
 :root {
-  --bg-header: #020E30;         /* Fondo azul/negro oscuro */
-  --neon-purple: #7C3AED;       /* Violeta neón del borde */
-  --text-color: #FFFFFF;        /* Color blanco de texto e íconos */
+  --bg-header: #020E30;         
+  --neon-purple: #7C3AED;      
+  --text-color: #FFFFFF;       
 }
 * {
   box-sizing: border-box;
@@ -81,9 +81,6 @@ body {
   height: 18px;
 }
 
-/* =========================================
-   5. ÁTOMOS DE LA DERECHA (Carrito + Perfil)
-   ========================================= */
 .header-right {
   display: flex;
   align-items: center;
@@ -103,7 +100,7 @@ body {
 }
 
 .btn-icon:hover {
-  transform: scale(1.1); /* Efecto hover para los botones */
+  transform: scale(1.1);
 }
 
 .btn-icon img {
