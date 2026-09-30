@@ -88,19 +88,19 @@ function crearCardJuego(juego, generoActual, opciones = {}) {
         <span data-step="3"><img src= "assets/btnx.png" alt= "X" class= "btn-icon-img"></span>
         <span data-step="4"><img src= "assets/btncuadrado2.png" alt= "Cuadrado" class= "btn-icon-img"></span>
       </span>
-      <span class="done">▶ ¡A jugar!</span>
     </button>`;
 
   const botonPaidHTML = `
     <button class="card-btn btn-paid" type="button">
       <span class="btn-label">Añadir al carrito</span>
       <span class="fx" aria-hidden="true">
-        <img src="assets/paquete.png" alt="Paquete" class="box-img box">
         <img src="assets/icons/logo-carrito.svg" alt="Carrito" class="cart-img cart">
+        <span class="badge">+1</span>
       </span>
       <span class="done">✔ ¡Agregado!</span>
     </button>`;
 
+    // <img src="assets/paquete.png" alt="Paquete" class="box-img box">
   const botonHTML = esGratis ? botonGratisHTML : botonPaidHTML;
 
   const lockHTML = !esGratis 
@@ -137,6 +137,16 @@ function activarAnimacionesBotones() {
   if (window.__btnAnimationInitialized) return;
   window.__btnAnimationInitialized = true;
 
+  // Resetea el estado de los botones si el usuario regresa con el botón "Atrás"
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      document.querySelectorAll('.btn-free').forEach(btn => {
+        btn.classList.remove('busy');
+        btn.querySelectorAll('.fx [data-step]').forEach(el => el.classList.remove('lit'));
+      });
+    }
+  });
+
   document.addEventListener('click', (e) => {
     // 1. ANIMACIÓN BOTÓN GRATIS (.btn-free)
     const btnFree = e.target.closest('.btn-free');
@@ -144,13 +154,13 @@ function activarAnimacionesBotones() {
       e.preventDefault();
       e.stopPropagation();
 
-      if (btnFree.classList.contains('busy') || btnFree.classList.contains('ready')) return;
+      if (btnFree.classList.contains('busy')) return;
 
       const steps = 4;
       const stepMs = 300;
       const delay = 300;
-      const busyMs = 1800;
-      const readyMs = 3200;
+
+      const tiempoFinAnimacion = delay + (steps * stepMs) + 300;
 
       const icons = btnFree.querySelectorAll('.fx [data-step]');
 
@@ -166,21 +176,16 @@ function activarAnimacionesBotones() {
       }
 
       setTimeout(() => {
-        btnFree.classList.remove('busy');
-        btnFree.classList.add('ready');
-      }, busyMs);
-
-      setTimeout(() => {
-        btnFree.classList.remove('ready');
-        icons.forEach(el => el.classList.remove('lit'));
-        
         // Si el botón tiene playUrl, redirige recién cuando termina la animación
         const playUrl = btnFree.dataset.playUrl;
         if (playUrl) {
           window.location.href = playUrl;
+        } else {
+          btnFree.classList.remove('busy');
+          icons.forEach(el => el.classList.remove('lit'));
         }
       
-      }, readyMs);
+      }, tiempoFinAnimacion);
 
       return;
     }
@@ -193,8 +198,8 @@ function activarAnimacionesBotones() {
 
       if (btnPaid.classList.contains('busy') || btnPaid.classList.contains('ready')) return;
 
-      const busyMs = 1400;
-      const readyMs = 3200;
+      const busyMs = 1500;
+      const readyMs = 3300;
 
       btnPaid.classList.add('busy');
 
@@ -239,6 +244,8 @@ function iniciarCarruselDinamico(track, prevBtn, nextBtn) {
   let scrollActual = 0;
   let scrollAnterior = 0;
 
+  let factorSuavizado = 0.1;
+
   function maxScroll() {
     const anchoContenido = paddingHorizontal * 2 + wrappers.length * itemWidth - 16;
     return Math.max(0, anchoContenido - track.clientWidth);
@@ -264,7 +271,10 @@ function iniciarCarruselDinamico(track, prevBtn, nextBtn) {
     const centroCard = paddingHorizontal + index * itemWidth + 160 / 2;
     const centroTrack = track.clientWidth / 2;
 
+    factorSuavizado = 0.03;
+
     scrollObjetivo = clamp(centroCard - centroTrack);
+    actualizarFlechas();
   };
 
   function pintar(scroll, velocidad) {
@@ -282,7 +292,7 @@ function iniciarCarruselDinamico(track, prevBtn, nextBtn) {
   function render() {
     requestAnimationFrame(render);
 
-    scrollActual = lerp(scrollActual, scrollObjetivo, 0.1);
+    scrollActual = lerp(scrollActual, scrollObjetivo, factorSuavizado);
 
     const velocidad = scrollActual - scrollAnterior;
     scrollAnterior = scrollActual;
@@ -299,6 +309,8 @@ function iniciarCarruselDinamico(track, prevBtn, nextBtn) {
 
   track.addEventListener('pointerdown', (e) => {
     if (e.target.closest('.card-btn')) return;
+
+    factorSuavizado = 0.1;
 
     isDragging = true;
     didDrag = false;
@@ -341,11 +353,13 @@ function iniciarCarruselDinamico(track, prevBtn, nextBtn) {
   // --- Flechas ---
   if (prevBtn && nextBtn) {
     nextBtn.addEventListener('click', () => {
+      factorSuavizado = 0.1;
       scrollObjetivo = clamp(scrollObjetivo + itemWidth * 7);
       actualizarFlechas();
     });
 
     prevBtn.addEventListener('click', () => {
+      factorSuavizado = 0.1;
       scrollObjetivo = clamp(scrollObjetivo - itemWidth * 7);
       actualizarFlechas();
     });

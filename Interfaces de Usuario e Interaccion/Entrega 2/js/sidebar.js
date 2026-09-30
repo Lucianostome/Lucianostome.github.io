@@ -89,9 +89,18 @@ async function cargarCategoriasSidebar() {
     // Usamos 'genero' como nombre del parámetro URL para que coincida exactamente con categoria.js
     const htmlCategorias = generos.map(genero => {
       const generoEncoded = encodeURIComponent(genero);
+      // Normaliza el nombre para buscar el SVG (ej: "Massively Multiplayer" -> "massively-multiplayer")
+      const nombreIcono = genero
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, '-');
+
+      const rutaIcono = `assets/icons/${nombreIcono}.svg`;
+
       return `
         <li class="nav-item-categoria">
           <a href="categoria.html?genero=${generoEncoded}" class="nav-link nav-link-sub">
+          <img src="${rutaIcono}" alt="" class="nav-icon" onerror="this.style.display='none'">
             <span>${genero}</span>
           </a>
         </li>
