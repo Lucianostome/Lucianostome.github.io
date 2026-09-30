@@ -39,8 +39,6 @@ function renderizarHeroCarousel(destacados) {
   `).join('');
 
   const cards = Array.from(track.querySelectorAll('.hero-card'));
-  const btnPrev = document.querySelector('.hero-carousel-container .carousel-arrow.prev');
-  const btnNext = document.querySelector('.hero-carousel-container .carousel-arrow.next');
   const dotsContainer = document.getElementById('heroDots');
 
   let currentIndex = 0;
@@ -97,21 +95,6 @@ function renderizarHeroCarousel(destacados) {
 
   function stopAutoPlay() {
     if (autoPlayTimer) clearInterval(autoPlayTimer);
-  }
-
-  // Eventos para flechas de navegación
-  if (btnNext) {
-    btnNext.addEventListener('click', () => {
-      nextSlide();
-      startAutoPlay();
-    });
-  }
-
-  if (btnPrev) {
-    btnPrev.addEventListener('click', () => {
-      prevSlide();
-      startAutoPlay();
-    });
   }
 
   // FUNCIÓN DE ANIMACIÓN SUAVE POR CÁLCULO DE PASOS (FRAME BY FRAME)

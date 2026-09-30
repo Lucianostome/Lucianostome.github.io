@@ -49,9 +49,9 @@ async function cargarJuegosDeCategoria() {
 
       // 3. Si existe Peg Solitaire lo coloca en 1° lugar; luego completa hasta 30 juegos
       if (pegSolitaire) {
-        juegosAMostrar = [pegSolitaire, ...otrosJuegos.slice(0, 29)];
+        juegosAMostrar = [pegSolitaire, ...otrosJuegos.slice(0, cantJuegosAMostrar - 1)];
       } else {
-        juegosAMostrar = juegos.slice(0, 30);
+        juegosAMostrar = juegos.slice(0, cantJuegosAMostrar);
       }
     }
     else if(genero) {

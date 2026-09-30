@@ -9,7 +9,6 @@
   background-color: transparent;
 }
 
-/* SECCIÓN DE CADA CATEGORÍA */
 .carousel-section {
   width: 100%;
   box-sizing: border-box;
@@ -34,13 +33,14 @@
   color: #A3E635;
 }
 
+/* BASE = MOBILE: padding vertical */
 .carousel-container {
   position: relative;
   width: 100%;
   display: flex;
   align-items: center;
   background-color: transparent;
-  /*overflow: hidden;*/
+  padding: 12px 0;
 }
 
 .carousel-track {
@@ -52,6 +52,7 @@
   cursor: grab;
   user-select: none;
   touch-action: pan-y;
+  align-items: center;
 }
 
 .carousel-track:active {
@@ -62,8 +63,7 @@
   cursor: grabbing;
 }
 
-
-/* BOTONES DE NAVEGACIÓN (FLECHAS CENTRADAS) */
+/* BASE = MOBILE: flechas ocultas (se muestran en desktop) */
 .carousel-arrow {
   position: absolute;
   top: 50%;
@@ -78,7 +78,7 @@
   z-index: 50;                  
   font-size: 1.2rem;
   font-weight: bold;
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
   line-height: 1;
@@ -98,7 +98,11 @@
   transform: translateY(-50%) scale(1.1);
 }
 
-/* Ajustes ópticos para los símbolos en los botones */
+/* Evita que el foco del clic deje la flecha violeta */
+.carousel-arrow:focus:not(:hover) {
+  background-color: rgba(2, 14, 48, 0.9);
+}
+
 .prev-arrow { 
   left: 12px; 
   padding-right: 2px;
@@ -109,10 +113,11 @@
   padding-left: 2px;
 }
 
+/* BASE = MOBILE: tarjeta más chica */
 .game-card {
   position: relative;
-  width: 100%;              
-  height: 220px;
+  width: 135px;              
+  height: 185px;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
@@ -151,7 +156,7 @@
 }
 
 .game-card:hover .card-media {
-  height: 58%;              
+  height: 52%;              
 }
 
 .card-img {
@@ -198,19 +203,23 @@
   transition: height 0.3s ease, opacity 0.25s ease 0.05s, padding 0.3s ease;
 }
 
+/* BASE = MOBILE */
 .game-card:hover .card-body {
-  height: 42%;                
+  height: 48%;                
   opacity: 1;
-  padding: 8px 10px;
+  padding: 6px 8px;
+  gap: 3px;
+  justify-content: flex-start;
 }
 
 .game-card:hover .lock-overlay {
   opacity: 1;
 }
 
+/* BASE = MOBILE: textos más chicos */
 .card-title {
   color: #FFFFFF;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 700;
   margin: 0;
   width: 100%;
@@ -220,7 +229,7 @@
   display: block;
   position: relative;
   flex: 0 0 auto;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .card-title-inner {
@@ -251,7 +260,8 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
+  margin-bottom: 2px;
   color: #A0AEC0;
   flex: 0 0 auto;
   line-height: 1.1;
@@ -265,13 +275,13 @@
 /* BOTONES */
 .card-btn {
   width: 100%;
-  padding: 5px 0;
+  padding: 4px 0;
   border: none;
   border-radius: 6px;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 2px;
+  margin-top: 0;
   transition: filter 0.2s ease, transform 0.1s ease;
   flex: 0 0 auto;
 }
@@ -295,8 +305,7 @@
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.btn-free .fx,
-.btn-free .done {
+.btn-free .fx {
   position: absolute;
   inset: 0;
   display: flex;
@@ -307,31 +316,17 @@
   transition: transform 0.3s ease, opacity 0.25s ease;
 }
 
-.btn-free .done {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
 /* ESTADO BUSY (Encendido de combos) */
 .btn-free.busy {
   background-color: #4C1D95;
   box-shadow: 0 0 12px rgba(124, 58, 237, 0.6);
 }
 
+/* Esconde el texto original durante la animación */
 .btn-free.busy .btn-label {
-  transform: translateY(-100%);
   opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
 }
 
 .btn-free.busy .fx {
@@ -368,7 +363,6 @@
   filter: grayscale(0%);
 }
 
-
 .btn-free .fx [data-step="1"].lit {
   filter: drop-shadow(0 0 6px #2DD4BF);
 }
@@ -385,14 +379,11 @@
   filter: drop-shadow(0 0 6px #F472B6);
 }
 
-/* Esconde el texto original tanto en busy como en ready */
-.btn-free.busy .btn-label,
-
 /* Ajustes individuales de tamaño para equiparar los 4 símbolos */
 .btn-free .fx [data-step="1"] { font-size: 0.7rem; }  /* Triángulo */
-.btn-free .fx [data-step="2"] { font-size: 0.9rem; font-weight: bold; }  /* Círculo agrandado */
+.btn-free .fx [data-step="2"] { font-size: 0.9rem; font-weight: bold; }  /* Círculo */
 .btn-free .fx [data-step="3"] { font-size: 0.7rem; }  /* X */
-.btn-free .fx [data-step="4"] { font-size: 0.85rem; font-weight: bold; } /* Cuadrado agrandado */
+.btn-free .fx [data-step="4"] { font-size: 0.85rem; font-weight: bold; } /* Cuadrado */
 
 
 /*ESTILOS BASE Y TRANSICIONES DEL BOTÓN DE PAGO (.btn-paid)*/
@@ -415,6 +406,8 @@
   width: 20px;
   height: 20px;
   line-height: 1;
+  font-size: 26px;
+  transform: scale(0) rotate(-20deg);
 }
 
 .btn-paid .btn-label {
@@ -460,15 +453,9 @@
   opacity: 1;
 }
 
-
-.btn-paid .cart {
-  font-size: 26px;
-  transform: scale(0) rotate(-20deg);
-}
-
 .btn-paid.busy .cart {
   opacity: 1;
-  animation: cartpop .5s .2s cubic-bezier(.3,1.8,.5,1) forwards;;
+  animation: cartpop .5s .2s cubic-bezier(.3,1.8,.5,1) forwards;
 }
 
 .btn-paid .badge {
@@ -481,7 +468,7 @@
   transform: translateY(0);
 }
 
-.btn-paid.busy .badge{
+.btn-paid.busy .badge {
   animation: badgefloat 1s .5s ease-out forwards;
 }
 
@@ -512,59 +499,49 @@
 }
 
 
-@media (max-width: 768px) {
+/* DESKTOP (769px en adelante) */
+@media (min-width: 769px) {
   .carousel-container {
-    padding: 12px 0;
+    padding: 0;
   }
 
   .carousel-track {
-    height: 220px; /* Margen adicional para evitar recortes al agrandar */
-    align-items: center;
+    align-items: normal;
+  }
+
+  .carousel-arrow {
+    display: inline-flex;
   }
 
   .game-card {
-    width: 135px;
-    height: 185px;
-    transform-origin: center center;
+    width: 100%;
+    height: 220px;
   }
 
-  /* --- DISTRIBUCIÓN DE ESPACIO EN HOVER PARA PANTALLAS MÓVILES --- */
-  
-  /* Achica la imagen en móvil para dar más lugar al contenido inferior */
   .game-card:hover .card-media {
-    height: 52% !important;
+    height: 58%;
   }
 
-  /* Ocupa el 55% restante para garantizar visibilidad total del botón */
   .game-card:hover .card-body {
-    height: 48% !important;
-    padding: 6px 8px !important;
-    gap: 3px !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    height: 42%;
+    padding: 8px 10px;
+    gap: 8px;
+    justify-content: normal;
   }
 
-  /* Reducción de fuentes para optimizar espacio */
-  .game-card .card-title {
-    font-size: 0.72rem !important;
-    line-height: 1.1;
+  .card-title {
+    font-size: 0.8rem;
+    line-height: 1.2;
   }
 
-  .game-card .card-info {
-    font-size: 0.62rem !important;
-    margin-bottom: 2px;
+  .card-info {
+    font-size: 0.65rem;
+    margin-bottom: 0;
   }
 
-  /* Botón adaptado a pantallas pequeñas */
-  .game-card .card-btn {
-    padding: 4px 0 !important;
-    font-size: 0.65rem !important;
-    margin-top: 0 !important;
-  }
-
-  /* Ocultar flechas en dispositivos táctiles */
-  .carousel-container .carousel-arrow {
-    display: none !important;
+  .card-btn {
+    padding: 5px 0;
+    font-size: 0.7rem;
+    margin-top: 2px;
   }
 }
