@@ -9,14 +9,14 @@
 
 .main-footer {
   width: 100%;
-  background-color: #170339;
+  background-color: #020E30;
   color: #FFFFFF;
   padding: 3rem 1.5rem; 
 }
 
 .footer-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   gap: 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -58,6 +58,38 @@
   margin-top: 1rem;
 }
 
+.footer-list li {
+  font-size: 0.9rem;
+  color: #B0B8C1; /* Un tono gris azulado para darle jerarquía frente al título */
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footer-list li:hover {
+  color: #FFFFFF;
+}
+
+/* Ajuste de imágenes del logo y redes sociales en Mobile */
+.footer-logo-img {
+  max-width: 160px;
+  height: auto;
+}
+
+.contact-info {
+  font-size: 0.9rem;
+  color: #B0B8C1;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.15);
+}
 
 @media (min-width: 768px) {
   .main-footer {

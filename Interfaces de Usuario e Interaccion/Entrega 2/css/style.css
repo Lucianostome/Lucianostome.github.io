@@ -5,6 +5,11 @@
   padding: 0;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Corta cualquier contenido que sobresalga hacia los lados */
+}
+
 body {
   background-color: #0A2665; /* El azul de fondo que querés */
   color: #FFFFFF;

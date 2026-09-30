@@ -41,9 +41,17 @@ function renderizarHeroCarousel(destacados) {
   const cards = Array.from(track.querySelectorAll('.hero-card'));
   const btnPrev = document.querySelector('.hero-carousel-container .carousel-arrow.prev');
   const btnNext = document.querySelector('.hero-carousel-container .carousel-arrow.next');
+  const dotsContainer = document.getElementById('heroDots');
 
   let currentIndex = 0;
   let autoPlayTimer = null;
+
+  if (dotsContainer) {
+    dotsContainer.innerHTML = cards.map((_, index) => `
+      <button class="hero-dot" data-index="${index}" aria-label="Ir a la card ${index + 1}"></button>
+    `).join('');
+  }
+  const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.hero-dot')) : [];
 
   // Actualiza las clases CSS para reflejar la perspectiva 3D
   function updateCarousel() {
@@ -65,6 +73,10 @@ function renderizarHeroCarousel(destacados) {
         card.classList.add('hidden-card');
       }
     });
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
   }
 
   function nextSlide() {
@@ -80,7 +92,7 @@ function renderizarHeroCarousel(destacados) {
   // Control del temporizador automático (4000 ms)
   function startAutoPlay() {
     stopAutoPlay();
-    autoPlayTimer = setInterval(nextSlide, 4000);
+    autoPlayTimer = setInterval(nextSlide, 8000);
   }
 
   function stopAutoPlay() {
@@ -171,9 +183,25 @@ function renderizarHeroCarousel(destacados) {
     }
   });
 
+  if (dotsContainer) {
+    dotsContainer.addEventListener('click', (e) => {
+      const dot = e.target.closest('.hero-dot');
+      if (!dot) return;
+
+      currentIndex = Number(dot.dataset.index);
+      updateCarousel();
+      startAutoPlay();
+    });
+  }
+
   // Pausar reproducción automática cuando el puntero está sobre el carrusel
   track.addEventListener('mouseenter', stopAutoPlay);
   track.addEventListener('mouseleave', startAutoPlay);
+
+  if (dotsContainer) {
+    dotsContainer.addEventListener('mouseenter', stopAutoPlay);
+    dotsContainer.addEventListener('mouseleave', startAutoPlay);
+  }
 
   // Inicialización
   updateCarousel();

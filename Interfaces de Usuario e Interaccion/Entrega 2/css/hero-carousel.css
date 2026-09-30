@@ -1,15 +1,17 @@
 .hero-carousel-container {
   position: relative;
-  width: 100%;
-  max-width: 1400px; /* Ampliado de 1100px a 1400px */
-  margin: 10px auto 30px auto;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 10px 0 30px 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hero-carousel-container .carousel-viewport {
   width: 100%;
   height: 480px; /* Ampliado de 400px a 480px */
   perspective: 1200px; /* Ajuste de perspectiva para tarjetas más grandes */
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,43 +74,59 @@
   pointer-events: none;
 }
 
-/* FLECHAS DEL HERO */
-.hero-carousel-container .carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%) !important; /* Fuerza el centrado vertical exacto */
-  z-index: 30;
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  border: none;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  font-size: 1.6rem;
-  display: flex !important;
-  align-items: center;
+
+.hero-dots {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 15px auto 0 auto;
+  padding: 0;
+  position: relative;
+  z-index: 20;
+}
+
+.hero-dots .hero-dot {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  display: block;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid transparent;
   cursor: pointer;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
-.hero-carousel-container .carousel-arrow:hover {
-  background: rgba(255, 255, 255, 0.4);
-  transform: translateY(-50%) scale(1.1) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+.hero-dots .hero-dot:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.1);
 }
 
-/* Posicionamiento lateral a los extremos del contenedor */
-.hero-carousel-container .carousel-arrow.prev {
-  left: 20px;
-  right: auto;
+.hero-dots .hero-dot.active {
+  background-color: #7C3AED; /* O el color neón/destacado de tu web */
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.8);
 }
 
-.hero-carousel-container .carousel-arrow.next {
-  right: 20px;
-  left: auto;
+.hero-dot.active {
+  background-color: #ffffff; /* o #000000 si tu fondo es claro */
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
 
 /* EFECTO DE RESALTADO AL HACER SCROLL */

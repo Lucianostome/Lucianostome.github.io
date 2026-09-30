@@ -40,13 +40,14 @@
   display: flex;
   align-items: center;
   background-color: transparent;
+  /*overflow: hidden;*/
 }
 
 .carousel-track {
   position: relative;
   clip-path: inset(-40px 0 -40px 0);   /* antes: overflow: hidden */
   width: 100%;
-  height: 220px;                        /* antes: 260px — ahora es exactamente el alto de la card */
+  height: 220px;
   cursor: grab;
   user-select: none;
   touch-action: pan-y;
@@ -512,5 +513,18 @@
 }
 
 
+@media (max-width: 768px) {
+  .carousel-track {
+    height: 180px; /* Reducimos la altura del track */
+  }
 
+  .game-card {
+    width: 130px; /* Ancho menor para tarjetas en móvil */
+    height: 175px;
+  }
 
+  /* Las flechas laterales se pueden ocultar en táctil si el usuario desliza con el dedo */
+  .carousel-container .carousel-arrow {
+    display: none; 
+  }
+}
