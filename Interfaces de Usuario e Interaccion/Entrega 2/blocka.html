@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZoneArcade - Blocka</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/juego.css">
+  <link rel="stylesheet" href="css/blocka.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="game-page">
+    <div class="game-header-bar">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> / Puzzle / <span id="breadcrumb-text">Blocka</span>
+      </div>
+      <button class="back-button" id="backButton" type="button">Home</button>
+    </div>
+
+    <section class="game-layout">
+      <div class="game-main-column">
+        <section class="game-image-box blocka-stage" aria-label="Área de juego de Blocka">
+          <section class="blocka-menu" id="blockaMenu" aria-labelledby="blockaMenuTitle">
+            <div class="blocka-menu-content">
+              <p class="blocka-eyebrow">Rompecabezas de rotación</p>
+              <h1 id="blockaMenuTitle">Blocka</h1>
+              <p>Reconstruí la imagen girando cada una de sus piezas.</p>
+              <section class="blocka-progression" aria-labelledby="progressionTitle">
+                <h2 id="progressionTitle">Dificultad progresiva</h2>
+                <ol class="blocka-level-steps">
+                  <li><strong>Nivel 1</strong><span>Escala de grises</span></li>
+                  <li><strong>Nivel 2</strong><span>Brillo +30%</span></li>
+                  <li><strong>Nivel 3</strong><span>Filtros distintos por pieza</span></li>
+                </ol>
+              </section>
+              <fieldset class="blocka-settings blocka-piece-settings">
+                <legend>Cantidad de piezas</legend>
+                <div class="blocka-piece-options">
+                  <button class="blocka-piece-option is-selected" type="button" data-pieces="4" aria-pressed="true">4</button>
+                  <button class="blocka-piece-option" type="button" data-pieces="6" aria-pressed="false">6</button>
+                  <button class="blocka-piece-option" type="button" data-pieces="8" aria-pressed="false">8</button>
+                </div>
+              </fieldset>
+              <h2>Imágenes disponibles</h2>
+              <div class="blocka-gallery" aria-label="Imágenes posibles para el nivel">
+                <img class="blocka-thumbnail" src="assets/Blocka1.jpg" data-name="League of Legends" alt="Miniatura de League of Legends">
+                <img class="blocka-thumbnail" src="assets/Blocka2.jpg" data-name="Ghost of Tsushima" alt="Miniatura de Ghost of Tsushima">
+                <img class="blocka-thumbnail" src="assets/Blocka3.avif" data-name="Assassins Creed" alt="Miniatura de Assassins Creed">
+                <img class="blocka-thumbnail" src="assets/Blocka4.jpg" data-name="Prototype" alt="Miniatura de Prototype">
+                <img class="blocka-thumbnail" src="assets/Blocka5.jpeg" data-name="Spiderman" alt="Miniatura de Spiderman">
+                <img class="blocka-thumbnail" src="assets/Blocka6.jpg" data-name="Sekiro" alt="Miniatura de Sekiro">
+              </div>
+              <p class="blocka-selection" id="blockaSelection" aria-live="polite">Al comenzar se elegirá una imagen al azar.</p>
+              <button class="blocka-start" id="startGameButton" type="button">Comenzar</button>
+            </div>
+          </section>
+
+          <div class="blocka-play-area" id="blockaPlayArea" hidden>
+            <p class="blocka-level" id="blockaLevelLabel">Nivel 1</p>
+            <p class="blocka-timer" id="blockaTimer" aria-live="off">00:00</p>
+            <div class="blocka-board" id="blockaBoard" aria-label="Imagen del nivel dividida en piezas"></div>
+            <p class="blocka-status" id="blockaStatus">Imagen seleccionada para el nivel.</p>
+            <button class="blocka-next-level" id="nextLevelButton" type="button" hidden>Siguiente nivel</button>
+            <button class="blocka-menu-button" id="backToMenuButton" type="button">Menú principal</button>
+          </div>
+        </section>
+
+        <section class="comments-section">
+          <h2>Comentarios</h2>
+          <div class="comment-form">
+            <img src="assets/icons/logo-user.svg" alt="Usuario" class="comment-avatar">
+            <textarea id="commentText" placeholder="Deja un comentario..." required></textarea>
+            <button type="button">Publicar</button>
+          </div>
+          <p class="comment-message" id="commentMessage"></p>
+          <div id="commentsList">
+            <article class="comment">
+              <img src="assets/icons/logo-user.svg" alt="Usuario" class="comment-avatar">
+              <div>
+                <p class="comment-author">Pepito123 <span>Hace 8 horas</span></p>
+                <p>Muy bueno el juego y sobre todo complicado.</p>
+                <div class="comment-actions">Responder &nbsp;&nbsp; Compartir</div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <aside class="game-sidebar">
+        <section class="instructions-box">
+          <h2>Cómo jugar</h2>
+          <p>Objetivo: reconstruí la imagen girando sus piezas.</p>
+          <ol>
+            <li>Configurá el tablero con 4, 6 u 8 piezas.</li>
+            <li>Comenzás en el Nivel 1 con una imagen sorteada.</li>
+            <li>Girá las piezas con clic izquierdo o derecho.</li>
+            <li>Al completar la imagen, se detiene el tiempo y avanzás de nivel.</li>
+          </ol>
+        </section>
+
+        <section class="share-box">
+          <h2>Comparte este juego</h2>
+          <div class="share-links">
+            <img src="assets/icons/icon-facebook.svg" alt="Facebook">
+            <img src="assets/icons/icon-twitter.svg" alt="X">
+            <img src="assets/icons/icon-whatsapp.svg" alt="WhatsApp">
+          </div>
+          <div class="copy-link">
+            <input id="gameLink" type="text" value="blocka.html" readonly>
+            <button id="copyButton" type="button">Copiar</button>
+          </div>
+          <p class="copy-message" id="copyMessage"></p>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="js/sidebar.js"></script>
+  <script src="js/user-menu.js"></script>
+  <script src="js/insertar-header-footer.js"></script>
+  <script src="js/juego.js"></script>
+  <script src="js/blocka.js"></script>
+</body>
+</html>

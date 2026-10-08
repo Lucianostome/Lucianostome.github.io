@@ -1,0 +1,247 @@
+.blocka-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-height: 460px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.blocka-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex: 1;
+}
+
+.blocka-menu[hidden],
+.blocka-play-area[hidden] {
+  display: none;
+}
+
+.blocka-menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  width: 100%;
+  max-width: 820px;
+}
+
+.blocka-eyebrow {
+  color: #a3e635;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.blocka-menu-content h1 {
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+}
+
+.blocka-menu-content > p:not(.blocka-eyebrow, .blocka-selection) {
+  color: #e0e6f6;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.blocka-settings {
+  width: 100%;
+  border: 0;
+  padding: 0;
+}
+
+.blocka-settings legend {
+  margin: 0 auto 8px;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.blocka-level-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.blocka-level-steps li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 58px;
+  border-bottom: 2px solid #38518b;
+  padding: 8px;
+  color: #e0e6f6;
+}
+
+.blocka-level-steps strong {
+  color: #ffffff;
+  font-size: 0.78rem;
+}
+
+.blocka-level-steps span {
+  font-size: 0.68rem;
+  text-align: center;
+}
+
+.blocka-piece-option.is-selected {
+  border-color: #a3e635;
+  box-shadow: 0 0 0 1px #a3e635;
+}
+
+.blocka-piece-options {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.blocka-piece-option {
+  min-width: 48px;
+  min-height: 36px;
+  border: 1px solid #38518b;
+  border-radius: 5px;
+  background-color: #020e30;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+}
+
+.blocka-menu-content h2 {
+  margin-top: 4px;
+  color: #ffffff;
+  font-size: 0.82rem;
+}
+
+.blocka-gallery {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+}
+
+.blocka-thumbnail {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.blocka-thumbnail.is-selected {
+  transform: scale(1.06);
+  border-color: #a3e635;
+  box-shadow: 0 0 12px rgba(163, 230, 53, 0.6);
+}
+
+.blocka-selection {
+  min-height: 1rem;
+  color: #b9c8ed;
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.blocka-start,
+.blocka-menu-button,
+.blocka-next-level {
+  border: 0;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #a3e635;
+  color: #111111;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.blocka-start:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.blocka-play-area {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.blocka-level {
+  align-self: flex-start;
+  color: #a3e635;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+}
+
+.blocka-timer {
+  align-self: flex-end;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+}
+
+.blocka-board {
+  display: grid;
+  width: min(100%, 760px);
+  aspect-ratio: 16 / 9;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid #8b3ff2;
+  background-color: #020e30;
+}
+
+.blocka-tile {
+  min-width: 0;
+  min-height: 0;
+  border: 0;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform 120ms ease;
+}
+
+.blocka-tile:focus-visible {
+  outline: 2px solid #a3e635;
+  outline-offset: -2px;
+}
+
+.blocka-status {
+  color: #b9c8ed;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .blocka-stage {
+    min-height: 0;
+    padding: 14px;
+  }
+
+  .blocka-menu {
+    padding: 8px 0;
+  }
+
+  .blocka-menu-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .blocka-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.blocka-next-level[hidden] {
+  display: none;
+}

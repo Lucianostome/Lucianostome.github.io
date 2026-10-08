@@ -115,7 +115,7 @@ function crearCardJuego(juego, generoActual, opciones = {}) {
   const cardHTML = `
       <article class="game-card" data-id="${juego.id}">
         <div class="card-media">
-        <img src="${imagen}" alt="${titulo}" class="card-img" draggable="false" loading="lazy">
+        <img src="${imagen}" alt="${titulo}" class="card-img ${esGratis ? 'free-card' : ''}" draggable="false" loading="lazy">
         ${lockHTML}
         </div>
         
@@ -278,7 +278,7 @@ function iniciarCarruselDinamico(track, prevBtn, nextBtn) {
   };
 
   function pintar(scroll, velocidad) {
-    const skew = -velocidad * 0.2;
+    const skew = -velocidad * 0.3;
     const rotacion = velocidad * 0.01;
     const escala = 1 - Math.min(100, Math.abs(velocidad)) * 0.003;
 
@@ -360,7 +360,7 @@ function iniciarCarruselDinamico(track, prevBtn, nextBtn) {
 
     prevBtn.addEventListener('click', () => {
       factorSuavizado = 0.1;
-      scrollObjetivo = clamp(scrollObjetivo - itemWidth * 7);
+      scrollObjetivo = clamp(scrollObjetivo + itemWidth * 7);
       actualizarFlechas();
     });
   }

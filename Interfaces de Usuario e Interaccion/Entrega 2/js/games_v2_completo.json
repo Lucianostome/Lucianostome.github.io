@@ -93,6 +93,27 @@
     "playUrl": "peg-solitaire-pac-man.html"
   },
   {
+    "id": 1002,
+    "name": "Blocka",
+    "released": "2026-01-01",
+    "background_image": "assets/Blocka-portada.png",
+    "rating": 5.0,
+    "platforms": [
+      {
+        "id": 1,
+        "name": "PC"
+      }
+    ],
+    "genres": [
+      {
+        "id": 7,
+        "name": "Puzzle"
+      }
+    ],
+    "background_image_low_res": "assets/Blocka-portada.png",
+    "playUrl": "blocka.html"
+  },
+  {
     "id": 4200,
     "name": "Portal 2",
     "released": "2011-04-18",
