@@ -63,36 +63,6 @@
   font-weight: 600;
 }
 
-.blocka-level-steps {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  padding: 0;
-  list-style: none;
-}
-
-.blocka-level-steps li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  min-height: 58px;
-  border-bottom: 2px solid #38518b;
-  padding: 8px;
-  color: #e0e6f6;
-}
-
-.blocka-level-steps strong {
-  color: #ffffff;
-  font-size: 0.78rem;
-}
-
-.blocka-level-steps span {
-  font-size: 0.68rem;
-  text-align: center;
-}
-
 .blocka-piece-option.is-selected {
   border-color: #a3e635;
   box-shadow: 0 0 0 1px #a3e635;
@@ -153,7 +123,8 @@
 
 .blocka-start,
 .blocka-menu-button,
-.blocka-next-level {
+.blocka-next-level,
+.blocka-retry {
   border: 0;
   border-radius: 5px;
   padding: 10px 20px;
@@ -187,10 +158,45 @@
 }
 
 .blocka-timer {
-  align-self: flex-end;
   color: #ffffff;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1rem;
+}
+
+.blocka-game-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-end;
+}
+
+.blocka-timer.is-limited {
+  color: #fda4af;
+}
+
+.blocka-help {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #8b3ff2;
+  border-radius: 50%;
+  padding: 5px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.blocka-help img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.blocka-help:disabled {
+  cursor: default;
+  opacity: 0.45;
 }
 
 .blocka-board {
@@ -210,6 +216,15 @@
   background-repeat: no-repeat;
   cursor: pointer;
   transition: transform 120ms ease;
+}
+
+.blocka-tile.is-fixed {
+  border: 3px solid #a3e635;
+  cursor: default;
+}
+
+.blocka-tile:disabled {
+  opacity: 1;
 }
 
 .blocka-tile:focus-visible {
@@ -243,5 +258,9 @@
 }
 
 .blocka-next-level[hidden] {
+  display: none;
+}
+
+.blocka-retry[hidden] {
   display: none;
 }
