@@ -20,6 +20,30 @@ let startedAt = 0;
 let timer = null;
 let currentImage = '';
 let currentImageName = '';
+const recordsStorageKey = 'blockaRecords';
+
+function formatTime(seconds) {
+  const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
+  const remainder = String(seconds % 60).padStart(2, '0');
+  return `${minutes}:${remainder}`;
+}
+
+function getRecords() {
+  try {
+    return JSON.parse(localStorage.getItem(recordsStorageKey)) || {};
+  } catch {
+    return {};
+  }
+}
+
+function saveRecord(level, elapsed) {
+  const records = getRecords();
+  if (records[level] === undefined || elapsed < records[level]) {
+    records[level] = elapsed;
+    localStorage.setItem(recordsStorageKey, JSON.stringify(records));
+  }
+  return records[level];
+}
 
 pieceOptions.forEach(option => {
   option.addEventListener('click', () => {
@@ -45,14 +69,9 @@ function startTimer() {
 
 function updateTimer() {
   const elapsed = Math.floor((Date.now() - startedAt) / 1000);
-  const minutes = String(Math.floor(elapsed / 60)).padStart(2, '0');
-  const seconds = String(elapsed % 60).padStart(2, '0');
-  const time = `${minutes}:${seconds}`;
   const limited = currentLevel >= 3;
-  const maxTime = String(Math.floor(maxLevelTime / 60)).padStart(2, '0') + ':00';
-  const shownElapsed = limited ? Math.min(elapsed, maxLevelTime) : elapsed;
-  const shownTime = `${String(Math.floor(shownElapsed / 60)).padStart(2, '0')}:${String(shownElapsed % 60).padStart(2, '0')}`;
-  timerLabel.textContent = limited ? `${shownTime} / ${maxTime}` : time;
+  const time = formatTime(limited ? Math.min(elapsed, maxLevelTime) : elapsed);
+  timerLabel.textContent = limited ? `${time} / ${formatTime(maxLevelTime)}` : time;
   timerLabel.classList.toggle('is-limited', limited && elapsed >= 50);
   if (limited && elapsed >= maxLevelTime) loseLevel();
 }
@@ -88,20 +107,24 @@ function prepareBoard(image, imageName) {
   currentImage = image;
   currentImageName = imageName;
   levelLabel.textContent = `Nivel ${currentLevel}`;
-  status.textContent = `${selectedPieceCount} piezas · ${imageName}`;
+  const bestTime = getRecords()[currentLevel];
+  const recordLabel = bestTime === undefined ? 'Sin récord' : `Récord: ${formatTime(bestTime)}`;
+  status.textContent = `${selectedPieceCount} piezas · ${imageName} · ${recordLabel}`;
   nextLevelButton.hidden = true;
   retryButton.hidden = true;
   helpButton.disabled = false;
 }
 
 function completeLevel() {
+  const elapsed = Math.floor((Date.now() - startedAt) / 1000);
+  const bestTime = saveRecord(currentLevel, elapsed);
   stopTimer();
   board.querySelectorAll('.blocka-tile').forEach(piece => {
     piece.style.filter = 'none';
     piece.disabled = true;
   });
   helpButton.disabled = true;
-  status.textContent = `¡Nivel completado! Tiempo: ${timerLabel.textContent}`;
+  status.textContent = `¡Nivel completado! Tiempo: ${formatTime(elapsed)} · Récord: ${formatTime(bestTime)}`;
   nextLevelButton.hidden = currentLevel === 3;
 }
 
