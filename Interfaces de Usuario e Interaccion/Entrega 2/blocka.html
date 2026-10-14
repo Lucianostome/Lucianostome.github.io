@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/juego.css">
   <link rel="stylesheet" href="css/blocka.css">
 </head>
-<body>
+<body class="blocka-initial-screen">
   <div id="header-container"></div>
 
   <main class="game-page">
@@ -26,11 +26,17 @@
     <section class="game-layout">
       <div class="game-main-column">
         <section class="game-image-box blocka-stage" aria-label="Área de juego de Blocka">
-          <section class="blocka-menu" id="blockaMenu" aria-labelledby="blockaMenuTitle">
-            <div class="blocka-menu-content">
+          <section class="blocka-welcome" id="blockaWelcome" aria-labelledby="blockaWelcomeTitle">
+            <div class="blocka-welcome-content">
+              <h1 id="blockaWelcomeTitle">Blocka</h1>
               <p class="blocka-eyebrow">Rompecabezas de rotación</p>
-              <h1 id="blockaMenuTitle">Blocka</h1>
-              <p>Reconstruí la imagen girando cada una de sus piezas.</p>
+              <p>Una imagen. Piezas giradas. ¿Podés reconstruirla?</p>
+              <button class="blocka-start" id="enterGameButton" type="button">Jugar</button>
+            </div>
+          </section>
+
+          <section class="blocka-menu" id="blockaMenu" aria-labelledby="blockaMenuTitle" hidden>
+            <div class="blocka-menu-content">
               <fieldset class="blocka-settings blocka-piece-settings">
                 <legend>Cantidad de piezas</legend>
                 <div class="blocka-piece-options">
@@ -41,12 +47,12 @@
               </fieldset>
               <h2>Imágenes disponibles</h2>
               <div class="blocka-gallery" aria-label="Imágenes posibles para el nivel">
-                <img class="blocka-thumbnail" src="assets/Blocka1.jpg" data-name="League of Legends" alt="Miniatura de League of Legends">
-                <img class="blocka-thumbnail" src="assets/Blocka2.jpg" data-name="Ghost of Tsushima" alt="Miniatura de Ghost of Tsushima">
-                <img class="blocka-thumbnail" src="assets/Blocka3.avif" data-name="Assassins Creed" alt="Miniatura de Assassins Creed">
-                <img class="blocka-thumbnail" src="assets/Blocka4.jpg" data-name="Prototype" alt="Miniatura de Prototype">
-                <img class="blocka-thumbnail" src="assets/Blocka5.jpeg" data-name="Spiderman" alt="Miniatura de Spiderman">
-                <img class="blocka-thumbnail" src="assets/Blocka6.jpg" data-name="Sekiro" alt="Miniatura de Sekiro">
+                <img class="blocka-thumbnail" src="assets/creeper.jpeg" data-name="Creeper" alt="Miniatura de Creeper">
+                <img class="blocka-thumbnail" src="assets/Steve.webp" data-name="Steve" alt="Miniatura de Steve">
+                <img class="blocka-thumbnail" src="assets/esqueleto_wither.webp" data-name="Esqueleto Wither" alt="Miniatura de Esqueleto Wither">
+                <img class="blocka-thumbnail" src="assets/zombie.jpg" data-name="Zombie" alt="Miniatura de Zombie">
+                <img class="blocka-thumbnail" src="assets/enderman.jpg" data-name="Enderman" alt="Miniatura de Enderman">
+                <img class="blocka-thumbnail" src="assets/dragon.webp" data-name="Dragon" alt="Miniatura de Dragon">
               </div>
               <p class="blocka-selection" id="blockaSelection" aria-live="polite">Al comenzar se elegirá una imagen al azar.</p>
               <button class="blocka-start" id="startGameButton" type="button">Comenzar</button>
