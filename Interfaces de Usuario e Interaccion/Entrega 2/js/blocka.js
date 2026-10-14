@@ -1,5 +1,7 @@
 const menu = document.getElementById('blockaMenu');
 const playArea = document.getElementById('blockaPlayArea');
+const welcome = document.getElementById('blockaWelcome');
+const enterGameButton = document.getElementById('enterGameButton');
 const startButton = document.getElementById('startGameButton');
 const backButton = document.getElementById('backToMenuButton');
 const nextLevelButton = document.getElementById('nextLevelButton');
@@ -21,6 +23,13 @@ let timer = null;
 let currentImage = '';
 let currentImageName = '';
 const recordsStorageKey = 'blockaRecords';
+
+enterGameButton.addEventListener('click', () => {
+  document.body.classList.remove('blocka-initial-screen');
+  welcome.hidden = true;
+  menu.hidden = false;
+  startButton.focus();
+});
 
 function formatTime(seconds) {
   const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
