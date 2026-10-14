@@ -3,6 +3,7 @@
     "id": 3498,
     "name": "Grand Theft Auto V",
     "released": "2013-09-17",
+    "favorite": true,
     "background_image": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg",
     "rating": 4.47,
     "platforms": [
@@ -71,6 +72,7 @@
     "id": 1000,
     "name": "Peg Solitaire : Pac-Man",
     "released": "2026-01-01",
+    "favorite": true,
     "background_image": "assets/peg-solitaire-pacman.jpg",
     "rating": 5.0,
     "platforms": [
@@ -96,6 +98,7 @@
     "id": 1002,
     "name": "Blocka",
     "released": "2026-01-01",
+    "favorite": true,
     "background_image": "assets/Blocka-portada.png",
     "rating": 5.0,
     "platforms": [
@@ -929,6 +932,7 @@
     "id": 10213,
     "name": "Dota 2",
     "released": "2013-07-09",
+    "favorite": true,
     "background_image": "https://media.rawg.io/media/games/6fc/6fcf4cd3b17c288821388e6085bb0fc9.jpg",
     "rating": 3.07,
     "platforms": [
@@ -2817,6 +2821,7 @@
     "id": 12536,
     "name": "Hellblade: Senua's Sacrifice",
     "released": "2017-08-07",
+    "favorite": true,
     "background_image": "https://media.rawg.io/media/games/63f/63f0e68688cad279ed38cde931dbfcdb.jpg",
     "rating": 4.23,
     "platforms": [
@@ -2961,6 +2966,7 @@
     "id": 3144,
     "name": "Super Meat Boy",
     "released": "2010-10-20",
+    "favorite": true,
     "background_image": "https://media.rawg.io/media/games/e04/e04963f3ac4c4fa83a1dc0b9231e50db.jpg",
     "rating": 3.98,
     "platforms": [
@@ -3013,6 +3019,7 @@
     "id": 500001,
     "name": "FIFA 23",
     "released": "2022-09-30",
+    "favorite": true,
     "background_image": "https://media.rawg.io/media/games/dbc/dbcb05bcdf104264db35de68d1e73909.jpg",
     "rating": 3.6,
     "platforms": [
@@ -3045,6 +3052,7 @@
     "id": 500002,
     "name": "NBA 2K23",
     "released": "2022-09-09",
+    "favorite": true,
     "background_image": "https://media.rawg.io/media/games/5f5/5f5803f27d278c46f524a72956f540e7.jpg",
     "rating": 3.3,
     "platforms": [
@@ -3497,6 +3505,7 @@
     "id": 500016,
     "name": "Gran Turismo 7",
     "released": "2022-03-04",
+    "favorite": true,
     "background_image": "https://media.rawg.io/media/games/3f6/3f6a04b856f23310d3c2f5be8c5963f7.jpg",
     "rating": 4.0,
     "platforms": [
@@ -5765,6 +5774,7 @@
     "id": 500090,
     "name": "Cuphead",
     "released": "2017-09-29",
+    "favorite": true,
     "background_image": "https://media.rawg.io/media/games/226/2262cea0b385db6cf399f4be831603b0.jpg",
     "rating": 4.4,
     "platforms": [

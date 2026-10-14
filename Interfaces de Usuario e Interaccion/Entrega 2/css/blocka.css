@@ -3,34 +3,53 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  min-height: 460px;
+  height: 640px;
   padding: 20px;
   overflow: hidden;
 }
 
-.blocka-menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  flex: 1;
-}
-
+.blocka-welcome[hidden],
 .blocka-menu[hidden],
 .blocka-play-area[hidden],
-.blocka-welcome[hidden] {
+.blocka-next-level[hidden],
+.blocka-retry[hidden] {
   display: none;
+}
+
+.blocka-start,
+.blocka-menu-button,
+.blocka-next-level,
+.blocka-retry {
+  border: 0;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #a3e635;
+  color: #111111;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.blocka-start:disabled {
+  cursor: wait;
+  opacity: 0.7;
 }
 
 .blocka-welcome {
   display: grid;
   place-items: center;
+  flex: 1;
   width: 100%;
-  min-height: 420px;
-  background-image: linear-gradient(90deg, rgba(3, 11, 33, 0.96) 8%, rgba(3, 11, 33, 0.76) 48%, rgba(3, 11, 33, 0.2)), url('../assets/imagen_fondo_blocka.jpg');
+  min-height: 0;
+  text-align: center;
+}
+
+body.blocka-initial-screen .game-image-box.blocka-stage {
+  background-image:
+    linear-gradient(90deg, rgba(3, 11, 33, 0.96) 8%, rgba(3, 11, 33, 0.76) 48%, rgba(3, 11, 33, 0.2)),
+    url('../assets/imagen_fondo_blocka.jpg');
   background-position: center;
   background-size: cover;
-  text-align: center;
 }
 
 .blocka-welcome-content {
@@ -53,20 +72,44 @@
   line-height: 1.5;
 }
 
-.blocka-menu-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  min-width: 0;
-  width: 100%;
-  max-width: 900px;
-}
-
 .blocka-eyebrow {
   color: #a3e635;
   font-size: 0.72rem;
   text-transform: uppercase;
+}
+
+.blocka-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+}
+
+body:not(.blocka-initial-screen) .game-image-box.blocka-stage {
+  background-image:
+    linear-gradient(rgba(3, 11, 33, 0.85), rgba(3, 11, 33, 0.85)),
+    url('../assets/fondo-mc.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.blocka-menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+  max-width: 900px;
+  max-height: 100%;
+}
+
+.blocka-menu-content h2 {
+  margin-top: 4px;
+  color: #ffffff;
+  font-size: 1rem;
 }
 
 .blocka-settings {
@@ -78,13 +121,8 @@
 .blocka-settings legend {
   margin: 0 auto 8px;
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 600;
-}
-
-.blocka-piece-option.is-selected {
-  border-color: #a3e635;
-  box-shadow: 0 0 0 1px #a3e635;
 }
 
 .blocka-piece-options {
@@ -94,27 +132,29 @@
 }
 
 .blocka-piece-option {
-  min-width: 56px;
-  min-height: 44px;
+  min-width: 72px;
+  min-height: 50px;
   border: 1px solid #38518b;
   border-radius: 5px;
   background-color: #020e30;
   color: #ffffff;
   cursor: pointer;
   font: inherit;
+  font-size: 1.1rem;
 }
 
-.blocka-menu-content h2 {
-  margin-top: 4px;
-  color: #ffffff;
-  font-size: 1rem;
+.blocka-piece-option.is-selected {
+  border-color: #a3e635;
+  box-shadow: 0 0 0 1px #a3e635;
 }
+
 
 .blocka-gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   width: 100%;
+  max-width: 500px;
 }
 
 .game-image-box .blocka-thumbnail {
@@ -137,27 +177,8 @@
 .blocka-selection {
   min-height: 1rem;
   color: #b9c8ed;
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   text-align: center;
-}
-
-.blocka-start,
-.blocka-menu-button,
-.blocka-next-level,
-.blocka-retry {
-  border: 0;
-  border-radius: 5px;
-  padding: 10px 20px;
-  background-color: #a3e635;
-  color: #111111;
-  cursor: pointer;
-  font: inherit;
-  font-weight: 600;
-}
-
-.blocka-start:disabled {
-  cursor: wait;
-  opacity: 0.7;
 }
 
 .blocka-play-area {
@@ -165,29 +186,38 @@
   flex: 1;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
+  gap: 12px;
+  width: 100%;
+  min-height: 0;
+}
+
+.blocka-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
 }
 
-.blocka-level {
-  align-self: flex-start;
-  color: #a3e635;
+.blocka-level,
+.blocka-timer {
+  margin: 0;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.9rem;
 }
 
-.blocka-timer {
-  color: #ffffff;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1rem;
+.blocka-level {
+  color: #a3e635;
+  font-size: 0.9rem;
 }
 
 .blocka-game-tools {
   display: flex;
   align-items: center;
   gap: 10px;
-  align-self: flex-end;
+}
+
+.blocka-timer {
+  color: #ffffff;
+  font-size: 1rem;
 }
 
 .blocka-timer.is-limited {
@@ -206,6 +236,11 @@
   cursor: pointer;
 }
 
+.blocka-help:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
 .blocka-help img {
   display: block;
   width: 100%;
@@ -214,28 +249,45 @@
   object-fit: cover;
 }
 
-.blocka-help:disabled {
-  cursor: default;
-  opacity: 0.45;
+.blocka-board-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  container-type: size;
 }
 
 .blocka-board {
+  --tile: min(
+    calc((100cqw - 4px * (var(--cols, 2) - 1) - 10px) / var(--cols, 2)),
+    calc((100cqh - 14px) / 2)
+  );
   display: grid;
-  width: min(100%, 760px);
-  aspect-ratio: 16 / 9;
+  grid-template-columns: repeat(var(--cols, 2), var(--tile));
+  grid-auto-rows: var(--tile);
+  width: max-content;
   gap: 4px;
   padding: 4px;
   border: 1px solid #8b3ff2;
   background-color: #020e30;
+  transition: gap 400ms ease, padding 400ms ease, border-color 400ms ease;
+}
+
+.blocka-board.is-completed {
+  gap: 0;
+  padding: 0;
+  border-color: transparent;
 }
 
 .blocka-tile {
-  min-width: 0;
-  min-height: 0;
+  width: 100%;
+  height: 100%;
   border: 0;
   background-repeat: no-repeat;
   cursor: pointer;
-  transition: transform 120ms ease;
+  transition: transform 120ms ease, filter 300ms ease, outline 200ms ease;
 }
 
 .blocka-tile.is-fixed {
@@ -252,24 +304,35 @@
   outline-offset: -2px;
 }
 
+.blocka-board.is-completed .blocka-tile,
+.blocka-board.is-completed .blocka-tile.is-fixed {
+  outline: none;
+  border: none;
+}
+
 .blocka-status {
+  min-height: 2.4em;
+  margin: 0;
   color: #b9c8ed;
   font-size: 0.8rem;
   text-align: center;
 }
 
+.blocka-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+}
+
 @media (max-width: 700px) {
-  .blocka-welcome {
-    min-height: 260px;
+  .blocka-stage {
+    height: 540px;
+    padding: 14px;
   }
 
   .blocka-welcome h1 {
     font-size: 2.7rem;
-  }
-
-  .blocka-stage {
-    min-height: 0;
-    padding: 14px;
   }
 
   .blocka-menu {
@@ -277,15 +340,6 @@
   }
 
   .blocka-gallery {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
   }
-}
-
-.blocka-next-level[hidden] {
-  display: none;
-}
-
-.blocka-retry[hidden] {
-  display: none;
 }

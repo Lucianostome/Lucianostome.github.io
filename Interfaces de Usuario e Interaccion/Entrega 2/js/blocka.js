@@ -86,29 +86,34 @@ function updateTimer() {
 }
 
 function prepareBoard(image, imageName) {
+  board.classList.remove('is-completed');
   const columns = selectedPieceCount / 2;
-  const tileRatio = (16 / 9) * 2 / columns;
-  const rotatedScale = Math.min(tileRatio, 1 / tileRatio) * 0.98;
   const pieces = [];
-  board.style.gridTemplateColumns = `repeat(${columns}, minmax(0, 1fr))`;
+  board.style.setProperty('--cols', columns);
+  // board.style.gridTemplateColumns = `repeat(${columns}, minmax(0, 1fr))`;
   board.setAttribute('aria-label', `Imagen del nivel dividida en ${selectedPieceCount} piezas`);
 
   for (let index = 0; index < selectedPieceCount; index += 1) {
     const column = index % columns;
     const row = Math.floor(index / columns);
-    const rotation = index === 0 ? 1 : Math.floor(Math.random() * 4);
+    
+    // Garantiza que arranque desordenada (1, 2 o 3; nunca 0)
+    const rotation = Math.floor(Math.random() * 3) + 1;
+    
     const piece = document.createElement('button');
     piece.type = 'button';
     piece.className = 'blocka-tile';
     piece.setAttribute('aria-label', `Pieza ${index + 1}`);
     piece.dataset.rotation = rotation;
     piece.dataset.angle = rotation * 90;
-    piece.dataset.rotatedScale = rotatedScale;
+    
     piece.style.backgroundImage = `url("${image}")`;
     piece.style.backgroundSize = `${columns * 100}% 200%`;
     piece.style.backgroundPosition = `${columns === 1 ? 0 : column / (columns - 1) * 100}% ${row * 100}%`;
     piece.style.filter = currentLevel === 3 ? filters[index % filters.length] : filters[currentLevel - 1];
-    piece.style.transform = `rotate(${rotation * 90}deg) scale(${rotation % 2 ? rotatedScale : 1})`;
+    
+    // ROTACIÓN LIMPIA SIN SCALE
+    piece.style.transform = `rotate(${rotation * 90}deg)`;
     pieces.push(piece);
   }
 
@@ -132,7 +137,11 @@ function completeLevel() {
     piece.style.filter = 'none';
     piece.disabled = true;
   });
+  
   helpButton.disabled = true;
+  setTimeout(() => {
+    board.classList.add('is-completed');
+  }, 1200);
   status.textContent = `¡Nivel completado! Tiempo: ${formatTime(elapsed)} · Récord: ${formatTime(bestTime)}`;
   nextLevelButton.hidden = currentLevel === 3;
 }
@@ -151,9 +160,12 @@ function rotatePiece(piece, direction) {
 
   const rotation = (Number(piece.dataset.rotation) + direction + 4) % 4;
   const angle = Number(piece.dataset.angle) + direction * 90;
+  
   piece.dataset.rotation = rotation;
   piece.dataset.angle = angle;
-  piece.style.transform = `rotate(${angle}deg) scale(${rotation % 2 ? piece.dataset.rotatedScale : 1})`;
+  
+  // ROTACIÓN LIMPIA SIN SCALE
+  piece.style.transform = `rotate(${angle}deg)`;
 
   if ([...board.querySelectorAll('.blocka-tile')].every(tile => Number(tile.dataset.rotation) === 0)) {
     completeLevel();

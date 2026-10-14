@@ -58,21 +58,29 @@
               <button class="blocka-start" id="startGameButton" type="button">Comenzar</button>
             </div>
           </section>
+            <div class="blocka-play-area" id="blockaPlayArea" hidden>
+              <div class="blocka-topbar">
+                <p class="blocka-level" id="blockaLevelLabel">Nivel 1</p>
+                <div class="blocka-game-tools">
+                  <p class="blocka-timer" id="blockaTimer" aria-live="off">00:00</p>
+                  <button class="blocka-help" id="helpButton" type="button" aria-label="Usar ayuda; suma 5 segundos" title="Fijar una pieza correcta (+5 segundos)">
+                    <img src="assets/icons/ayuda.jpg" alt="">
+                  </button>
+                </div>
+              </div>
 
-          <div class="blocka-play-area" id="blockaPlayArea" hidden>
-            <p class="blocka-level" id="blockaLevelLabel">Nivel 1</p>
-            <div class="blocka-game-tools">
-              <p class="blocka-timer" id="blockaTimer" aria-live="off">00:00</p>
-              <button class="blocka-help" id="helpButton" type="button" aria-label="Usar ayuda; suma 5 segundos" title="Fijar una pieza correcta (+5 segundos)">
-                <img src="assets/icons/ayuda.jpg" alt="">
-              </button>
+              <div class="blocka-board-wrap">
+                <div class="blocka-board" id="blockaBoard" aria-label="Imagen del nivel dividida en piezas"></div>
+              </div>
+
+              <p class="blocka-status" id="blockaStatus">Imagen seleccionada para el nivel.</p>
+
+              <div class="blocka-actions">
+                <button class="blocka-next-level" id="nextLevelButton" type="button" hidden>Siguiente nivel</button>
+                <button class="blocka-retry" id="retryButton" type="button" hidden>Reintentar nivel</button>
+                <button class="blocka-menu-button" id="backToMenuButton" type="button">Menú principal</button>
+              </div>
             </div>
-            <div class="blocka-board" id="blockaBoard" aria-label="Imagen del nivel dividida en piezas"></div>
-            <p class="blocka-status" id="blockaStatus">Imagen seleccionada para el nivel.</p>
-            <button class="blocka-next-level" id="nextLevelButton" type="button" hidden>Siguiente nivel</button>
-            <button class="blocka-retry" id="retryButton" type="button" hidden>Reintentar nivel</button>
-            <button class="blocka-menu-button" id="backToMenuButton" type="button">Menú principal</button>
-          </div>
         </section>
 
         <section class="comments-section">

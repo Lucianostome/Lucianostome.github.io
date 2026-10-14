@@ -159,12 +159,9 @@
   height: 52%;           
 }
 .game-card:hover .card-media .free-card {
-  opacity: 0.3;           
+  opacity: 0.8;           
 }
 
-.game-card:hover .card-media {
-  filter:brightness(2);
-}
 
 .card-img {
   width: 100%;

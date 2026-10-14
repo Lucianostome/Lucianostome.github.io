@@ -16,6 +16,12 @@ async function obtenerJuegosYAgrupar() {
     const juegos = await respuesta.json();
 
     const juegosPorGenero = {};
+
+    const listaFavoritos = obtenerJuegosFavoritos(juegos);
+    if (listaFavoritos.length > 0) {
+      juegosPorGenero['Favoritos'] = listaFavoritos;
+    }
+    
     juegos.forEach(juego => {
       if (juego.genres && juego.genres.length > 0) {
         juego.genres.forEach(g => {
@@ -45,6 +51,18 @@ async function obtenerJuegosYAgrupar() {
   }
 }
 
+const ORDEN_FAVORITOS = [1000, 1002];
+
+function obtenerJuegosFavoritos(juegos) {
+  const prioridad = id => {
+    const posicion = ORDEN_FAVORITOS.indexOf(id);
+    return posicion === -1 ? ORDEN_FAVORITOS.length : posicion;
+  };
+
+  return juegos
+    .filter(juego => juego.favorite === true)
+    .sort((a, b) => prioridad(a.id) - prioridad(b.id));
+}
 function crearSeccionCarrusel(genero, juegos) {
   const cardsHTML = juegos.map(juego => crearCardJuego(juego, genero)).join('');
 
