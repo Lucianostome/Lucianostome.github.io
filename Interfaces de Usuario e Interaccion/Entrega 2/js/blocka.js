@@ -14,7 +14,8 @@ const levelLabel = document.getElementById('blockaLevelLabel');
 const status = document.getElementById('blockaStatus');
 const timerLabel = document.getElementById('blockaTimer');
 const selection = document.getElementById('blockaSelection');
-const filters = ['grayscale(100%)', 'brightness(130%)', 'invert(100%)'];
+const filtrosPorNivel = [aplicarGrises, aplicarBrillo, aplicarNegativo];
+//const filters = ['grayscale(100%)', 'brightness(130%)', 'invert(100%)'];
 const maxLevelTime = 60;
 let selectedPieceCount = 4;
 let currentLevel = 1;
@@ -30,6 +31,75 @@ enterGameButton.addEventListener('click', () => {
   menu.hidden = false;
   startButton.focus();
 });
+
+function aplicarGrises(imageData){
+  const data = imageData.data;
+  const width = imageData.width;
+  const height = imageData.height;
+
+  for (let y = 0; y < height; y++){
+    for (let x = 0; x < width; x++){
+      const i = (x + y * width) * 4;
+      const r = data[i];
+      const g = data[i+1];
+      const b = data[i+2];
+      
+      const gris = 0.299 * r + 0.587 * g + 0.114 * b;
+
+      data[i] = gris;
+      data[i+1] = gris;
+      data[i+2] = gris;
+    }
+  }
+}
+
+function aplicarBrillo(imageData){
+  const data = imageData.data;
+  const width = imageData.width;
+  const height = imageData.height;
+
+  for(let y = 0; y < height; y++){
+    for(let x = 0; x < width; x++){
+      const i =  (x + y * width) * 4;
+      data[i] = data[i] * 1.3;
+      data[i+1] = data[i+1] * 1.3;
+      data[i+2] = data[i+2] * 1.3;
+    }
+  }
+}
+
+function aplicarNegativo(imageData){
+  const data = imageData.data;
+  const width = imageData.width;
+  const height = imageData.height;
+
+  for(let y = 0; y < height; y++){
+    for(let x = 0; x < width; x++){
+      const i = (x + y * width) * 4;
+      data[i] = 255 - data[i];
+      data[i+1] = 255 - data[i+1];
+      data[i+2] = 255 - data[i+2];
+    }
+  }
+}
+
+function filtrarImagen(ruta, filtro, callback){
+  const imagen = new Image();
+  imagen.onload = function () { 
+    const canvas = document.createElement('canvas');
+    canvas.width = this.naturalWidth;
+    canvas.height = this.naturalHeight;
+    const ctx = canvas.getContext('2d');
+
+    ctx.drawImage(this, 0, 0);
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    filtro(imageData);
+    ctx.putImageData(imageData, 0, 0);
+
+    callback(canvas.toDataURL());
+  }
+  imagen.src = ruta;
+}
 
 function formatTime(seconds) {
   const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
@@ -85,7 +155,7 @@ function updateTimer() {
   if (limited && elapsed >= maxLevelTime) loseLevel();
 }
 
-function prepareBoard(image, imageName) {
+function armarTablero(image, imageName, fondos) {
   board.classList.remove('is-completed');
   const columns = selectedPieceCount / 2;
   const pieces = [];
@@ -107,10 +177,9 @@ function prepareBoard(image, imageName) {
     piece.dataset.rotation = rotation;
     piece.dataset.angle = rotation * 90;
     
-    piece.style.backgroundImage = `url("${image}")`;
+    piece.style.backgroundImage = `url("${fondos[index % fondos.length]}")`;
     piece.style.backgroundSize = `${columns * 100}% 200%`;
     piece.style.backgroundPosition = `${columns === 1 ? 0 : column / (columns - 1) * 100}% ${row * 100}%`;
-    piece.style.filter = currentLevel === 3 ? filters[index % filters.length] : filters[currentLevel - 1];
     
     // ROTACIÓN LIMPIA SIN SCALE
     piece.style.transform = `rotate(${rotation * 90}deg)`;
@@ -129,12 +198,33 @@ function prepareBoard(image, imageName) {
   helpButton.disabled = false;
 }
 
+function prepareBoard(image, imageName) {
+  if(currentLevel === 3) {
+    const fondos = [];
+    let terminados = 0;
+
+    filtrosPorNivel.forEach((filtro, i) => {
+      filtrarImagen(image, filtro, fondo => {
+        fondos[i] = fondo;
+        terminados++;
+        if(terminados === filtrosPorNivel.length) {
+          armarTablero(image, imageName, fondos);
+        }
+      })
+    })
+  } else {
+    filtrarImagen(image, filtrosPorNivel[currentLevel - 1], fondo => {
+      armarTablero(image, imageName, [fondo]);
+    });
+  } 
+}
+
 function completeLevel() {
   const elapsed = Math.floor((Date.now() - startedAt) / 1000);
   const bestTime = saveRecord(currentLevel, elapsed);
   stopTimer();
   board.querySelectorAll('.blocka-tile').forEach(piece => {
-    piece.style.filter = 'none';
+    piece.style.backgroundImage = `url("${currentImage}")`;
     piece.disabled = true;
   });
   
