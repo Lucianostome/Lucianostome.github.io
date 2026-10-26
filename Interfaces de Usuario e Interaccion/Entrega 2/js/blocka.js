@@ -83,6 +83,42 @@ function aplicarNegativo(imageData){
   }
 }
 
+/*function aplicarBlur(imageData){
+  const data = imageData.data;
+  const originalData = Array.from(data);
+  const width = imageData.width;
+  const height = imageData.height;
+  const radio = 2;
+
+  for (let y = 0; y < height; y++){
+    for (let x = 0; x < width; x++){
+      let rojo = 0;
+      let verde = 0;
+      let azul = 0;
+      let cantidad = 0;
+
+      for (let offsetY = -radio; offsetY <= radio; offsetY++){
+        for (let offsetX = -radio; offsetX <= radio; offsetX++){
+          const vecinoX = x + offsetX;
+          const vecinoY = y + offsetY;
+          if (vecinoX < 0 || vecinoX >= width || vecinoY < 0 || vecinoY >= height) continue;
+
+          const i = (vecinoX + vecinoY * width) * 4;
+          rojo += originalData[i];
+          verde += originalData[i + 1];
+          azul += originalData[i + 2];
+          cantidad++;
+        }
+      }
+
+      const i = (x + y * width) * 4;
+      data[i] = rojo / cantidad;
+      data[i + 1] = verde / cantidad;
+      data[i + 2] = azul / cantidad;
+    }
+  }
+}*/
+
 function filtrarImagen(ruta, filtro, callback){
   const imagen = new Image();
   imagen.onload = function () { 
