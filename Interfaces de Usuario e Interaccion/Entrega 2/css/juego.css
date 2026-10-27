@@ -81,11 +81,19 @@
 }
 
 .game-image-box {
-  padding: 7px;
-  border: 2px solid #8b3ff2;
-  border-radius: 9px;
-  background-color: #030b21;
-  box-shadow: 0 0 15px rgba(139, 63, 242, 0.65);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* Fondo oscuro tipo arcade */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#solitaireCanvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .game-image-box img {

@@ -25,7 +25,7 @@
     <section class="game-layout">
       <div class="game-main-column">
         <div class="game-image-box">
-          <img src="assets/icons/peg_solitaire.svg" alt="Pantalla del juego Peg Solitaire">
+          <canvas id="solitaireCanvas" width="1280" height="720"></canvas>
         </div>
 
         <section class="comments-section">
@@ -81,9 +81,20 @@
 
   <div id="footer-container"></div>
 
+  <!-- Scripts del sitio web (ZoneArcade) -->
   <script src="js/sidebar.js"></script>
   <script src="js/user-menu.js"></script>
   <script src="js/insertar-header-footer.js"></script>
   <script src="js/juego.js"></script>
+
+  <!-- Scripts MVC del Peg Solitaire -->
+  <script src="js/peg-solitaire/AssetManager.js"></script>
+  <script src="js/peg-solitaire/modelo/Ficha.js"></script>
+  <script src="js/peg-solitaire/modelo/Tablero.js"></script>
+  <script src="js/peg-solitaire/modelo/Puntuacion.js"></script>
+  <script src="js/peg-solitaire/vista/TableroVista.js"></script>
+  <script src="js/peg-solitaire/vista/FichaVista.js"></script>
+  <script src="js/peg-solitaire/controlador/GameController.js"></script>
+  <script src="js/peg-solitaire/main.js"></script>
 </body>
 </html>
