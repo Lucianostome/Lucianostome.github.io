@@ -1,9 +1,10 @@
 class AssetManager {
+  // Inicializa el registro de imágenes cargadas.
   constructor() {
     this.images = {};
   }
 
-  // Carga un objeto con pares { nombre: ruta }
+  // Carga un objeto con pares { nombre: ruta } y rechaza la promesa si falla algún recurso.
   loadImages(sources) {
     const promises = [];
 
@@ -24,7 +25,7 @@ class AssetManager {
     return Promise.all(promises);
   }
 
-  // Devuelve la imagen cargada por su clave
+  // Devuelve la imagen cargada por su clave.
   getImage(key) {
     return this.images[key];
   }

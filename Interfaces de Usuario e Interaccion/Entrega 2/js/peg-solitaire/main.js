@@ -54,6 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Cargar imágenes (Asegurate de que las rutas coincidan con tus archivos en assets/)
   assetManager.loadImages({
     fondo: 'assets/peg-solitaire-img/fondo-peg2.jpg',  // Imagen para el fondo (o la que uses)
+    frutilla: 'assets/peg-solitaire-img/frutilla.svg',
+    cereza: 'assets/peg-solitaire-img/cereza.svg',
+    naranja: 'assets/peg-solitaire-img/naranja.svg',
+    manzana: 'assets/peg-solitaire-img/manzana.svg',
     1: 'assets/peg-solitaire-img/fantasmaRojo.svg',          // Fantasma Rojo
     2: 'assets/peg-solitaire-img/fantasmaRosa.svg',          // Fantasma Rosa
     3: 'assets/peg-solitaire-img/fantasmaCeleste.svg',          // Fantasma Celeste
@@ -63,17 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const tableroVista = new TableroVista(canvas, ctx, assetManager.getImage('fondo'));
 
     // 5. Instanciar la Vista de las Fichas pasándole el mapa de imágenes
-    const imagenesFantasmas = {
+    const imagenesFichas = {
       1: assetManager.getImage(1),
       2: assetManager.getImage(2),
       3: assetManager.getImage(3),
-      4: assetManager.getImage(4)
+      4: assetManager.getImage(4),
+      frutas: {
+        1: assetManager.getImage('frutilla'),
+        2: assetManager.getImage('cereza'),
+        3: assetManager.getImage('naranja'),
+        4: assetManager.getImage('manzana')
+      }
     };
-    const fichaVista = new FichaVista(ctx, imagenesFantasmas);
+    const fichaVista = new FichaVista(ctx, imagenesFichas);
 
     const puntuacion = new Puntuacion();
+    const controles = {
+      estado: document.getElementById('gameStatus')
+    };
 
-    new GameController(tablero, tableroVista, fichaVista, canvas, puntuacion);
+    // Inicia el juego una vez cargadas sus imágenes y conectados los controles de la página.
+    new GameController(tablero, tableroVista, fichaVista, canvas, puntuacion, controles);
 
   }).catch(error => {
     console.error("Error al cargar assets del juego:", error);

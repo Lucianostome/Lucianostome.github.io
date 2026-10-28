@@ -25,8 +25,31 @@
     <section class="game-layout">
       <div class="game-main-column">
         <div class="game-image-box">
-          <canvas id="solitaireCanvas" width="1280" height="720"></canvas>
+          <canvas
+            id="solitaireCanvas"
+            width="1280"
+            height="720"
+            aria-label="Tablero de Peg Solitaire. Arrastra las fichas y usa la franja superior para ver el puntaje y el tiempo, reiniciar o cambiar entre fantasmas y frutas."
+          ></canvas>
         </div>
+        <section class="game-description" aria-labelledby="gameDescriptionTitle">
+          <img
+            src="assets/peg-solitaire-pacman.jpg"
+            alt="Edición Pac-Man de Peg Solitaire con fichas de fantasmas"
+            class="game-description-image"
+          >
+          <div>
+            <h2 id="gameDescriptionTitle">Peg Solitaire: Pac-Man Edition</h2>
+            <p>
+              ZoneArcade transforma el solitario clásico en una edición arcade inspirada en
+              Pac-Man, con un tablero de estética retro y personajes del universo del juego.
+            </p>
+            <p>
+              Desde la franja superior de la partida puedes alternar entre fichas de fantasmas
+              y frutas pixeladas (frutilla, cereza, naranja y manzana).
+            </p>
+          </div>
+        </section>
 
         <section class="comments-section">
           <h2>Comentarios</h2>
@@ -55,7 +78,7 @@
           <h2>Como jugar?</h2>
           <p>Objetivo: Atrapa a todos los fantasmas y logra que quede solo uno en el laberinto.</p>
           <ol>
-            <li>Selecciona una ficha sobre cualquier fantasma que tenga la posibilidad de saltar a un casillero vacio.</li>
+            <li>Selecciona una ficha sobre cualquier fantasma que tenga la posibilidad de saltar a un casillero vacio, ya sea horizontal o verticalmente.</li>
             <li>Salta tacticamente moviendo la ficha por encima de otro adyacente.</li>
             <li>Al terminar, intenta dejar una sola ficha en el tablero.</li>
           </ol>

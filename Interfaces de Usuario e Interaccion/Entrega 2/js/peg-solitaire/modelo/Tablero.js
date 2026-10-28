@@ -28,40 +28,41 @@ const DIRECCIONES = [
 ];
 
 class Tablero {
+    // Crea el modelo y prepara la distribución inicial de fichas.
     constructor(cantidadTipos = 4){
         this.cantidadTipos = cantidadTipos;
         this.reiniciar();
     }
 
-    // Arma el tablero inicial: fichas en todos los casilleros menos el del centro
+    // Arma el tablero inicial con fichas en los casilleros válidos, excepto el centro.
     reiniciar() {
-    // Matriz de distribución fija de personajes
+        this.grilla = [];
+        for (let f = 0; f < 7; f++) {
+            this.grilla[f] = [];
+            for (let c = 0; c < 7; c++) {
+                const tipo = MAPA_TIPOS[f][c];
 
-    this.grilla = [];
-    for (let f = 0; f < 7; f++) {
-      this.grilla[f] = [];
-      for (let c = 0; c < 7; c++) {
-        const tipo = MAPA_TIPOS[f][c];
-        
-        // Si el casillero es jugable y tiene tipo asignado (> 0), creamos la ficha
-        if (PLANTILLA[f][c] === 1 && tipo > 0) {
-          this.grilla[f][c] = new Ficha(tipo, f, c);
-        } else {
-          this.grilla[f][c] = null; // Casillero vacío (incluye el centro [3][3])
+                if (PLANTILLA[f][c] === 1 && tipo > 0) {
+                    this.grilla[f][c] = new Ficha(tipo, f, c);
+                } else {
+                    this.grilla[f][c] = null;
+                }
+            }
         }
-      }
     }
-  }
 
+    // Indica si las coordenadas corresponden a una casilla dentro de la cruz jugable.
     esCasilleroJugable(f, c) {
         return f >= 0 && f < 7 && c >= 0 && c < 7 && PLANTILLA[f][c] === 1;
     }
 
+    // Devuelve la ficha de una casilla o null si está vacía o fuera del tablero.
     getFicha(f, c){
         if (!this.esCasilleroJugable(f, c)) return null;
         return this.grilla[f][c];
     }
 
+    // Indica si la casilla es válida y no contiene una ficha.
     esVacio(f, c){
         return this.esCasilleroJugable(f, c) && this.grilla[f][c] === null;
     }
@@ -105,6 +106,7 @@ class Tablero {
         return movimientosValidos;
     }
 
+    // Mueve la ficha al destino y elimina la ficha que saltó.
     moverFicha(origen, destino, capturada){
         const ficha = this.grilla[origen.f][origen.c];
 
@@ -116,6 +118,7 @@ class Tablero {
         this.grilla[capturada.f][capturada.c] = null;
     }
 
+    // Comprueba si al menos una ficha todavía puede realizar un salto.
     hayMovimientosPosibles(){
         for(let f = 0; f < 7; f++){
             for(let c = 0; c < 7; c++){
@@ -129,6 +132,7 @@ class Tablero {
         return false;
     }
 
+    // Cuenta las fichas que permanecen sobre el tablero.
     getContadorFichas(){
         let contador = 0;
         for(let f = 0; f < 7; f++){
