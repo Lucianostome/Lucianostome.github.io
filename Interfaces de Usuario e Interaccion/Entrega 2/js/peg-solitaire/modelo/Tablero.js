@@ -36,6 +36,7 @@ class Tablero {
 
     // Arma el tablero inicial con fichas en los casilleros válidos, excepto el centro.
     reiniciar() {
+        this.estado = 'jugando';
         this.grilla = [];
         for (let f = 0; f < 7; f++) {
             this.grilla[f] = [];
@@ -106,6 +107,17 @@ class Tablero {
         return movimientosValidos;
     }
 
+    // Ejecuta el salto si el destino corresponde a un movimiento válido.
+    intentarMovimiento(origen, destino) {
+        const movimiento = this.movimientosDesde(origen.f, origen.c).find(
+            (opcion) => opcion.destino.f === destino.f && opcion.destino.c === destino.c
+        );
+        if (!movimiento) return false;
+
+        this.moverFicha(origen, movimiento.destino, movimiento.capturada);
+        return true;
+    }
+
     // Mueve la ficha al destino y elimina la ficha que saltó.
     moverFicha(origen, destino, capturada){
         const ficha = this.grilla[origen.f][origen.c];
@@ -130,6 +142,29 @@ class Tablero {
             }
         }
         return false;
+    }
+
+    // Devuelve el resultado final según el estado del tablero, o null si se puede continuar.
+    evaluarFinDeJuego() {
+        if (this.estado !== 'jugando' || this.hayMovimientosPosibles()) return null;
+
+        if (this.getContadorFichas() !== 1) {
+            this.estado = 'perdido';
+        } else {
+            this.estado = this.getFicha(3, 3) !== null ? 'ganado-centro' : 'ganado';
+        }
+
+        return this.estado;
+    }
+
+    // Marca el fin de la partida cuando vence el tiempo.
+    finalizarPorTiempo() {
+        if (this.estado === 'jugando') this.estado = 'tiempo-agotado';
+    }
+
+    // Devuelve el estado actual de la partida.
+    getEstadoPartida() {
+        return this.estado;
     }
 
     // Cuenta las fichas que permanecen sobre el tablero.

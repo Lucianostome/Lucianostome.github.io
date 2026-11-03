@@ -63,8 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
     3: 'assets/peg-solitaire-img/fantasmaCeleste.svg',          // Fantasma Celeste
     4: 'assets/peg-solitaire-img/fantasmaAmarillo.svg'           // Fantasma Naranja
   }).then(() => {
+    const controles = {
+      estado: document.getElementById('gameStatus')
+    };
+
     // 4. Instanciar la Vista del Tablero
-    const tableroVista = new TableroVista(canvas, ctx, assetManager.getImage('fondo'));
+    const tableroVista = new TableroVista(canvas, ctx, assetManager.getImage('fondo'), controles.estado);
 
     // 5. Instanciar la Vista de las Fichas pasándole el mapa de imágenes
     const imagenesFichas = {
@@ -82,12 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const fichaVista = new FichaVista(ctx, imagenesFichas);
 
     const puntuacion = new Puntuacion();
-    const controles = {
-      estado: document.getElementById('gameStatus')
-    };
 
-    // Inicia el juego una vez cargadas sus imágenes y conectados los controles de la página.
-    new GameController(tablero, tableroVista, fichaVista, canvas, puntuacion, controles);
+    // Inicia el juego una vez cargadas sus imágenes y conectadas las vistas.
+    new GameController(tablero, tableroVista, fichaVista, canvas, puntuacion);
 
   }).catch(error => {
     console.error("Error al cargar assets del juego:", error);

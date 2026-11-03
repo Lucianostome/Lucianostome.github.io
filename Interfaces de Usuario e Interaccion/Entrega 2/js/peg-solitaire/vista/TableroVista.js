@@ -3,13 +3,15 @@ class TableroVista {
    * @param {HTMLCanvasElement} canvas
    * @param {CanvasRenderingContext2D} ctx
    * @param {Image} bgImage Imagen de fondo
+   * @param {HTMLElement|null} elementoEstado Elemento para anunciar el estado de la partida
    */
 
     // Calcula y conserva la geometría del tablero dentro del canvas.
-    constructor(canvas, ctx, bgImage) {
+    constructor(canvas, ctx, bgImage, elementoEstado = null) {
         this.canvas = canvas;
         this.ctx = ctx;
         this.bgImage = bgImage;
+        this.elementoEstado = elementoEstado;
 
         this.gridSize = 7;
         this.hudHeight = 72;
@@ -20,6 +22,20 @@ class TableroVista {
         this.offsetX = (this.canvas.width - this.gridSize * this.tileSize) / 2;
         this.offsetY = this.hudHeight +
             (this.canvas.height - this.hudHeight - this.gridSize * this.tileSize) / 2;
+    }
+
+    // Actualiza el mensaje accesible que describe el estado de la partida.
+    actualizarEstado(estado) {
+        if (!this.elementoEstado) return;
+
+        const mensajes = {
+            jugando: 'Partida en curso. Selecciona una ficha para ver sus destinos.',
+            ganado: '¡Ganaste! Quedó una sola ficha en el tablero.',
+            'ganado-centro': '¡Partida perfecta! La última ficha quedó en el centro.',
+            perdido: 'Fin de la partida: ya no quedan movimientos posibles.',
+            'tiempo-agotado': 'Se agotó el tiempo. La partida terminó.'
+        };
+        this.elementoEstado.textContent = mensajes[estado];
     }
 
     // Convierte una posición de la grilla a coordenadas X e Y del canvas.

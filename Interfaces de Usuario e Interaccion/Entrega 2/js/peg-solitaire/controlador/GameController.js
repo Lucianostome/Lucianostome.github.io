@@ -7,18 +7,15 @@ class GameController {
      * @param {FichaVista} fichaVista Vista que dibuja las fichas.
      * @param {HTMLCanvasElement} canvas Superficie de juego y entrada del mouse.
      * @param {Puntuacion} puntuacion Registro del puntaje y movimientos.
-     * @param {Object} controles Elementos HTML utilizados para anunciar el estado.
      */
-    // Conecta el modelo, las vistas, los controles de la página y los eventos de entrada.
-    constructor(modelo, tableroVista, fichaVista, canvas, puntuacion, controles = {}) {
+    // Conecta el modelo, las vistas y los eventos de entrada.
+    constructor(modelo, tableroVista, fichaVista, canvas, puntuacion) {
         this.modelo = modelo;
         this.tableroVista = tableroVista;
         this.fichaVista = fichaVista;
         this.canvas = canvas;
         this.puntuacion = puntuacion;
-        this.controles = controles;
 
-        this.estado = 'jugando';
         this.fichaSeleccionada = null;
         this.origen = null;
         this.movimientosValidos = [];
@@ -29,7 +26,7 @@ class GameController {
         this.temporizador = null;
 
         this._initEvents();
-        this._actualizarPanel();
+        this.tableroVista.actualizarEstado(this.modelo.getEstadoPartida());
         this._iniciarTemporizador();
 
         this._loop = this._loop.bind(this);
@@ -68,7 +65,7 @@ class GameController {
             return;
         }
 
-        if (this.estado !== 'jugando') {
+        if (this.modelo.getEstadoPartida() !== 'jugando') {
             if (this.tableroVista.clickEnBotonReintentar(pos.x, pos.y)) {
                 this.reiniciarJuego();
             }
@@ -111,15 +108,9 @@ class GameController {
         const pos = this._getMousePos(e);
         const destinoCell = this.tableroVista.pixelAGrilla(pos.x, pos.y);
         if (destinoCell) {
-            const movimiento = this.movimientosValidos.find(
-                (opcion) => opcion.destino.f === destinoCell.f && opcion.destino.c === destinoCell.c
-            );
-
-            if (movimiento) {
-                this.modelo.moverFicha(this.origen, movimiento.destino, movimiento.capturada);
+            if (this.modelo.intentarMovimiento(this.origen, destinoCell)) {
                 this.puntuacion.registrarCaptura();
                 this._verificarFinDeJuego();
-                this._actualizarPanel();
             }
         }
 
@@ -140,9 +131,9 @@ class GameController {
             this.fichaVista.dibujarFicha(this.fichaSeleccionada, this.dragPos.x, this.dragPos.y);
         }
 
-        if (this.estado !== 'jugando') {
+        if (this.modelo.getEstadoPartida() !== 'jugando') {
             this.tableroVista.dibujarFinDeJuego(
-                this.estado,
+                this.modelo.getEstadoPartida(),
                 this.modelo.getContadorFichas(),
                 this.puntuacion.getPuntos()
             );
@@ -165,18 +156,13 @@ class GameController {
 
     // Comprueba tras cada salto si quedan movimientos y finaliza la partida si no los hay.
     _verificarFinDeJuego() {
-        if (this.modelo.hayMovimientosPosibles()) return;
+        const resultado = this.modelo.evaluarFinDeJuego();
+        if (!resultado) return;
 
-        if (this.modelo.getContadorFichas() === 1) {
-            const enElCentro = this.modelo.getFicha(3, 3) !== null;
-            this.estado = enElCentro ? 'ganado-centro' : 'ganado';
-            this.puntuacion.aplicarBonus(this.estado);
-        } else {
-            this.estado = 'perdido';
-        }
+        this.puntuacion.aplicarBonus(resultado);
 
         this._detenerTemporizador();
-        this._actualizarPanel();
+        this.tableroVista.actualizarEstado(resultado);
     }
 
     // Inicia la cuenta regresiva de cinco minutos para la partida actual.
@@ -188,15 +174,15 @@ class GameController {
 
     // Actualiza el tiempo restante y termina la partida cuando llega a cero.
     _actualizarTemporizador() {
-        if (this.estado !== 'jugando') return;
+        if (this.modelo.getEstadoPartida() !== 'jugando') return;
 
         const transcurrido = Math.floor((Date.now() - this.inicioTemporizador) / 1000);
         this.tiempoRestante = Math.max(0, TIEMPO_LIMITE_SEGUNDOS - transcurrido);
 
         if (this.tiempoRestante === 0) {
-            this.estado = 'tiempo-agotado';
+            this.modelo.finalizarPorTiempo();
             this._detenerTemporizador();
-            this._actualizarPanel();
+            this.tableroVista.actualizarEstado(this.modelo.getEstadoPartida());
             this.render();
         }
     }
@@ -206,20 +192,6 @@ class GameController {
         if (this.temporizador !== null) {
             window.clearInterval(this.temporizador);
             this.temporizador = null;
-        }
-    }
-
-    // Actualiza el mensaje accesible de estado de la partida.
-    _actualizarPanel() {
-        if (this.controles.estado) {
-            const mensajes = {
-                jugando: 'Partida en curso. Selecciona una ficha para ver sus destinos.',
-                ganado: '¡Ganaste! Quedó una sola ficha en el tablero.',
-                'ganado-centro': '¡Partida perfecta! La última ficha quedó en el centro.',
-                perdido: 'Fin de la partida: ya no quedan movimientos posibles.',
-                'tiempo-agotado': 'Se agotó el tiempo. La partida terminó.'
-            };
-            this.controles.estado.textContent = mensajes[this.estado];
         }
     }
 
@@ -235,14 +207,13 @@ class GameController {
         this._detenerTemporizador();
         this.modelo.reiniciar();
         this.puntuacion.reiniciar();
-        this.estado = 'jugando';
         this.isDragging = false;
         this.fichaSeleccionada = null;
         this.origen = null;
         this.movimientosValidos = [];
         this.tiempoRestante = TIEMPO_LIMITE_SEGUNDOS;
 
-        this._actualizarPanel();
+        this.tableroVista.actualizarEstado(this.modelo.getEstadoPartida());
         this._iniciarTemporizador();
         this.render();
     }
