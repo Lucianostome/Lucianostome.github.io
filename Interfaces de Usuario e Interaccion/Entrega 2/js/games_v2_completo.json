@@ -117,6 +117,28 @@
     "playUrl": "blocka.html"
   },
   {
+    "id": 1004,
+    "name": "Runner",
+    "released": "2026-01-01",
+    "favorite": true,
+    "background_image": "assets/icons/platformer.svg",
+    "rating": 5.0,
+    "platforms": [
+      {
+        "id": 1,
+        "name": "PC"
+      }
+    ],
+    "genres": [
+      {
+        "id": 13,
+        "name": "Arcade"
+      }
+    ],
+    "background_image_low_res": "assets/icons/platformer.svg",
+    "playUrl": "runner.html"
+  },
+  {
     "id": 4200,
     "name": "Portal 2",
     "released": "2011-04-18",

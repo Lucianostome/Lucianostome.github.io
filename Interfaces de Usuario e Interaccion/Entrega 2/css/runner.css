@@ -1,0 +1,41 @@
+.runner-stage {
+  display: block;
+  padding: 12px;
+  background-color: #020e30;
+}
+
+#runnerCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  background:
+    linear-gradient(
+      180deg,
+      #78b9df 0%,
+      #b9d9e8 66%,
+      #8dc957 66%,
+      #8dc957 71%,
+      #4a3e65 71%,
+      #252340 100%
+    );
+}
+
+.runner-stage-status {
+  min-height: 1.5em;
+  margin: 10px 4px 0;
+  color: #b9c8ed;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .runner-stage {
+    padding: 8px;
+  }
+
+  .runner-stage-status {
+    font-size: 0.72rem;
+  }
+}
