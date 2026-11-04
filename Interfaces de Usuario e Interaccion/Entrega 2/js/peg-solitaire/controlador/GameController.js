@@ -25,23 +25,23 @@ class GameController {
         this.tiempoRestante = TIEMPO_LIMITE_SEGUNDOS;
         this.temporizador = null;
 
-        this._initEvents();
+        this.initEvents();
         this.tableroVista.actualizarEstado(this.modelo.getEstadoPartida());
-        this._iniciarTemporizador();
+        this.iniciarTemporizador();
 
-        this._loop = this._loop.bind(this);
-        requestAnimationFrame(this._loop);
+        this.loop = this.loop.bind(this);
+        requestAnimationFrame(this.loop);
     }
 
     // Registra los eventos de arrastre y el control HTML para reiniciar la partida.
-    _initEvents() {
-        this.canvas.addEventListener('mousedown', (e) => this._onMouseDown(e));
-        this.canvas.addEventListener('mousemove', (e) => this._onMouseMove(e));
-        window.addEventListener('mouseup', (e) => this._onMouseUp(e));
+    initEvents() {
+        this.canvas.addEventListener('mousedown', (e) => this.onMouseDown(e));
+        this.canvas.addEventListener('mousemove', (e) => this.onMouseMove(e));
+        window.addEventListener('mouseup', (e) => this.onMouseUp(e));
     }
 
     // Convierte las coordenadas del mouse a coordenadas internas del canvas escalado.
-    _getMousePos(e) {
+    getMousePos(e) {
         const rect = this.canvas.getBoundingClientRect();
         const scaleX = this.canvas.width / rect.width;
         const scaleY = this.canvas.height / rect.height;
@@ -53,8 +53,8 @@ class GameController {
     }
 
     // Selecciona una ficha arrastrable o activa el reinicio del mensaje final.
-    _onMouseDown(e) {
-        const pos = this._getMousePos(e);
+    onMouseDown(e) {
+        const pos = this.getMousePos(e);
         if (this.tableroVista.clickEnBotonReiniciar(pos.x, pos.y)) {
             this.reiniciarJuego();
             return;
@@ -89,28 +89,28 @@ class GameController {
     }
 
     // Actualiza la posición visual de la ficha seleccionada mientras se arrastra.
-    _onMouseMove(e) {
+    onMouseMove(e) {
         if (!this.isDragging) {
-            const pos = this._getMousePos(e);
+            const pos = this.getMousePos(e);
             const sobreControl = this.tableroVista.clickEnBotonReiniciar(pos.x, pos.y) ||
                 this.tableroVista.clickEnSelectorFichas(pos.x, pos.y);
             this.canvas.style.cursor = sobreControl ? 'pointer' : 'grab';
             return;
         }
-        this.dragPos = this._getMousePos(e);
+        this.dragPos = this.getMousePos(e);
         this.render();
     }
 
     // Aplica únicamente un salto válido y devuelve la ficha a su origen si no lo es.
-    _onMouseUp(e) {
+    onMouseUp(e) {
         if (!this.isDragging) return;
 
-        const pos = this._getMousePos(e);
+        const pos = this.getMousePos(e);
         const destinoCell = this.tableroVista.pixelAGrilla(pos.x, pos.y);
         if (destinoCell) {
             if (this.modelo.intentarMovimiento(this.origen, destinoCell)) {
                 this.puntuacion.registrarCaptura();
-                this._verificarFinDeJuego();
+                this.verificarFinDeJuego();
             }
         }
 
@@ -141,7 +141,7 @@ class GameController {
 
         this.tableroVista.dibujarHUD(
             this.puntuacion.getPuntos(),
-            this._formatearTiempo(this.tiempoRestante),
+            this.formatearTiempo(this.tiempoRestante),
             this.modelo.getContadorFichas(),
             this.puntuacion.getMovimientos(),
             this.fichaVista.getTema()
@@ -149,31 +149,31 @@ class GameController {
     }
 
     // Mantiene el dibujo del canvas y la animación de los destinos durante la partida.
-    _loop() {
+    loop() {
         this.render();
-        requestAnimationFrame(this._loop);
+        requestAnimationFrame(this.loop);
     }
 
     // Comprueba tras cada salto si quedan movimientos y finaliza la partida si no los hay.
-    _verificarFinDeJuego() {
+    verificarFinDeJuego() {
         const resultado = this.modelo.evaluarFinDeJuego();
         if (!resultado) return;
 
         this.puntuacion.aplicarBonus(resultado);
 
-        this._detenerTemporizador();
+        this.detenerTemporizador();
         this.tableroVista.actualizarEstado(resultado);
     }
 
     // Inicia la cuenta regresiva de cinco minutos para la partida actual.
-    _iniciarTemporizador() {
+    iniciarTemporizador() {
         this.inicioTemporizador = Date.now();
-        this.temporizador = window.setInterval(() => this._actualizarTemporizador(), 1000);
-        this._actualizarTemporizador();
+        this.temporizador = window.setInterval(() => this.actualizarTemporizador(), 1000);
+        this.actualizarTemporizador();
     }
 
     // Actualiza el tiempo restante y termina la partida cuando llega a cero.
-    _actualizarTemporizador() {
+    actualizarTemporizador() {
         if (this.modelo.getEstadoPartida() !== 'jugando') return;
 
         const transcurrido = Math.floor((Date.now() - this.inicioTemporizador) / 1000);
@@ -181,14 +181,14 @@ class GameController {
 
         if (this.tiempoRestante === 0) {
             this.modelo.finalizarPorTiempo();
-            this._detenerTemporizador();
+            this.detenerTemporizador();
             this.tableroVista.actualizarEstado(this.modelo.getEstadoPartida());
             this.render();
         }
     }
 
     // Detiene el intervalo para evitar que siga corriendo tras finalizar la partida.
-    _detenerTemporizador() {
+    detenerTemporizador() {
         if (this.temporizador !== null) {
             window.clearInterval(this.temporizador);
             this.temporizador = null;
@@ -196,7 +196,7 @@ class GameController {
     }
 
     // Convierte una cantidad de segundos al formato de reloj MM:SS.
-    _formatearTiempo(segundos) {
+    formatearTiempo(segundos) {
         const minutos = String(Math.floor(segundos / 60)).padStart(2, '0');
         const resto = String(segundos % 60).padStart(2, '0');
         return `${minutos}:${resto}`;
@@ -204,7 +204,7 @@ class GameController {
 
     // Restaura el tablero, el puntaje y el reloj para iniciar una partida nueva.
     reiniciarJuego() {
-        this._detenerTemporizador();
+        this.detenerTemporizador();
         this.modelo.reiniciar();
         this.puntuacion.reiniciar();
         this.isDragging = false;
@@ -214,7 +214,7 @@ class GameController {
         this.tiempoRestante = TIEMPO_LIMITE_SEGUNDOS;
 
         this.tableroVista.actualizarEstado(this.modelo.getEstadoPartida());
-        this._iniciarTemporizador();
+        this.iniciarTemporizador();
         this.render();
     }
 }
