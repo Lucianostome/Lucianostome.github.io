@@ -121,7 +121,7 @@
     "name": "Runner",
     "released": "2026-01-01",
     "favorite": true,
-    "background_image": "assets/icons/platformer.svg",
+    "background_image": "assets/portada-flappy-cat.jpg",
     "rating": 5.0,
     "platforms": [
       {
@@ -135,7 +135,7 @@
         "name": "Arcade"
       }
     ],
-    "background_image_low_res": "assets/icons/platformer.svg",
+    "background_image_low_res": "assets/portada-flappy-cat.jpg",
     "playUrl": "runner.html"
   },
   {

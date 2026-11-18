@@ -1,25 +1,343 @@
 .runner-stage {
+  position: relative;
   display: block;
-  padding: 12px;
-  background-color: #020e30;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  overflow: hidden;
+  background-color: #579cb5;
+  user-select: none;
+  touch-action: manipulation;
 }
 
-#runnerCanvas {
+.runner-world {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 960px;
+  height: 540px;
+  overflow: hidden;
+  transform-origin: top left;
+  background: #579cb5;
+}
+
+.runner-parallax,
+.runner-layer,
+.runner-entities {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.runner-parallax {
+  z-index: 1;
+}
+
+.runner-layer {
+  width: 1920px;
+  height: 540px;
+  will-change: transform;
+}
+
+.runner-layer img {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  border-radius: 4px;
-  background:
-    linear-gradient(
-      180deg,
-      #78b9df 0%,
-      #b9d9e8 66%,
-      #8dc957 66%,
-      #8dc957 71%,
-      #4a3e65 71%,
-      #252340 100%
-    );
+  width: 960px;
+  height: 540px;
+  max-width: none;
+  object-fit: fill;
+  user-select: none;
+  pointer-events: none;
+}
+
+.runner-layer img + img {
+  left: 960px;
+}
+
+.runner-layer--sky {
+  z-index: 1;
+}
+
+.runner-layer--mountain {
+  z-index: 2;
+}
+
+.runner-layer--back {
+  z-index: 3;
+}
+
+.runner-layer--middle {
+  z-index: 4;
+}
+
+.runner-layer--front {
+  z-index: 5;
+}
+
+.runner-layer--ground {
+  z-index: 6;
+}
+
+.runner-entities {
+  z-index: 8;
+  pointer-events: none;
+}
+
+.runner-player,
+.runner-entity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.runner-player {
+  z-index: 12;
+  width: 64px;
+  height: 48px;
+}
+
+.runner-player-motion,
+.runner-sprite-window {
+  position: absolute;
+  inset: 0;
+  width: 64px;
+  height: 48px;
+}
+
+.runner-player-motion {
+  animation: runner-flight 1s ease-in-out infinite;
+}
+
+.runner-player-motion.is-boosting {
+  animation: runner-boost 220ms ease-out;
+}
+
+.runner-player-motion.is-hurt {
+  animation: runner-hurt 520ms steps(2, end);
+}
+
+.runner-sprite-window {
+  overflow: hidden;
+}
+
+.runner-sprite-window .runner-sprite-sheet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 640px;
+  height: 240px;
+  max-width: none;
+  aspect-ratio: auto;
+  border-radius: 0;
+  object-fit: none;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.runner-pipe-pair {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 540px;
+}
+
+.runner-pipe {
+  position: absolute;
+  left: 0;
+  width: 64px;
+  overflow: visible;
+  border-right: 2px solid rgba(14, 70, 52, 0.65);
+  border-left: 2px solid rgba(14, 70, 52, 0.65);
+  background-color: #35a866;
+  background-image: linear-gradient(90deg, #20784e 0%, #58c876 24%, #32a760 76%, #176943 100%);
+}
+
+.runner-pipe::after {
+  position: absolute;
+  left: -9px;
+  width: 78px;
+  height: 27px;
+  border: 2px solid #145c43;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #258d57, #70d47a 25%, #38ad68 72%, #176743);
+  content: "";
+}
+
+.runner-pipe--top {
+  top: 0;
+}
+
+.runner-pipe--top::after {
+  bottom: 0;
+}
+
+.runner-pipe--bottom {
+  bottom: 0;
+}
+
+.runner-pipe--bottom::after {
+  top: 0;
+}
+
+.runner-enemy {
+  z-index: 10;
+  width: 56px;
+  height: 56px;
+  overflow: hidden;
+}
+
+.runner-enemy img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 336px;
+  height: 112px;
+  max-width: none;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.runner-coin {
+  z-index: 9;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.runner-coin img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 350px;
+  height: 50px;
+  max-width: none;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.runner-coin .runner-coin-collect-sheet {
+  display: none;
+  width: 300px;
+}
+
+.runner-heart {
+  z-index: 9;
+  width: 32px;
+  height: 32px;
+}
+
+.runner-heart img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  animation: runner-heart-pulse 700ms ease-in-out infinite alternate;
+  image-rendering: pixelated;
+  user-select: none;
+  pointer-events: none;
+}
+
+.runner-coin.is-collecting .runner-coin-spin-sheet {
+  display: none;
+}
+
+.runner-coin.is-collecting .runner-coin-collect-sheet {
+  display: block;
+}
+
+.runner-hud {
+  position: absolute;
+  z-index: 20;
+  top: 14px;
+  left: 16px;
+  display: flex;
+  gap: 18px;
+  padding: 9px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 8px;
+  background: rgba(3, 21, 43, 0.78);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: 0 1px 2px #071422;
+}
+
+.runner-hud p {
+  margin: 0;
+}
+
+.runner-overlay {
+  position: absolute;
+  z-index: 30;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(5, 24, 44, 0.6);
+}
+
+.runner-overlay.is-hidden {
+  display: none;
+}
+
+.runner-overlay-card {
+  width: min(440px, 100%);
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 14px;
+  background: rgba(2, 14, 38, 0.94);
+  color: #ffffff;
+  text-align: center;
+}
+
+.runner-overlay-kicker {
+  margin-bottom: 8px;
+  color: #a3e635;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.runner-overlay-card h2 {
+  margin-bottom: 12px;
+  font-size: 1.65rem;
+}
+
+.runner-overlay-card p {
+  line-height: 1.45;
+}
+
+.runner-button {
+  min-width: 130px;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 6px;
+  padding: 11px 22px;
+  background: #a3e635;
+  color: #17200b;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.runner-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.runner-controls-hint {
+  margin-top: 12px;
+  color: #c4d2e9;
+  font-size: 0.78rem;
 }
 
 .runner-stage-status {
@@ -30,11 +348,55 @@
   text-align: center;
 }
 
-@media (max-width: 600px) {
-  .runner-stage {
-    padding: 8px;
+@keyframes runner-flight {
+  0%, 100% {
+    transform: translateY(0);
   }
+  50% {
+    transform: translateY(-3px);
+  }
+}
 
+@keyframes runner-boost {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  45% {
+    transform: rotate(-15deg) scale(1.12);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes runner-hurt {
+  0%, 100% {
+    opacity: 1;
+    filter: none;
+    transform: rotate(0);
+  }
+  25%, 75% {
+    opacity: 0.35;
+    filter: sepia(1) saturate(5) hue-rotate(320deg);
+    transform: rotate(-18deg) translateX(-4px);
+  }
+  50% {
+    opacity: 1;
+    filter: none;
+    transform: rotate(14deg) translateX(4px);
+  }
+}
+
+@keyframes runner-heart-pulse {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+
+@media (max-width: 600px) {
   .runner-stage-status {
     font-size: 0.72rem;
   }

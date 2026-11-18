@@ -25,31 +25,87 @@
 
     <section class="game-layout">
       <div class="game-main-column">
-        <section class="game-image-box runner-stage" aria-label="Área de juego de Runner">
-          <canvas
-            id="runnerCanvas"
-            width="960"
-            height="540"
-            aria-label="Escenario de Runner. El juego y sus animaciones se incorporarán aquí."
-          >
-            Tu navegador no permite mostrar el escenario del juego.
-          </canvas>
+        <section class="game-image-box runner-stage" id="runnerStage" aria-label="Área de juego de Runner">
+          <div class="runner-world" id="runnerWorld">
+            <div class="runner-parallax" aria-hidden="true">
+              <div class="runner-layer runner-layer--sky" data-speed="0.03">
+                <img src="assets/runner/forest/forest_sky.png" alt="">
+                <img src="assets/runner/forest/forest_sky.png" alt="">
+              </div>
+              <div class="runner-layer runner-layer--mountain" data-speed="0.08">
+                <img src="assets/runner/forest/forest_mountain.png" alt="">
+                <img src="assets/runner/forest/forest_mountain.png" alt="">
+              </div>
+              <div class="runner-layer runner-layer--back" data-speed="0.16">
+                <img src="assets/runner/forest/forest_back.png" alt="">
+                <img src="assets/runner/forest/forest_back.png" alt="">
+              </div>
+              <div class="runner-layer runner-layer--middle" data-speed="0.3">
+                <img src="assets/runner/forest/forest_mid.png" alt="">
+                <img src="assets/runner/forest/forest_mid.png" alt="">
+              </div>
+              <div class="runner-layer runner-layer--front" data-speed="0.52">
+                <img src="assets/runner/forest/forest_short.png" alt="">
+                <img src="assets/runner/forest/forest_short.png" alt="">
+              </div>
+              <div class="runner-layer runner-layer--ground" data-speed="1">
+                <img src="assets/runner/forest/forest_long.png" alt="">
+                <img src="assets/runner/forest/forest_long.png" alt="">
+              </div>
+            </div>
+
+            <div class="runner-entities" id="runnerEntities"></div>
+
+            <div class="runner-player" id="runnerPlayer" aria-label="Popo">
+              <div class="runner-player-motion" id="runnerPlayerMotion">
+                <div class="runner-sprite-window">
+                  <img
+                    class="runner-sprite-sheet"
+                    src="assets/runner/Popo-AnimationSheet.png"
+                    alt=""
+                    draggable="false"
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="runner-hud" aria-live="polite">
+              <p>Puntaje: <span id="runnerScore">0</span></p>
+              <p>Vidas: <span id="runnerLives">3</span></p>
+            </div>
+
+            <div class="runner-overlay" id="runnerOverlay">
+              <div class="runner-overlay-card">
+                <p class="runner-overlay-kicker">Super Flappy Cat · ZoneArcade</p>
+                <h2 id="runnerOverlayTitle">¡Ayudá a SuperCat a volar!</h2>
+                <p id="runnerOverlayText">
+                  Esquivá las tuberías y los enemigos, juntá monedas y buscá corazones para recuperar vidas.
+                  La partida termina al perder las tres vidas.
+                </p>
+                <button class="runner-button" id="runnerStartButton" type="button" disabled>Cargando…</button>
+                <p class="runner-controls-hint">Impulso: clic, ↑ o espacio</p>
+              </div>
+            </div>
+          </div>
         </section>
-        <p class="runner-stage-status" id="runnerGameStatus" aria-live="polite">
-          Escenario preparado para probar los spritesheets y las animaciones.
-        </p>
+        <p class="runner-stage-status" id="runnerGameStatus" aria-live="polite">Cargando spritesheets…</p>
 
         <section class="game-description" aria-labelledby="gameDescriptionTitle">
           <img
-            src="assets/icons/platformer.svg"
+            src="assets/portada-flappy-cat.jpg"
             alt="Icono de juegos de plataformas"
             class="game-description-image"
           >
           <div>
-            <h2 id="gameDescriptionTitle">Runner</h2>
+            <h2 id="gameDescriptionTitle">Super Flappy Cat</h2>
             <p>
               Un juego de desplazamiento horizontal en el que el personaje avanza por el
               escenario y debe superar los obstáculos con impulsos hacia arriba.
+            </p>
+            <p>
+              El bosque tiene seis capas con distintas velocidades. Esquivá al enemigo,
+              juntá monedas para sumar puntos y corazones poco frecuentes para recuperar vidas.
+              Los golpes restan vidas sin detener la partida.
             </p>
           </div>
         </section>
@@ -63,6 +119,16 @@
           </div>
           <p class="comment-message" id="commentMessage"></p>
           <div id="commentsList"></div>
+          <div id="commentsList">
+            <article class="comment">
+              <img src="assets/icons/logo-user.svg" alt="Usuario" class="comment-avatar">
+              <div>
+                <p class="comment-author">Pepito123 <span>Hace 8 horas</span></p>
+                <p>Muy bueno el juego y sobre todo complicado.</p>
+                <div class="comment-actions">Responder &nbsp;&nbsp; Compartir</div>
+              </div>
+            </article>
+          </div>
         </section>
       </div>
 
@@ -72,9 +138,11 @@
           <p>Objetivo: avanzar por el escenario y pasar entre los obstáculos.</p>
           <ol>
             <li>El personaje avanzará a velocidad constante.</li>
-            <li>Usá la tecla de espacio o la flecha hacia arriba para darle impulso.</li>
-            <li>Pasá por las aberturas entre las tuberías y evitá chocar con ellas.</li>
-            <li>Sumá puntos o mantenete en juego el mayor tiempo posible.</li>
+            <li>Usá clic, la tecla ↑ o espacio para darle impulso.</li>
+            <li>Pasá por las aberturas entre las tuberías, que se van haciendo más pequeñas a medida que avances.</li>
+            <li>Juntá monedas para sumar puntos.</li>
+            <li>Los corazones aparecen cada tanto y recuperan una vida, hasta un máximo de tres.</li>
+            <li>Evitá las tuberías y a los enemigos: los choques restan vidas, pero no detienen el vuelo mientras te quede alguna.</li>
           </ol>
         </section>
 
@@ -101,5 +169,6 @@
   <script src="js/user-menu.js"></script>
   <script src="js/insertar-header-footer.js"></script>
   <script src="js/juego.js"></script>
+  <script src="js/runner.js"></script>
 </body>
 </html>
