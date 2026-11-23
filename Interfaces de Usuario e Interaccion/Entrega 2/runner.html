@@ -69,9 +69,10 @@
               </div>
             </div>
 
-            <div class="runner-hud" aria-live="polite">
-              <p>Puntaje: <span id="runnerScore">0</span></p>
-              <p>Vidas: <span id="runnerLives">3</span></p>
+            <div class="runner-hud" aria-live="off">
+              <p>Puntaje: <span id="runnerScore" aria-live="polite">0</span></p>
+              <p>Vidas: <span id="runnerLives" aria-live="polite">3</span></p>
+              <p>Tiempo: <span id="runnerTime">1:30</span></p>
             </div>
 
             <div class="runner-overlay" id="runnerOverlay">
@@ -80,7 +81,7 @@
                 <h2 id="runnerOverlayTitle">¡Ayudá a SuperCat a volar!</h2>
                 <p id="runnerOverlayText">
                   Esquivá las tuberías y los enemigos, juntá monedas y buscá corazones para recuperar vidas.
-                  La partida termina al perder las tres vidas.
+                  La partida termina al perder las tres vidas o al agotarse el tiempo (90 segundos).
                 </p>
                 <button class="runner-button" id="runnerStartButton" type="button" disabled>Cargando…</button>
                 <p class="runner-controls-hint">Impulso: clic, ↑ o espacio</p>
@@ -105,7 +106,7 @@
             <p>
               El bosque tiene seis capas con distintas velocidades. Esquivá al enemigo,
               juntá monedas para sumar puntos y corazones poco frecuentes para recuperar vidas.
-              Los golpes restan vidas sin detener la partida.
+              Los golpes restan vidas sin detener la partida. Tenés 90 segundos para sobrevivir y sumar puntos.
             </p>
           </div>
         </section>
@@ -143,6 +144,7 @@
             <li>Juntá monedas para sumar puntos.</li>
             <li>Los corazones aparecen cada tanto y recuperan una vida, hasta un máximo de tres.</li>
             <li>Evitá las tuberías y a los enemigos: los choques restan vidas, pero no detienen el vuelo mientras te quede alguna.</li>
+            <li>La partida termina al perder las tres vidas o cuando se agotan los 90 segundos.</li>
           </ol>
         </section>
 

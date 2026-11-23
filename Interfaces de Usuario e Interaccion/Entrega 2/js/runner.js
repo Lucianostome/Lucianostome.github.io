@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const startButton = document.getElementById('runnerStartButton');
   const scoreElement = document.getElementById('runnerScore');
   const livesElement = document.getElementById('runnerLives');
+  const timeElement = document.getElementById('runnerTime');
   const statusElement = document.getElementById('runnerGameStatus');
 
   const WORLD_WIDTH = 960;
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const PLAYER_HEIGHT = 48;
   const PLAYER_X = 180;
   const RUN_SPEED = 240;
+  const GAME_TIME_LIMIT = 90;
   const GRAVITY = 1050;
   const FLAP_SPEED = -390;
   const PLAYER_FRAMES = {
@@ -63,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     running: false,
     score: 0,
     lives: 3,
+    timeRemaining: GAME_TIME_LIMIT,
     distance: 0,
     nextPipeX: WORLD_WIDTH + 90,
     lastGapCenter: WORLD_HEIGHT / 2,
@@ -114,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     clearEntities();
     state.score = 0;
     state.lives = 3;
+    state.timeRemaining = GAME_TIME_LIMIT;
     state.distance = 0;
     state.nextPipeX = WORLD_WIDTH + 90;
     state.lastGapCenter = WORLD_HEIGHT / 2;
@@ -143,13 +147,15 @@ document.addEventListener('DOMContentLoaded', () => {
     flap();
   }
 
-  function endGame() {
+  function endGame(reason) {
     state.running = false;
-    overlayTitle.textContent = 'Fin de la partida';
-    overlayText.textContent = `Puntaje: ${state.score}. ¡Volvé a intentarlo!`;
+    overlayTitle.textContent = reason === 'time' ? '¡Tiempo agotado!' : 'Fin de la partida';
+    overlayText.textContent = `Puntaje final: ${state.score}. ¡Volvé a intentarlo!`;
     startButton.textContent = 'Jugar de nuevo';
     overlay.classList.remove('is-hidden');
-    statusElement.textContent = 'Partida terminada.';
+    statusElement.textContent = reason === 'time'
+      ? 'Se agotaron los 90 segundos.'
+      : 'Partida terminada.';
   }
 
   function flap() {
@@ -162,6 +168,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateHud() {
     scoreElement.textContent = String(state.score);
     livesElement.textContent = String(state.lives);
+    const remainingSeconds = Math.ceil(state.timeRemaining);
+    const minutes = Math.floor(remainingSeconds / 60);
+    const seconds = String(remainingSeconds % 60).padStart(2, '0');
+    timeElement.textContent = `${minutes}:${seconds}`;
   }
 
   function createPipe(x, spacing) {
@@ -296,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
     state.boostTimer = 0;
     updateHud();
     statusElement.textContent = '¡Cuidado! Perdiste una vida, pero el vuelo continúa.';
-    if (state.lives <= 0) endGame();
+    if (state.lives <= 0) endGame('lives');
   }
 
   function collectCoin(coin) {
@@ -513,6 +523,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function update(dt) {
     if (!state.running) return;
+    const previousSeconds = Math.ceil(state.timeRemaining);
+    state.timeRemaining = Math.max(0, state.timeRemaining - dt);
+    if (Math.ceil(state.timeRemaining) !== previousSeconds || state.timeRemaining === 0) {
+      updateHud();
+    }
+    if (state.timeRemaining === 0) {
+      endGame('time');
+      return;
+    }
     updateParallax(dt);
     updatePlayer(dt);
     updatePipes(dt);
