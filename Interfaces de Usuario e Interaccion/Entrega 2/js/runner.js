@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const PLAYER_X = 180;
   const RUN_SPEED = 240;
   const GAME_TIME_LIMIT = 90;
+  const MAX_LIVES = 5;
   const GRAVITY = 1050;
   const FLAP_SPEED = -390;
   const PLAYER_FRAMES = {
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ready: false,
     running: false,
     score: 0,
-    lives: 3,
+    lives: MAX_LIVES,
     timeRemaining: GAME_TIME_LIMIT,
     distance: 0,
     nextPipeX: WORLD_WIDTH + 90,
@@ -116,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function resetGame() {
     clearEntities();
     state.score = 0;
-    state.lives = 3;
+    state.lives = MAX_LIVES;
     state.timeRemaining = GAME_TIME_LIMIT;
     state.distance = 0;
     state.nextPipeX = WORLD_WIDTH + 90;
@@ -322,10 +323,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function collectHeart(heart) {
-    if (heart.collected || state.lives >= 3) return;
+    if (heart.collected || state.lives >= MAX_LIVES) return;
     heart.collected = true;
     heart.collectTime = 0;
-    state.lives = Math.min(3, state.lives + 1);
+    heart.element.classList.add('is-collecting');
+    state.lives = Math.min(MAX_LIVES, state.lives + 1);
     updateHud();
     statusElement.textContent = '¡Recuperaste una vida!';
   }
@@ -410,35 +412,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateHearts(dt) {
     const playerBox = playerHitbox();
-    state.hearts = state.hearts.filter((heart) => {
-      heart.x -= RUN_SPEED * dt;
-      heart.frameTime += dt;
-      heart.frame = Math.floor(heart.frameTime / 0.1) % heartFrames.length;
-      heart.image.src = heartFrames[heart.frame];
+  state.hearts = state.hearts.filter((heart) => {
+    heart.x -= RUN_SPEED * dt;
 
-      if (!heart.collected) {
-        const heartBox = {
-          left: heart.x + 5,
-          right: heart.x + 27,
-          top: heart.y + 5,
-          bottom: heart.y + 27
-        };
-        if (overlaps(playerBox, heartBox) && state.lives < 3) collectHeart(heart);
-      } else {
-        heart.collectTime += dt;
-        if (heart.collectTime >= 0.3) {
-          heart.element.remove();
-          return false;
-        }
+    if (!heart.collected) {
+      heart.frameTime += dt;
+      const frame = Math.floor(heart.frameTime / 0.1) % heartFrames.length;
+      if (frame !== heart.frame) {
+        heart.frame = frame;
+        heart.image.src = heartFrames[frame];
       }
 
-      heart.element.style.transform = `translate3d(${heart.x}px, ${heart.y}px, 0)`;
-      if (heart.x + 32 < 0) {
+      const heartBox = {
+        left: heart.x + 5,
+        right: heart.x + 27,
+        top: heart.y + 5,
+        bottom: heart.y + 27
+      };
+      if (overlaps(playerBox, heartBox) && state.lives < MAX_LIVES) {
+        collectHeart(heart);
+      }
+    } else {
+      heart.collectTime += dt;
+      if (heart.collectTime >= 0.3) {
         heart.element.remove();
         return false;
       }
-      return true;
-    });
+    }
+
+    heart.element.style.transform = `translate3d(${heart.x}px, ${heart.y}px, 0)`;
+    if (heart.x + 32 < 0) {
+      heart.element.remove();
+      return false;
+    }
+    return true;
+  });
   }
 
   function updateCoins(dt) {

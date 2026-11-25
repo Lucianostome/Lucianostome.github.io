@@ -245,6 +245,10 @@
   pointer-events: none;
 }
 
+.runner-heart.is-collecting img {
+  animation: runner-heart-collect 300ms ease-out forwards;
+}
+
 .runner-coin.is-collecting .runner-coin-spin-sheet {
   display: none;
 }
@@ -393,6 +397,22 @@
   }
   to {
     transform: scale(1.12);
+  }
+}
+
+@keyframes runner-heart-collect {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1.8) translateY(-8px);
+    opacity: 1;
+    filter: brightness(1.6);
+  }
+  100% {
+    transform: scale(0.4) translateY(-34px);
+    opacity: 0;
   }
 }
 
