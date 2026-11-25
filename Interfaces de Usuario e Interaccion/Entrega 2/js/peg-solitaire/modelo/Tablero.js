@@ -78,7 +78,7 @@ class Tablero {
         // 1. Si no hay ficha en (f, c), no hay movimientos posibles
         if(!fichaOrigen){
             return [];
-        }
+           }
 
         const movimientosValidos = [];
 
